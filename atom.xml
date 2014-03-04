@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Enry blog]]></title>
+  <link href="http://erfannoury.github.io/atom.xml" rel="self"/>
+  <link href="http://erfannoury.github.io/"/>
+  <updated>2014-03-04T08:55:02+00:00</updated>
+  <id>http://erfannoury.github.io/</id>
+  <author>
+    <name><![CDATA[Enry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
