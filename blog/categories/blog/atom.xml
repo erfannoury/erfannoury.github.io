@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Enry blog]]></title>
-  <link href="http://erfannoury.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Blog | Enry blog]]></title>
+  <link href="http://erfannoury.github.io/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://erfannoury.github.io/"/>
   <updated>2014-03-24T14:07:02+00:00</updated>
   <id>http://erfannoury.github.io/</id>
@@ -27,22 +27,20 @@
 <p>Since I would be writing both in English and Persian and since Persian is written RTL, I had to figure out a way to style the blog posts accordingly. I was looking for the solution in the markdown level, but I couldn&rsquo;t find a solution. So after searching projects in Github, I came across to this great project, named <a href="https://github.com/hasenj/bidiweb">bidiweb</a>. This little JavaScript library sets text direction automatically by determining the text language. So, after running this script on the HTML page&rsquo;s content, it will set the text directions.
 In fact I added this piece of code to the bottom of my page:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/javascripts/bidiweb.build.js&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;/script&gt;</span>
-</span><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;DOMContentLoaded&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>        <span class="nx">bidiweb</span><span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;.site-content  *&#39;</span><span class="p">);</span>
-</span><span class='line'>    <span class="p">});</span>
-</span><span class='line'><span class="nt">&lt;/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>```html</p>
 
+<script type="text/javascript" src="http://erfannoury.github.io/javascripts/bidiweb.build.js"> </script>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() 
+    {
+        bidiweb.style('.site-content  *');
+    });
+</script>
+
+
+<p>```</p>
 
 <p><code>site-content</code> is the class of elements containing the text that their direction should be set later. Now I can normally add new posts to the blog and this little scripts takes care of the heavy duty later.</p>
 
