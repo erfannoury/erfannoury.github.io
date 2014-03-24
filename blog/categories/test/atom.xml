@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Enry blog]]></title>
-  <link href="http://erfannoury.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Test | Enry blog]]></title>
+  <link href="http://erfannoury.github.io/blog/categories/test/atom.xml" rel="self"/>
   <link href="http://erfannoury.github.io/"/>
   <updated>2014-03-24T12:11:28+00:00</updated>
   <id>http://erfannoury.github.io/</id>
@@ -24,9 +24,9 @@
 
 <p>This is an english text</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>this is a piece of code!</span></code></pre></td></tr></table></div></figure>
-
+<p><code>
+this is a piece of code!
+</code></p>
 ]]></content>
   </entry>
   
