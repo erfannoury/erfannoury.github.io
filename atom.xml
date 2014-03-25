@@ -4,11 +4,11 @@
   <title><![CDATA[Enry blog]]></title>
   <link href="http://erfannoury.github.io/atom.xml" rel="self"/>
   <link href="http://erfannoury.github.io/"/>
-  <updated>2014-03-24T14:07:02+00:00</updated>
+  <updated>2014-03-25T07:31:42+00:00</updated>
   <id>http://erfannoury.github.io/</id>
   <author>
     <name><![CDATA[Enry]]></name>
-    
+    <email><![CDATA[ennry@outlook.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 

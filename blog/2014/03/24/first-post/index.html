@@ -86,6 +86,9 @@
 
 <time datetime="2014-03-24T13:51:51+00:00" pubdate data-updated="true">Mar 24<span>th</span>, 2014</time>
         
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://erfannoury.github.io">Comments</a>
+        
       </p>
     
   </header>
@@ -162,6 +165,8 @@ In fact I added this piece of code to the bottom of my page:</p>
   
   
   
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
 
     
@@ -171,6 +176,12 @@ In fact I added this piece of code to the bottom of my page:</p>
     </p>
   </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -234,7 +245,32 @@ In fact I added this piece of code to the bottom of my page:</p>
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'enrygithubpages';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://erfannoury.github.io/blog/2014/03/24/first-post/';
+        var disqus_url = 'http://erfannoury.github.io/blog/2014/03/24/first-post/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
