@@ -79,33 +79,32 @@
   </header>
 
 
-<div class="entry-content"><h2>به نام خدا</h2>
+<div class="entry-content"><h2 id="section">به نام خدا</h2>
 
-<p>This is my technical blog, using <a href="http://octopress.org">Octopress</a>, hosted on Github Pages. I have for a long time wanted to have this blog. But unfortunately, setting up Octopress on Windows, my main OS, isn&rsquo;t a trivial task. Whatsoever, until now I haven&rsquo;t been able to set it up on Windows.</p>
+<p>This is my technical blog, using <a href="http://octopress.org">Octopress</a>, hosted on Github Pages. I have for a long time wanted to have this blog. But unfortunately, setting up Octopress on Windows, my main OS, isn’t a trivial task. Whatsoever, until now I haven’t been able to set it up on Windows. </p>
 
 <p>Lucky enough, recently a new web site launched, named <a href="http://koding.com" title="Koding">Koding</a>. This website gives you a virtual machine hosted on the cloud, with a complete console, web hosting and even a file manager in the cloud. This proved to be a great solution and setting up Octopress on this service was rather easy. So I set up my new blog with help from Koding. Now I generate my blog content in my VM in the cloud, push the changes to my repository in Github and, whoola! It is all done.</p>
 
-<p>Since I would be writing both in English and Persian and since Persian is written RTL, I had to figure out a way to style the blog posts accordingly. I was looking for the solution in the markdown level, but I couldn&rsquo;t find a solution. So after searching projects in Github, I came across to this great project, named <a href="https://github.com/hasenj/bidiweb">bidiweb</a>. This little JavaScript library sets text direction automatically by determining the text language. So, after running this script on the HTML page&rsquo;s content, it will set the text directions.
+<p>Since I would be writing both in English and Persian and since Persian is written RTL, I had to figure out a way to style the blog posts accordingly. I was looking for the solution in the markdown level, but I couldn’t find a solution. So after searching projects in Github, I came across to this great project, named <a href="https://github.com/hasenj/bidiweb">bidiweb</a>. This little JavaScript library sets text direction automatically by determining the text language. So, after running this script on the HTML page’s content, it will set the text directions. 
 In fact I added this piece of code to the bottom of my page:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/javascripts/bidiweb.build.js&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;/script&gt;</span>
-</span><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;DOMContentLoaded&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>        <span class="nx">bidiweb</span><span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;.site-content  *&#39;</span><span class="p">);</span>
-</span><span class='line'>    <span class="p">});</span>
-</span><span class='line'><span class="nt">&lt;/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/javascripts/bidiweb.build.js&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;/script&gt;</span>
+</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;DOMContentLoaded&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span>
+</span><span class="line">    <span class="p">{</span>
+</span><span class="line">        <span class="nx">bidiweb</span><span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;.site-content  *&#39;</span><span class="p">);</span>
+</span><span class="line">    <span class="p">});</span>
+</span><span class="line"><span class="nt">&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<p><code>site-content</code> is the class of elements containing the text that their direction should be set later. Now I can normally add new posts to the blog and this little scripts takes care of the heavy duty later.</p>
+<p><code>site-content</code> is the class of elements containing the text that their direction should be set later. Now I can normally add new posts to the blog and this little scripts takes care of the heavy duty later. </p>
 
 <p>This script is not yet tested thoroughly, but it will be after I add more posts to this blog. So today marks the beginning of my efforts in publishing some technical stuff.</p>
 
@@ -157,6 +156,8 @@ In fact I added this piece of code to the bottom of my page:</p>
     
     <p class="meta">
       
+      
+        <a class="basic-alignment right" href="/blog/2014/04/06/few-new-changes/" title="Next Post: theme">theme &raquo;</a>
       
     </p>
   </footer>
@@ -239,6 +240,12 @@ In fact I added this piece of code to the bottom of my page:</p>
 
 
 
+
+<script type="text/javascript">
+window.analytics=window.analytics||[],window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(t){if(!document.getElementById("analytics-js")){var a=document.createElement("script");a.type="text/javascript",a.id="analytics-js",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.io/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)}},window.analytics.SNIPPET_VERSION="2.0.9",
+window.analytics.load("jwvvh0f72n");
+window.analytics.page();
+</script>
 
 </body>
 </html>
