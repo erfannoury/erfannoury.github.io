@@ -786,11 +786,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 22px;
+    font-size: 27px;
 }
 
 h2 {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 h3 {
@@ -849,7 +849,7 @@ h4, h5, h6 {
   }
 
 .head-inner h1 {
-    font-weight: normal;
+    font-weight: bold;
 }
 
 .site-content {
@@ -911,7 +911,7 @@ th {
 }
 
 .format-aside h1.entry-title, .format-quote h1.entry-title, .format-chat h1.entry-title, .format-status h1.entry-title, .format-image h1.entry-title, .format-link h1.entry-title {
-    font-size: 13px;
+    font-size: 17px;
     line-height: 21px;
 }
 
@@ -1053,7 +1053,7 @@ code {
 }
 
 code, tt {
-    background-color: #F8F8F8;
+    /*background-color: #F8F8F8;*/
     border: 1px solid #EAEAEA;
     border-radius: 3px 3px 3px 3px;
     margin: 0 2px;
@@ -1139,7 +1139,7 @@ div#post {
 
     div#post h1 span,
     ul.posts > li > h1 span {
-      font-size: 8pt;
+      font-size: 14pt;
       font-weight: normal;
       display: block;
       border-top: 1px #ccc solid;
@@ -1159,7 +1159,7 @@ ul.posts {
 
   .post > h1 {
     text-align: center;
-    font-weight: 300;
+    font-weight: 400;
   }
     .post > h1,
     .post > h1 a {
@@ -1366,7 +1366,7 @@ kbd {
 }
 
 .post-title{
-	font-size: 150%;
+	/*font-size: 150%;*/
 	font-weight: bold;
 	color: #610561;
 }

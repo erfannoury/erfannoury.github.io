@@ -1,4 +1,64 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">تکنیکال اِنری</title><subtitle type="text">تکنیکال اِنری</subtitle><id>http://erfannoury.github.io/</id><updated>2014-04-16T20:19:27+04:30</updated><author><name>عرفان</name><uri>http://erfannoury.github.io</uri><email>ennry@outlook.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://erfannoury.github.io/feed.xml" /><link rel="self" type="text/html" title="تکنیکال اِنری" href="http://erfannoury.github.io/feed.xml" /><entry><id>http://erfannoury.github.io/2014/04/first-post/</id><title type="text">اولین پست، ولی آزمایشی</title><summary type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">تکنیکال اِنری</title><subtitle type="text">تکنیکال اِنری</subtitle><id>http://erfannoury.github.io/</id><updated>2014-04-17T02:55:33+04:30</updated><author><name>عرفان</name><uri>http://erfannoury.github.io</uri><email>ennry@outlook.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://erfannoury.github.io/feed.xml" /><link rel="self" type="text/html" title="تکنیکال اِنری" href="http://erfannoury.github.io/feed.xml" /><entry><id>http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages/</id><title type="text">چگونه یک صفحه‌ی گیت‌هاب با استفاده از Sandra.Snow بسازیم؟</title><summary type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;h2&gt;آماده‌سازی اولیه‌ی بلاگ&lt;/h2&gt;
+
+&lt;p&gt;در این پست می‌خواهم در مورد نحوه‌ی ساخت یک صفحه‌ی گیت‌هاب (&lt;a href="https://pages.github.com"&gt;Github Pages&lt;/a&gt;) با استفاده از &lt;a href="https://github.com/Sandra/Sandra.Snow"&gt;Sandra.Snow&lt;/a&gt; بنویسم. همین وبلاگی که الان مشاهده می‌کنید با استفاده از این سیستم ساخته شده. چنین سایت‌هایی به صفحات ایستا (Static Webpages) مشهور هستند. در این نوع سایت‌ها، بجز نمایش صفحات، از سمت سرور هیچ عمل خاصی انجام نمی‌گیرد. به همین دلیل هم میزبانی این نوع صفحات بسیار آسان است و به راحتی می‌توان محتوای خوبی با استفاده از این نوع صفحات ایجاد کرد. البته همین ایستا بودن صفحات باعث ایجاد محدودیت‌هایی هم می‌شود ولی می‌توان بعضی از این محدودیت‌ها را با استفاده از امکانات سمت کاربر (Client-side) ایجاد کرد. یک نمونه از این امکانات، نظرگذاری در پست‌ها می‌باشد. یکی از راه‌های پیاده‌سازی نظرگذاری در بسیاری از سایت‌ها، ایجاد یک پایگاه‌داده در سمت سرور و مدیریت این نظرات توسط سرور می‌باشد. راه‌حلی که برای سایت‌های ایستا ایجاد شده است، استفاده از سرویس‌هایی همچون &lt;a href="http://disqus.com/"&gt;Disqus&lt;/a&gt; می‌باشد. سرویس‌هایی اینچنین امکان نظر گذاشتن بر روی صفحات ایستا را فراهم می‌سازند. برای فعال‌سازی این نوع نظرات فقط کافی است یک حساب کاربری در این سایت ایجاد نمایید و شناسه‌ی سایت خود را دریافت کنید. با قراردادن این شناسه در فایل تنظیمات، این امکان در صفحات ایستا ایجاد می‌شود.
+امکانات دیگری نیز وجود دارد که تقریباً همه‌ی آنها وابسته به جاوااسکریپت بوده و سمت کاربر هستند. پس به راحتی می‌توان با پیدا کردن کتابخانه‌های جاوااسکریپت، امکانات بیشتری را به صفحات ایستا افزود. البته باید مسئله‌ی حجم صفحات را نیز در نظر گرفت و از سنگین کردن بیtش از حد این صفحات جلوگیری کرد. مثلاً یکی از کتابخانه‌های جاوااسکریپت که در این بلاگ استفاده شده، کتابخانه‌ی &lt;a href="http://mathjax.org"&gt;MathJax&lt;/a&gt; برای نمایش فرمول‌های ریاضی هست.
+حالا اگر بخواییم خلاصه‌ای از مراحل ایجاد این بلاگ را بگیم به این صورت خواهد بود:
+اول لازمه که پروژه‌ی زیر رو از گیت‌هاب بر روی کامپیوتر خودتون clone کنید:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;git clone https://github.com/Sandra/Sandra.Snow.git&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;مرحله‌ی بعد این هست که فایل پروژه‌ با نام &lt;code&gt;Sandra.Snow.sln&lt;/code&gt; که در پوشه‌ی &lt;code&gt;src&lt;/code&gt; قرار دارد را باز کنید. برای اینکار بر روی ویندوز به نرم‌افزار ویژوال‌استودیو نیاز دارید. البته بر روی همه‌ی سیستم‌های عامل می‌توانید از &lt;a href="http://erfannoury.github.io/xamarin.com/studio"&gt;Xamarin Studio&lt;/a&gt; استفاده کنید. در اینجا برای ساخت بلاگ، فقط به پروژه‌ای با نام &lt;code&gt;Snow&lt;/code&gt; نیاز داریم. در تنظیمات این پروژه، در قسمت &lt;code&gt;debug&lt;/code&gt; در قسمت مربوط به &lt;code&gt;Command line arguments&lt;/code&gt; اطلاعات زیر رو وارد کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;config="path/to/Snow/" server=true debug=true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/vs-debug.png" alt="Project Settings -&gt; Debug -&gt; Command line arguments" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;path/to/Snow/&lt;/code&gt; آدرس پوشه‌ی &lt;code&gt;Snow&lt;/code&gt; هست که فایل‌های سایت در اون قرار داره. در این پوشه فایل‌های مربوط به تنظیمات صفحات، تنظیمات ظاهر صفحه و همچنین فایل‌های جاوااسکریپت و CSS و عکس‌ها قرار دارند. برای یک نمونه از این نوع پوشه که برای شروع کار آماده است می‌توانید از نمونه‌ای که در &lt;a href="https://github.com/Sandra/Sandra.Snow.SnowTemplate"&gt;این آدرس&lt;/a&gt; قرار دارد استفاده کنید. همچنین نمونه‌ی تغییر یافته برای بلاگ‌های فارسی در &lt;a href="https://github.com/erfannoury/erfannoury.github.io"&gt;این آدرس&lt;/a&gt; قرار دارد. شما فقط به پوشه‌ی &lt;code&gt;Snow&lt;/code&gt; این فایل‌ها نیاز دارید. 
+در نهایت فقط کافی است تنظیمات مربوط به فایل &lt;code&gt;snow.config&lt;/code&gt; و در صورت نیاز، فایل‌های &lt;code&gt;*.cshtml&lt;/code&gt; موجود در پوشه‌ی &lt;code&gt;themes/snowbytepersian&lt;/code&gt; و &lt;code&gt;themes/snowbytepersian/_layouts&lt;/code&gt; را تغییر دهید. در این میان مهم‌ترین فایل، فایل &lt;code&gt;default.cshtml&lt;/code&gt; می‌باشد. با تغییر این فایل، بسیاری از تنظیمات شما برقرار می‌شوند.
+در فایل‌های موجود در تِمِ snowbytepersian تنظیمات مربوط به جهت درست نمایش متون و همچنین نمایش فرمول‌های ریاضی درج شده‌اند. با بررسی فایل‌های ذکر شده می‌توانید تنظیمات دلخواه خود را اعمال کنید.&lt;/p&gt;
+
+&lt;p&gt;در نهایت بعد از کامپایل کردن پروژه‌ی ذکر شده در ابتدای پست، در صورتی که آدرس پوشه‌ی &lt;code&gt;Snow&lt;/code&gt; را به درستی داده باشید، سایت شما ایجاد شده و یک سرور برای نمایش محلی شما ایجاد می‌شود. بعد از اینکه کار ساخت فایل‌های سایت شما به اتمام رسید، می‌تواند با &lt;code&gt;push&lt;/code&gt; کردن در پروژه‌ی صفحه‌ی گیت‌هاب بر روی گیتهاب، سایت خود را آماده کنید.&lt;/p&gt;
+
+&lt;h2&gt;در مورد صفحه‌ی گیت‌هاب&lt;/h2&gt;
+
+&lt;p&gt;برای داشتن یک صفحه‌ی گیت‌هاب در سایت Github لازم است یک پروژه با نام &lt;code&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt; در گیت‌هاب ایجاد نمایید. &lt;code&gt;&amp;lt;username&amp;gt;&lt;/code&gt; نام کاربری شما در گیت‌هاب می‌باشد. در نهایت با &lt;code&gt;push&lt;/code&gt; کردن فایل‌های ایستای بلاگتان در این پروژه، بلاگ ایستای شما در آدرسی به نام پروژه‌تان ایجاد خواهد شد.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+</summary><published>2014-04-16T19:30:00Z</published><updated>2014-04-16T19:30:00Z</updated><link rel="alternate" href="http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages/" /><content type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;h2&gt;آماده‌سازی اولیه‌ی بلاگ&lt;/h2&gt;
+
+&lt;p&gt;در این پست می‌خواهم در مورد نحوه‌ی ساخت یک صفحه‌ی گیت‌هاب (&lt;a href="https://pages.github.com"&gt;Github Pages&lt;/a&gt;) با استفاده از &lt;a href="https://github.com/Sandra/Sandra.Snow"&gt;Sandra.Snow&lt;/a&gt; بنویسم. همین وبلاگی که الان مشاهده می‌کنید با استفاده از این سیستم ساخته شده. چنین سایت‌هایی به صفحات ایستا (Static Webpages) مشهور هستند. در این نوع سایت‌ها، بجز نمایش صفحات، از سمت سرور هیچ عمل خاصی انجام نمی‌گیرد. به همین دلیل هم میزبانی این نوع صفحات بسیار آسان است و به راحتی می‌توان محتوای خوبی با استفاده از این نوع صفحات ایجاد کرد. البته همین ایستا بودن صفحات باعث ایجاد محدودیت‌هایی هم می‌شود ولی می‌توان بعضی از این محدودیت‌ها را با استفاده از امکانات سمت کاربر (Client-side) ایجاد کرد. یک نمونه از این امکانات، نظرگذاری در پست‌ها می‌باشد. یکی از راه‌های پیاده‌سازی نظرگذاری در بسیاری از سایت‌ها، ایجاد یک پایگاه‌داده در سمت سرور و مدیریت این نظرات توسط سرور می‌باشد. راه‌حلی که برای سایت‌های ایستا ایجاد شده است، استفاده از سرویس‌هایی همچون &lt;a href="http://disqus.com/"&gt;Disqus&lt;/a&gt; می‌باشد. سرویس‌هایی اینچنین امکان نظر گذاشتن بر روی صفحات ایستا را فراهم می‌سازند. برای فعال‌سازی این نوع نظرات فقط کافی است یک حساب کاربری در این سایت ایجاد نمایید و شناسه‌ی سایت خود را دریافت کنید. با قراردادن این شناسه در فایل تنظیمات، این امکان در صفحات ایستا ایجاد می‌شود.
+امکانات دیگری نیز وجود دارد که تقریباً همه‌ی آنها وابسته به جاوااسکریپت بوده و سمت کاربر هستند. پس به راحتی می‌توان با پیدا کردن کتابخانه‌های جاوااسکریپت، امکانات بیشتری را به صفحات ایستا افزود. البته باید مسئله‌ی حجم صفحات را نیز در نظر گرفت و از سنگین کردن بیtش از حد این صفحات جلوگیری کرد. مثلاً یکی از کتابخانه‌های جاوااسکریپت که در این بلاگ استفاده شده، کتابخانه‌ی &lt;a href="http://mathjax.org"&gt;MathJax&lt;/a&gt; برای نمایش فرمول‌های ریاضی هست.
+حالا اگر بخواییم خلاصه‌ای از مراحل ایجاد این بلاگ را بگیم به این صورت خواهد بود:
+اول لازمه که پروژه‌ی زیر رو از گیت‌هاب بر روی کامپیوتر خودتون clone کنید:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;git clone https://github.com/Sandra/Sandra.Snow.git&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;مرحله‌ی بعد این هست که فایل پروژه‌ با نام &lt;code&gt;Sandra.Snow.sln&lt;/code&gt; که در پوشه‌ی &lt;code&gt;src&lt;/code&gt; قرار دارد را باز کنید. برای اینکار بر روی ویندوز به نرم‌افزار ویژوال‌استودیو نیاز دارید. البته بر روی همه‌ی سیستم‌های عامل می‌توانید از &lt;a href="http://erfannoury.github.io/xamarin.com/studio"&gt;Xamarin Studio&lt;/a&gt; استفاده کنید. در اینجا برای ساخت بلاگ، فقط به پروژه‌ای با نام &lt;code&gt;Snow&lt;/code&gt; نیاز داریم. در تنظیمات این پروژه، در قسمت &lt;code&gt;debug&lt;/code&gt; در قسمت مربوط به &lt;code&gt;Command line arguments&lt;/code&gt; اطلاعات زیر رو وارد کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;config="path/to/Snow/" server=true debug=true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/vs-debug.png" alt="Project Settings -&gt; Debug -&gt; Command line arguments" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;path/to/Snow/&lt;/code&gt; آدرس پوشه‌ی &lt;code&gt;Snow&lt;/code&gt; هست که فایل‌های سایت در اون قرار داره. در این پوشه فایل‌های مربوط به تنظیمات صفحات، تنظیمات ظاهر صفحه و همچنین فایل‌های جاوااسکریپت و CSS و عکس‌ها قرار دارند. برای یک نمونه از این نوع پوشه که برای شروع کار آماده است می‌توانید از نمونه‌ای که در &lt;a href="https://github.com/Sandra/Sandra.Snow.SnowTemplate"&gt;این آدرس&lt;/a&gt; قرار دارد استفاده کنید. همچنین نمونه‌ی تغییر یافته برای بلاگ‌های فارسی در &lt;a href="https://github.com/erfannoury/erfannoury.github.io"&gt;این آدرس&lt;/a&gt; قرار دارد. شما فقط به پوشه‌ی &lt;code&gt;Snow&lt;/code&gt; این فایل‌ها نیاز دارید. 
+در نهایت فقط کافی است تنظیمات مربوط به فایل &lt;code&gt;snow.config&lt;/code&gt; و در صورت نیاز، فایل‌های &lt;code&gt;*.cshtml&lt;/code&gt; موجود در پوشه‌ی &lt;code&gt;themes/snowbytepersian&lt;/code&gt; و &lt;code&gt;themes/snowbytepersian/_layouts&lt;/code&gt; را تغییر دهید. در این میان مهم‌ترین فایل، فایل &lt;code&gt;default.cshtml&lt;/code&gt; می‌باشد. با تغییر این فایل، بسیاری از تنظیمات شما برقرار می‌شوند.
+در فایل‌های موجود در تِمِ snowbytepersian تنظیمات مربوط به جهت درست نمایش متون و همچنین نمایش فرمول‌های ریاضی درج شده‌اند. با بررسی فایل‌های ذکر شده می‌توانید تنظیمات دلخواه خود را اعمال کنید.&lt;/p&gt;
+
+&lt;p&gt;در نهایت بعد از کامپایل کردن پروژه‌ی ذکر شده در ابتدای پست، در صورتی که آدرس پوشه‌ی &lt;code&gt;Snow&lt;/code&gt; را به درستی داده باشید، سایت شما ایجاد شده و یک سرور برای نمایش محلی شما ایجاد می‌شود. بعد از اینکه کار ساخت فایل‌های سایت شما به اتمام رسید، می‌تواند با &lt;code&gt;push&lt;/code&gt; کردن در پروژه‌ی صفحه‌ی گیت‌هاب بر روی گیتهاب، سایت خود را آماده کنید.&lt;/p&gt;
+
+&lt;h2&gt;در مورد صفحه‌ی گیت‌هاب&lt;/h2&gt;
+
+&lt;p&gt;برای داشتن یک صفحه‌ی گیت‌هاب در سایت Github لازم است یک پروژه با نام &lt;code&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt; در گیت‌هاب ایجاد نمایید. &lt;code&gt;&amp;lt;username&amp;gt;&lt;/code&gt; نام کاربری شما در گیت‌هاب می‌باشد. در نهایت با &lt;code&gt;push&lt;/code&gt; کردن فایل‌های ایستای بلاگتان در این پروژه، بلاگ ایستای شما در آدرسی به نام پروژه‌تان ایجاد خواهد شد.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+</content></entry><entry><id>http://erfannoury.github.io/2014/04/first-post/</id><title type="text">اولین پست، ولی آزمایشی</title><summary type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;این یک آزمایش است.&lt;/p&gt;
 
