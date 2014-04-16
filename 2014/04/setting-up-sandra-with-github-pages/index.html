@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2014-04-17T02:55:31.0513609+04:30" />
+    <meta name="keywords" content="عمومی,بلاگ,آموزشی" />
+    <title>Technical Enry</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+	<script type="text/javascript"
+		src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+
+   <link rel="canonical" href="http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages/" />
+</head>
+<body class="home blog">
+    <div id="page" class="hfeed site">
+        <header id="masthead" class="site-header" role="banner">
+            <hgroup>
+                <h1 class="site-title"><a href="/" title="Technical Enry" rel="home">تکنیکال اِنری</a>
+                <p>
+				<small>(Technical Enry)</small><br>
+				<small>ماجراجویی‌های من به عنوان یک تازه‌کار</small>
+				</p>
+				</h1>
+            </hgroup>
+            <nav role="navigation" class="site-navigation main-navigation">
+                <h1 class="assistive-text">منو</h1>
+                <div class="assistive-text skip-link"><a href="#content" title="Skip to content">ادامه به اصلِ مطلب</a></div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="/" class="home"><i class="fa fa-home"></i></a></li>
+                        <li><a href="/about">درباره‌ی من</a></li>
+                        <li><a href="/category">موضوع‌بندی‌ها</a></li>
+                        <li><a href="/archive">آرشیو</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="/feed.xml">Atom</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div id="main">
+            <div id="primary" class="site-content">
+                <div id="content" role="main">
+                  
+
+<div class="post">
+    <h1 class="post-title">چگونه یک صفحه‌ی گیت‌هاب با استفاده از Sandra.Snow بسازیم؟</h1> 
+      <div class="meta">
+        <p class="posted">17 Apr 2014</p>
+        <ul class="categories">
+          <li><a href="/category/" title="Snow.Models.Category">عمومی</a></li>
+          <li><a href="/category/" title="Snow.Models.Category">بلاگ</a></li>
+          <li><a href="/category/" title="Snow.Models.Category">آموزشی</a></li>
+        </ul>
+      </div>
+
+      <!--div class="addthis_toolbox addthis_default_style" style="float:right;">
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        <a class="addthis_button_tweet"></a>
+        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+        <a class="addthis_button_linkedin_counter"></a>
+        <a class="addthis_counter addthis_pill_style"></a>
+      </div-->
+    </div>
+    
+    
+        
+    <h1>به نام خدا</h1>
+
+<h2>آماده‌سازی اولیه‌ی بلاگ</h2>
+
+<p>در این پست می‌خواهم در مورد نحوه‌ی ساخت یک صفحه‌ی گیت‌هاب (<a href="https://pages.github.com">Github Pages</a>) با استفاده از <a href="https://github.com/Sandra/Sandra.Snow">Sandra.Snow</a> بنویسم. همین وبلاگی که الان مشاهده می‌کنید با استفاده از این سیستم ساخته شده. چنین سایت‌هایی به صفحات ایستا (Static Webpages) مشهور هستند. در این نوع سایت‌ها، بجز نمایش صفحات، از سمت سرور هیچ عمل خاصی انجام نمی‌گیرد. به همین دلیل هم میزبانی این نوع صفحات بسیار آسان است و به راحتی می‌توان محتوای خوبی با استفاده از این نوع صفحات ایجاد کرد. البته همین ایستا بودن صفحات باعث ایجاد محدودیت‌هایی هم می‌شود ولی می‌توان بعضی از این محدودیت‌ها را با استفاده از امکانات سمت کاربر (Client-side) ایجاد کرد. یک نمونه از این امکانات، نظرگذاری در پست‌ها می‌باشد. یکی از راه‌های پیاده‌سازی نظرگذاری در بسیاری از سایت‌ها، ایجاد یک پایگاه‌داده در سمت سرور و مدیریت این نظرات توسط سرور می‌باشد. راه‌حلی که برای سایت‌های ایستا ایجاد شده است، استفاده از سرویس‌هایی همچون <a href="http://disqus.com/">Disqus</a> می‌باشد. سرویس‌هایی اینچنین امکان نظر گذاشتن بر روی صفحات ایستا را فراهم می‌سازند. برای فعال‌سازی این نوع نظرات فقط کافی است یک حساب کاربری در این سایت ایجاد نمایید و شناسه‌ی سایت خود را دریافت کنید. با قراردادن این شناسه در فایل تنظیمات، این امکان در صفحات ایستا ایجاد می‌شود.
+امکانات دیگری نیز وجود دارد که تقریباً همه‌ی آنها وابسته به جاوااسکریپت بوده و سمت کاربر هستند. پس به راحتی می‌توان با پیدا کردن کتابخانه‌های جاوااسکریپت، امکانات بیشتری را به صفحات ایستا افزود. البته باید مسئله‌ی حجم صفحات را نیز در نظر گرفت و از سنگین کردن بیtش از حد این صفحات جلوگیری کرد. مثلاً یکی از کتابخانه‌های جاوااسکریپت که در این بلاگ استفاده شده، کتابخانه‌ی <a href="http://mathjax.org">MathJax</a> برای نمایش فرمول‌های ریاضی هست.
+حالا اگر بخواییم خلاصه‌ای از مراحل ایجاد این بلاگ را بگیم به این صورت خواهد بود:
+اول لازمه که پروژه‌ی زیر رو از گیت‌هاب بر روی کامپیوتر خودتون clone کنید:</p>
+
+<p><code>git clone https://github.com/Sandra/Sandra.Snow.git</code></p>
+
+<p>مرحله‌ی بعد این هست که فایل پروژه‌ با نام <code>Sandra.Snow.sln</code> که در پوشه‌ی <code>src</code> قرار دارد را باز کنید. برای اینکار بر روی ویندوز به نرم‌افزار ویژوال‌استودیو نیاز دارید. البته بر روی همه‌ی سیستم‌های عامل می‌توانید از <a href="xamarin.com/studio">Xamarin Studio</a> استفاده کنید. در اینجا برای ساخت بلاگ، فقط به پروژه‌ای با نام <code>Snow</code> نیاز داریم. در تنظیمات این پروژه، در قسمت <code>debug</code> در قسمت مربوط به <code>Command line arguments</code> اطلاعات زیر رو وارد کنید:</p>
+
+<pre><code>config="path/to/Snow/" server=true debug=true
+</code></pre>
+
+<p><img src="/stylesheets/images/vs-debug.png" alt="Project Settings -> Debug -> Command line arguments" /></p>
+
+<p><code>path/to/Snow/</code> آدرس پوشه‌ی <code>Snow</code> هست که فایل‌های سایت در اون قرار داره. در این پوشه فایل‌های مربوط به تنظیمات صفحات، تنظیمات ظاهر صفحه و همچنین فایل‌های جاوااسکریپت و CSS و عکس‌ها قرار دارند. برای یک نمونه از این نوع پوشه که برای شروع کار آماده است می‌توانید از نمونه‌ای که در <a href="https://github.com/Sandra/Sandra.Snow.SnowTemplate">این آدرس</a> قرار دارد استفاده کنید. همچنین نمونه‌ی تغییر یافته برای بلاگ‌های فارسی در <a href="https://github.com/erfannoury/erfannoury.github.io">این آدرس</a> قرار دارد. شما فقط به پوشه‌ی <code>Snow</code> این فایل‌ها نیاز دارید. 
+در نهایت فقط کافی است تنظیمات مربوط به فایل <code>snow.config</code> و در صورت نیاز، فایل‌های <code>*.cshtml</code> موجود در پوشه‌ی <code>themes/snowbytepersian</code> و <code>themes/snowbytepersian/_layouts</code> را تغییر دهید. در این میان مهم‌ترین فایل، فایل <code>default.cshtml</code> می‌باشد. با تغییر این فایل، بسیاری از تنظیمات شما برقرار می‌شوند.
+در فایل‌های موجود در تِمِ snowbytepersian تنظیمات مربوط به جهت درست نمایش متون و همچنین نمایش فرمول‌های ریاضی درج شده‌اند. با بررسی فایل‌های ذکر شده می‌توانید تنظیمات دلخواه خود را اعمال کنید.</p>
+
+<p>در نهایت بعد از کامپایل کردن پروژه‌ی ذکر شده در ابتدای پست، در صورتی که آدرس پوشه‌ی <code>Snow</code> را به درستی داده باشید، سایت شما ایجاد شده و یک سرور برای نمایش محلی شما ایجاد می‌شود. بعد از اینکه کار ساخت فایل‌های سایت شما به اتمام رسید، می‌تواند با <code>push</code> کردن در پروژه‌ی صفحه‌ی گیت‌هاب بر روی گیتهاب، سایت خود را آماده کنید.</p>
+
+<h2>در مورد صفحه‌ی گیت‌هاب</h2>
+
+<p>برای داشتن یک صفحه‌ی گیت‌هاب در سایت Github لازم است یک پروژه با نام <code>&lt;username&gt;.github.io</code> در گیت‌هاب ایجاد نمایید. <code>&lt;username&gt;</code> نام کاربری شما در گیت‌هاب می‌باشد. در نهایت با <code>push</code> کردن فایل‌های ایستای بلاگتان در این پروژه، بلاگ ایستای شما در آدرسی به نام پروژه‌تان ایجاد خواهد شد.</p>
+
+<pre><code>git push -u origin master
+</code></pre>
+
+
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages/';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'enrygithubpages';
+    var disqus_url = 'http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-****"></script>
+    <script type="text/javascript" src="/javascripts/bidiweb.build.js"> </script>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function()
+    {
+        bidiweb.style('.site-content  *');
+    });
+    </script>
+</div>
+                </div>
+                <!-- #content -->
+            </div>
+            <!-- #primary .site-content -->
+        </div>
+        <!-- #main -->
+
+        <footer class="site-footer" role="contentinfo">
+            <div class="site-info">
+			قدرت گرفته از <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>. تِم تغییر یافته از روی Snow Byte. میزبانی بر روی صفحات گیت‌هاب با &hearts;	
+            </div>
+            <!-- .site-info -->
+        </footer>
+        <!-- #colophon .site-footer -->
+    </div>
+    <!-- #page .hfeed .site -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+    
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-######-##']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+    
+    <script type='text/javascript'>
+      $(function () {
+        $("pre code").parent().each(function () {
+          if (!$(this).hasClass("prettyprint")) {
+            $(this).addClass("prettyprint");
+            a = true
+          }
+        });
+
+        prettyPrint();
+      });
+    </script>
+    <script type="text/javascript" src="/javascripts/bidiweb.build.js"> </script>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function()
+    {
+        bidiweb.style('.site-content  *');
+    });
+    </script>
+</body>
+</html>
