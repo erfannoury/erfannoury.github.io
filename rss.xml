@@ -1,4 +1,54 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>تکنیکال اِنری</title><link>http://erfannoury.github.io/rss.xml</link><description>تکنیکال اِنری</description><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages/</guid><link>http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages/</link><title>چگونه یک صفحه‌ی گیت‌هاب با استفاده از Sandra.Snow بسازیم؟</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>تکنیکال اِنری</title><link>http://erfannoury.github.io/rss.xml</link><description>تکنیکال اِنری</description><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/pathfinding-visualization/</guid><link>http://erfannoury.github.io/2014/04/pathfinding-visualization/</link><title>Pathfinding.js, معرفی و نمایش</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;امروز در حین گشت‌و‌گذار میان صفحات با آدرس *.github.io به صفحات جالبی برخوردم. یکی از صفحات مربوط به نمایش امکانات یک کتابخانه‌ی محاسبه‌ی مسیر به زبان جاوااسکریپت بود.
+کتابخانه اینطوری توصیف شده:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;A comprehensive path-finding library for grid based games&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/qiao/PathFinding.js"&gt;اینجا&lt;/a&gt; می‌توانید به کد کتابخانه دسترسی داشته باشید.&lt;/p&gt;
+
+&lt;p&gt;ولی نکته‌ی اصلی که توجهم را جلب کرد، نمایش قابلیت‌های این کتابخانه در &lt;a href="http://qiao.github.io/PathFinding.js/visual/"&gt;این سایت&lt;/a&gt; بود. در این سایت به خوبی نمایشی از نحوه‌ی الگوریتم‌های پیاده‌سازی‌شده در این کتابخانه وجود دارد. حتماً این صفحه را بازدید کنید.&lt;/p&gt;
+
+&lt;p&gt;الگوریتم‌های مسیریابی پیاده‌سازی شده در این کتابخانه:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;A*&lt;/li&gt;
+&lt;li&gt;IDA*&lt;/li&gt;
+&lt;li&gt;BFS&lt;/li&gt;
+&lt;li&gt;DFS&lt;/li&gt;
+&lt;li&gt;Dijkstra&lt;/li&gt;
+&lt;li&gt;Jump Point Search&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/pathfindingjs-visual.png" alt="Pathding.js Visualization" /&gt;&lt;/p&gt;
+</description><pubDate>Wed, 16 Apr 2014 19:30:00 Z</pubDate><a10:updated>2014-04-16T19:30:00Z</a10:updated><a10:content type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;امروز در حین گشت‌و‌گذار میان صفحات با آدرس *.github.io به صفحات جالبی برخوردم. یکی از صفحات مربوط به نمایش امکانات یک کتابخانه‌ی محاسبه‌ی مسیر به زبان جاوااسکریپت بود.
+کتابخانه اینطوری توصیف شده:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;A comprehensive path-finding library for grid based games&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/qiao/PathFinding.js"&gt;اینجا&lt;/a&gt; می‌توانید به کد کتابخانه دسترسی داشته باشید.&lt;/p&gt;
+
+&lt;p&gt;ولی نکته‌ی اصلی که توجهم را جلب کرد، نمایش قابلیت‌های این کتابخانه در &lt;a href="http://qiao.github.io/PathFinding.js/visual/"&gt;این سایت&lt;/a&gt; بود. در این سایت به خوبی نمایشی از نحوه‌ی الگوریتم‌های پیاده‌سازی‌شده در این کتابخانه وجود دارد. حتماً این صفحه را بازدید کنید.&lt;/p&gt;
+
+&lt;p&gt;الگوریتم‌های مسیریابی پیاده‌سازی شده در این کتابخانه:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;A*&lt;/li&gt;
+&lt;li&gt;IDA*&lt;/li&gt;
+&lt;li&gt;BFS&lt;/li&gt;
+&lt;li&gt;DFS&lt;/li&gt;
+&lt;li&gt;Dijkstra&lt;/li&gt;
+&lt;li&gt;Jump Point Search&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/pathfindingjs-visual.png" alt="Pathding.js Visualization" /&gt;&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages/</guid><link>http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages/</link><title>چگونه یک صفحه‌ی گیت‌هاب با استفاده از Sandra.Snow بسازیم؟</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;h2&gt;آماده‌سازی اولیه‌ی بلاگ&lt;/h2&gt;
 
