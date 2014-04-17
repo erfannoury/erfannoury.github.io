@@ -127,8 +127,8 @@ blockquote {
     border-left: 4px #dfdfdf solid;
     padding: 10px 15px;
     border-radius: 12px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
     background-color: #f3f3f3;
 }
 
