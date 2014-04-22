@@ -18,8 +18,8 @@ title: Pathfinding.js, معرفی و نمایش
 
 1. A*
 2. IDA*
-3. BFS
-4. DFS
+3. Breadth-First-Search
+4. Best-First-Search
 5. Dijkstra
 6. Jump Point Search
 

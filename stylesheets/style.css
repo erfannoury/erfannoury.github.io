@@ -20,6 +20,7 @@ html {
     -ms-text-size-adjust: 100%;
 }
 
+
 body {
     /*background: #fefefe;*/
     background: #FEFEEF;
@@ -546,6 +547,9 @@ embed, iframe, object {
     max-width: 100%;
     border: 1px #ccc solid;
     border-radius: 4px;
+    display: block;
+  	margin-left: auto;
+    margin-right: auto;
 }
 
 #comments {

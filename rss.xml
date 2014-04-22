@@ -1,4 +1,38 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>تکنیکال اِنری</title><link>http://erfannoury.github.io/rss.xml</link><description>تکنیکال اِنری</description><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/pathfinding-visualization/</guid><link>http://erfannoury.github.io/2014/04/pathfinding-visualization/</link><title>Pathfinding.js, معرفی و نمایش</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>تکنیکال اِنری</title><link>http://erfannoury.github.io/rss.xml</link><description>تکنیکال اِنری</description><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/this-vs-that/</guid><link>http://erfannoury.github.io/2014/04/this-vs-that/</link><title>این در مقابل اون</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;فرض کنید یک انسان 80 سال عمر بکنه. هر سال را هم به طور  متوسط 365.25 روز می‌گیریم، هر روز هم 24 و چهار ساعت، هر ساعت 60 دقیقه و هر دقیقه هم 60 ثانیه است.&lt;/p&gt;
+
+&lt;p&gt;انسان به طور معمول در هر ثانیه 20 تصویر را می‌بینه، ولی هنگامی که هیحان بالایی داره، این عدد ممکنه تا 60 افزایش پیدا بکنه. حالا ما فرض می‌کنیم که این فرد به طور متوسط در طول عمرش 30 ثانیه در تصویر دیده، هیچ‌وقت هم چشمانش رو نبسته.&lt;/p&gt;
+
+&lt;p&gt;با این اعداد، تعداد تصاویری که این فرد در طول عمرش خواهد دید برابر خواهد بود با:
+$$ 7.5738 \times 10^{10} $$&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/human-eye.jpg" alt="Human Eye" /&gt;&lt;/p&gt;
+
+&lt;p&gt;حالا یک تصویر دیجیتال غیررنگی با سایز 512 در 512 را در نظر بگیرید. هر پیکسل از این تصویر مقداری بین 0 تا 255  به خودش می‌گیره. پس تعداد کل تصاویر ممکن برابر خواهد بود با عدد:
+$$ 4.5443 \times 10^{631305} $$&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/random-image.png" alt="Random 512-by-512 grayscale image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;مقایسه‌ی جالبی هست به نظرم. توی این همه تصویر، تصویر صورت همه‌ی ما از همه جهات، تصویر صورت همه‌ی دوستانمون، تصویر خودروی آینده‌مون، تصویر فرزندانمون و خیلی تصاویر دیگه هست. ولی ما خیلی راحت، بدون دیدن این همه تصویر، می‌تونیم بفهمیم که توی تصویری صورت هست یا نه.&lt;/p&gt;
+</description><pubDate>Tue, 22 Apr 2014 19:30:00 Z</pubDate><a10:updated>2014-04-22T19:30:00Z</a10:updated><a10:content type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;فرض کنید یک انسان 80 سال عمر بکنه. هر سال را هم به طور  متوسط 365.25 روز می‌گیریم، هر روز هم 24 و چهار ساعت، هر ساعت 60 دقیقه و هر دقیقه هم 60 ثانیه است.&lt;/p&gt;
+
+&lt;p&gt;انسان به طور معمول در هر ثانیه 20 تصویر را می‌بینه، ولی هنگامی که هیحان بالایی داره، این عدد ممکنه تا 60 افزایش پیدا بکنه. حالا ما فرض می‌کنیم که این فرد به طور متوسط در طول عمرش 30 ثانیه در تصویر دیده، هیچ‌وقت هم چشمانش رو نبسته.&lt;/p&gt;
+
+&lt;p&gt;با این اعداد، تعداد تصاویری که این فرد در طول عمرش خواهد دید برابر خواهد بود با:
+$$ 7.5738 \times 10^{10} $$&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/human-eye.jpg" alt="Human Eye" /&gt;&lt;/p&gt;
+
+&lt;p&gt;حالا یک تصویر دیجیتال غیررنگی با سایز 512 در 512 را در نظر بگیرید. هر پیکسل از این تصویر مقداری بین 0 تا 255  به خودش می‌گیره. پس تعداد کل تصاویر ممکن برابر خواهد بود با عدد:
+$$ 4.5443 \times 10^{631305} $$&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/random-image.png" alt="Random 512-by-512 grayscale image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;مقایسه‌ی جالبی هست به نظرم. توی این همه تصویر، تصویر صورت همه‌ی ما از همه جهات، تصویر صورت همه‌ی دوستانمون، تصویر خودروی آینده‌مون، تصویر فرزندانمون و خیلی تصاویر دیگه هست. ولی ما خیلی راحت، بدون دیدن این همه تصویر، می‌تونیم بفهمیم که توی تصویری صورت هست یا نه.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/pathfinding-visualization/</guid><link>http://erfannoury.github.io/2014/04/pathfinding-visualization/</link><title>Pathfinding.js, معرفی و نمایش</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;امروز در حین گشت‌و‌گذار میان صفحات با آدرس *.github.io به صفحات جالبی برخوردم. یکی از صفحات مربوط به نمایش امکانات یک کتابخانه‌ی محاسبه‌ی مسیر به زبان جاوااسکریپت بود.
 کتابخانه اینطوری توصیف شده:&lt;/p&gt;
@@ -16,8 +50,8 @@
 &lt;ol&gt;
 &lt;li&gt;A*&lt;/li&gt;
 &lt;li&gt;IDA*&lt;/li&gt;
-&lt;li&gt;BFS&lt;/li&gt;
-&lt;li&gt;DFS&lt;/li&gt;
+&lt;li&gt;Breadth-First-Search&lt;/li&gt;
+&lt;li&gt;Best-First-Search&lt;/li&gt;
 &lt;li&gt;Dijkstra&lt;/li&gt;
 &lt;li&gt;Jump Point Search&lt;/li&gt;
 &lt;/ol&gt;
@@ -41,14 +75,14 @@
 &lt;ol&gt;
 &lt;li&gt;A*&lt;/li&gt;
 &lt;li&gt;IDA*&lt;/li&gt;
-&lt;li&gt;BFS&lt;/li&gt;
-&lt;li&gt;DFS&lt;/li&gt;
+&lt;li&gt;Breadth-First-Search&lt;/li&gt;
+&lt;li&gt;Best-First-Search&lt;/li&gt;
 &lt;li&gt;Dijkstra&lt;/li&gt;
 &lt;li&gt;Jump Point Search&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/pathfindingjs-visual.png" alt="Pathding.js Visualization" /&gt;&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages/</guid><link>http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages/</link><title>چگونه یک صفحه‌ی گیت‌هاب با استفاده از Sandra.Snow بسازیم؟</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages-copy/</guid><link>http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages-copy/</link><title>چگونه یک صفحه‌ی گیت‌هاب با استفاده از Sandra.Snow بسازیم؟</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;h2&gt;آماده‌سازی اولیه‌ی بلاگ&lt;/h2&gt;
 
