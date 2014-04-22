@@ -9,8 +9,9 @@
     <li class="post">
       <h1><a href="@postPaged.Url">@postPaged.Title</a></h1> 
       <div class="meta">
-        <p class="posted">@postPaged.Date.ToString("dd MMM yyyy")</p>
+        <p class="posted"><i class="fa fa-calendar"></i> @postPaged.Date.ToString("dd MMM yyyy")</p>
         <ul class="categories">
+        <i class="fa fa-tag"></i> 
         @foreach(var category in @postPaged.Categories.ToList()) {
           <li><a href="/category/@category" title="@category">@category</a></li>
         }
