@@ -1,8 +1,136 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">تکنیکال اِنری</title><subtitle type="text">تکنیکال اِنری</subtitle><id>http://erfannoury.github.io/</id><updated>2014-04-22T17:34:15+04:30</updated><author><name>عرفان</name><uri>http://erfannoury.github.io</uri><email>ennry@outlook.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://erfannoury.github.io/feed.xml" /><link rel="self" type="text/html" title="تکنیکال اِنری" href="http://erfannoury.github.io/feed.xml" /><entry><id>http://erfannoury.github.io/2014/04/this-vs-that/</id><title type="text">این در مقابل اون</title><summary type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">تکنیکال اِنری</title><subtitle type="text">تکنیکال اِنری</subtitle><id>http://erfannoury.github.io/</id><updated>2014-04-25T04:14:33+04:30</updated><author><name>عرفان</name><uri>http://erfannoury.github.io</uri><email>ennry@outlook.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://erfannoury.github.io/feed.xml" /><link rel="self" type="text/html" title="تکنیکال اِنری" href="http://erfannoury.github.io/feed.xml" /><entry><id>http://erfannoury.github.io/2014/04/spectrogram/</id><title type="text">Spectrogram</title><summary type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href="http://commons.wikimedia.org/wiki/File:Expchirp.jpg"&gt;Exponential Chirp Spectrogram&lt;/a&gt;
+&lt;img src="http://upload.wikimedia.org/wikipedia/commons/f/f1/Expchirp.jpg" alt="Exponential Chirp Spectrogram" /&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;em&gt;Creative Commons &lt;a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en"&gt;Attribution-Share Alike 3.0 Unported license&lt;/a&gt; (CC BY-SA 3.0), from Wikimedia Commons&lt;/em&gt;)&lt;/p&gt;
+
+&lt;h2&gt;معرفی&lt;/h2&gt;
+
+&lt;p&gt;برای بررسی ساختار فرکانسی سیگنال‌های متغییر در زمان، از روشی به نام تبدیل فوریه‌ی کوتاه-زمان (&lt;a href="http://en.wikipedia.org/wiki/STFT"&gt;STFT&lt;/a&gt;) استفاده می‌شود. با استفاده از این نوع تبدیل فوریه می‌توان به اطلاعات فرکانسی و فازی ناحیه‌ای کوتاه از سیگنال پی برد. در حالت پیوسته، این تبدیل از رابطه‌ی زیر به دست می‌آید:&lt;/p&gt;
+
+&lt;p&gt;$$ \text{STFT} ‎\lbrace x(t) ‎\rbrace (\tau ,\omega ) \equiv X ( \tau ,\omega ) = \int _{-\infty }^{\infty} x(t)w(t-\tau )e^{-j \omega t}dt $$&lt;/p&gt;
+
+&lt;p&gt;که تابع \( w(t)\) تابع پنجره می‌باشد.&lt;/p&gt;
+
+&lt;p&gt;رابطه‌ی تبدیل فوریه‌ی کوتاه-زمان برای حالت گسسته نیز مشابه می‌باشد.&lt;/p&gt;
+
+&lt;p&gt;$$ \text{STFT} \lbrace x[n] \rbrace (m,\omega )\equiv X(m,\omega )=\sum _{n=-\infty }^{\infty } x[n]w[n-m]e^{-j \omega  n} $$&lt;/p&gt;
+
+&lt;p&gt;برای تهیه‌ی اسپکتروگرام، سیگنال به بازه‌هایی با طول کمتر از طول سیگنال تقسیم می‌شود (لزومی ندارد این بازه‌ها مجزا باشند)، برای هر کدام از این بازه‌ها تبدیل فوریه محاسبه می‌شود، و سپس اندازه‌ی این تبدیل فوریه برای بازه‌های مختلف در کنار یکدیگر قرار می‌گیرد تا تصویری دو یا سه بعدی از اسپکتروگرام سیگنال اصلی ایجاد شود. &lt;/p&gt;
+
+&lt;h2&gt;پیاده‌سازی&lt;/h2&gt;
+
+&lt;p&gt;(نمونه کدها، به زبان متلب می‌باشند)&lt;/p&gt;
+
+&lt;p&gt;برای ایجاد نمودار اسپکتروگرام برای یک سیگنال، ابتدا لازم است سیگنال را به تعدادی بازه تقسیم کرده و سپس برای هر بازه، ضرایب فوریه را محاسبه نماییم. در نهایت با جمع‌آوری همه‌ی این ضرایب به دست‌آمده، می‌توانیم نمودار آبشاری اسپکتروگرام را رسم کنیم.&lt;/p&gt;
+
+&lt;p&gt;کد زیر یک پیاده‌سازی ابتدایی برای این کار است:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function specPlot(x, windlen)
+% x: input signal
+% windlen: length of the time window inside which fourier coefficients will be calculated, note that since our signal is real, only half of the coefficients are needed
+
+% preallocating magnitude matrix for speedup
+numofwinds = floor(length(x)/windlen);
+magnitude = zeros(numofwinds, floor(windlen/2));
+for i = 0:(numofwinds - 1)
+    startIdx = i*windlen;
+    partfft = abs(fft(x((1+startIdx):(startIdx+windlen))))/windlen;
+    magnitude((i+1),:) = partfft(1:length(partfft)/2);
+end
+waterfall(1:windlen/2, 0:(length(x)/windlen -1), magnitude);
+xlabel('frequency');
+ylabel('time');
+zlabel('magnitude');
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حال این توابع را بر روی یک سیگنال نمونه امتحان می‌کنیم.&lt;/p&gt;
+
+&lt;p&gt;سیگنال زیر را که یک سیگنال جیر با رابطه‌ی \( y=sin(1600\pi t^2) \) می‌باشد در نظر بگیرید. نمودار این سیگنال به صورت زیر است:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/chirp-limited.png" alt="Chirp Plot, limited" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/chirp.png" alt="Chirp Plot" /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt; t = [0:1/8000:1-1/8000];
+&amp;gt;&amp;gt; y = sin(2*pi*800*(t.*t));
+&amp;gt;&amp;gt; specPlot(y,800);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;با اجرای دستور آخر نمودار زیر ایجاد خواهد شد&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/chirp-specplot.png" alt="Spectrogram waterfall plot" /&gt;&lt;/p&gt;
+</summary><published>2014-04-24T19:30:00Z</published><updated>2014-04-24T19:30:00Z</updated><link rel="alternate" href="http://erfannoury.github.io/2014/04/spectrogram/" /><content type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href="http://commons.wikimedia.org/wiki/File:Expchirp.jpg"&gt;Exponential Chirp Spectrogram&lt;/a&gt;
+&lt;img src="http://upload.wikimedia.org/wikipedia/commons/f/f1/Expchirp.jpg" alt="Exponential Chirp Spectrogram" /&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;em&gt;Creative Commons &lt;a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en"&gt;Attribution-Share Alike 3.0 Unported license&lt;/a&gt; (CC BY-SA 3.0), from Wikimedia Commons&lt;/em&gt;)&lt;/p&gt;
+
+&lt;h2&gt;معرفی&lt;/h2&gt;
+
+&lt;p&gt;برای بررسی ساختار فرکانسی سیگنال‌های متغییر در زمان، از روشی به نام تبدیل فوریه‌ی کوتاه-زمان (&lt;a href="http://en.wikipedia.org/wiki/STFT"&gt;STFT&lt;/a&gt;) استفاده می‌شود. با استفاده از این نوع تبدیل فوریه می‌توان به اطلاعات فرکانسی و فازی ناحیه‌ای کوتاه از سیگنال پی برد. در حالت پیوسته، این تبدیل از رابطه‌ی زیر به دست می‌آید:&lt;/p&gt;
+
+&lt;p&gt;$$ \text{STFT} ‎\lbrace x(t) ‎\rbrace (\tau ,\omega ) \equiv X ( \tau ,\omega ) = \int _{-\infty }^{\infty} x(t)w(t-\tau )e^{-j \omega t}dt $$&lt;/p&gt;
+
+&lt;p&gt;که تابع \( w(t)\) تابع پنجره می‌باشد.&lt;/p&gt;
+
+&lt;p&gt;رابطه‌ی تبدیل فوریه‌ی کوتاه-زمان برای حالت گسسته نیز مشابه می‌باشد.&lt;/p&gt;
+
+&lt;p&gt;$$ \text{STFT} \lbrace x[n] \rbrace (m,\omega )\equiv X(m,\omega )=\sum _{n=-\infty }^{\infty } x[n]w[n-m]e^{-j \omega  n} $$&lt;/p&gt;
+
+&lt;p&gt;برای تهیه‌ی اسپکتروگرام، سیگنال به بازه‌هایی با طول کمتر از طول سیگنال تقسیم می‌شود (لزومی ندارد این بازه‌ها مجزا باشند)، برای هر کدام از این بازه‌ها تبدیل فوریه محاسبه می‌شود، و سپس اندازه‌ی این تبدیل فوریه برای بازه‌های مختلف در کنار یکدیگر قرار می‌گیرد تا تصویری دو یا سه بعدی از اسپکتروگرام سیگنال اصلی ایجاد شود. &lt;/p&gt;
+
+&lt;h2&gt;پیاده‌سازی&lt;/h2&gt;
+
+&lt;p&gt;(نمونه کدها، به زبان متلب می‌باشند)&lt;/p&gt;
+
+&lt;p&gt;برای ایجاد نمودار اسپکتروگرام برای یک سیگنال، ابتدا لازم است سیگنال را به تعدادی بازه تقسیم کرده و سپس برای هر بازه، ضرایب فوریه را محاسبه نماییم. در نهایت با جمع‌آوری همه‌ی این ضرایب به دست‌آمده، می‌توانیم نمودار آبشاری اسپکتروگرام را رسم کنیم.&lt;/p&gt;
+
+&lt;p&gt;کد زیر یک پیاده‌سازی ابتدایی برای این کار است:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function specPlot(x, windlen)
+% x: input signal
+% windlen: length of the time window inside which fourier coefficients will be calculated, note that since our signal is real, only half of the coefficients are needed
+
+% preallocating magnitude matrix for speedup
+numofwinds = floor(length(x)/windlen);
+magnitude = zeros(numofwinds, floor(windlen/2));
+for i = 0:(numofwinds - 1)
+    startIdx = i*windlen;
+    partfft = abs(fft(x((1+startIdx):(startIdx+windlen))))/windlen;
+    magnitude((i+1),:) = partfft(1:length(partfft)/2);
+end
+waterfall(1:windlen/2, 0:(length(x)/windlen -1), magnitude);
+xlabel('frequency');
+ylabel('time');
+zlabel('magnitude');
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حال این توابع را بر روی یک سیگنال نمونه امتحان می‌کنیم.&lt;/p&gt;
+
+&lt;p&gt;سیگنال زیر را که یک سیگنال جیر با رابطه‌ی \( y=sin(1600\pi t^2) \) می‌باشد در نظر بگیرید. نمودار این سیگنال به صورت زیر است:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/chirp-limited.png" alt="Chirp Plot, limited" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/chirp.png" alt="Chirp Plot" /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt; t = [0:1/8000:1-1/8000];
+&amp;gt;&amp;gt; y = sin(2*pi*800*(t.*t));
+&amp;gt;&amp;gt; specPlot(y,800);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;با اجرای دستور آخر نمودار زیر ایجاد خواهد شد&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/chirp-specplot.png" alt="Spectrogram waterfall plot" /&gt;&lt;/p&gt;
+</content></entry><entry><id>http://erfannoury.github.io/2014/04/this-vs-that/</id><title type="text">این در مقابل اون</title><summary type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;فرض کنید یک انسان 80 سال عمر بکنه. هر سال را هم به طور  متوسط 365.25 روز می‌گیریم، هر روز هم 24  ساعت، هر ساعت 60 دقیقه و هر دقیقه هم 60 ثانیه است.&lt;/p&gt;
 
-&lt;p&gt;انسان به طور معمول در هر ثانیه 20 تصویر را می‌بینه، ولی هنگامی که هیحان بالایی داره، این عدد ممکنه تا 60 افزایش پیدا بکنه. حالا ما فرض می‌کنیم که این فرد به طور متوسط در طول عمرش 30 ثانیه در تصویر دیده، هیچ‌وقت هم چشمانش رو نبسته.&lt;/p&gt;
+&lt;p&gt;انسان به طور معمول در هر ثانیه 20 تصویر را می‌بینه، ولی هنگامی که هیحان بالایی داره، این عدد ممکنه تا 60 افزایش پیدا بکنه. حالا ما فرض می‌کنیم که این فرد به طور متوسط در طول عمرش 30 تصویر در ثانیه دیده، هیچ‌وقت هم چشمانش رو نبسته.&lt;/p&gt;
 
 &lt;p&gt;با این اعداد، تعداد تصاویری که این فرد در طول عمرش خواهد دید برابر خواهد بود با:
 $$ 7.5738 \times 10^{10} $$&lt;/p&gt;
@@ -19,7 +147,7 @@ $$ 4.5443 \times 10^{631305} $$&lt;/p&gt;
 
 &lt;p&gt;فرض کنید یک انسان 80 سال عمر بکنه. هر سال را هم به طور  متوسط 365.25 روز می‌گیریم، هر روز هم 24  ساعت، هر ساعت 60 دقیقه و هر دقیقه هم 60 ثانیه است.&lt;/p&gt;
 
-&lt;p&gt;انسان به طور معمول در هر ثانیه 20 تصویر را می‌بینه، ولی هنگامی که هیحان بالایی داره، این عدد ممکنه تا 60 افزایش پیدا بکنه. حالا ما فرض می‌کنیم که این فرد به طور متوسط در طول عمرش 30 ثانیه در تصویر دیده، هیچ‌وقت هم چشمانش رو نبسته.&lt;/p&gt;
+&lt;p&gt;انسان به طور معمول در هر ثانیه 20 تصویر را می‌بینه، ولی هنگامی که هیحان بالایی داره، این عدد ممکنه تا 60 افزایش پیدا بکنه. حالا ما فرض می‌کنیم که این فرد به طور متوسط در طول عمرش 30 تصویر در ثانیه دیده، هیچ‌وقت هم چشمانش رو نبسته.&lt;/p&gt;
 
 &lt;p&gt;با این اعداد، تعداد تصاویری که این فرد در طول عمرش خواهد دید برابر خواهد بود با:
 $$ 7.5738 \times 10^{10} $$&lt;/p&gt;
