@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="last-modified" content="2014-04-30T00:54:36.0175312+04:30" />
-    <meta name="keywords" content="معرفی" />
+    <meta name="keywords" content="پایتون,python,tips" />
     <title>Technical Enry</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
@@ -14,7 +14,7 @@
 	</script>
 
 
-   <link rel="canonical" href="http://erfannoury.github.io/2014/04/pathfinding-visualization/" />
+   <link rel="canonical" href="http://erfannoury.github.io/2014/04/msvc-for-python/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -48,12 +48,14 @@
                   
 
 <div class="post">
-    <h1 class="post-title">Pathfinding.js, معرفی و نمایش</h1> 
+    <h1 class="post-title">کامپایلر مایکروسافت برای پایتون</h1> 
       <div class="meta">
-        <p class="posted"><i class="fa fa-calendar"></i> 17 Apr 2014</p>
+        <p class="posted"><i class="fa fa-calendar"></i> 30 Apr 2014</p>
         <ul class="categories">
         <i class="fa fa-tag"></i>
-          <li><a href="/category/" title="Snow.Models.Category">معرفی</a></li>
+          <li><a href="/category/" title="Snow.Models.Category">پایتون</a></li>
+          <li><a href="/category/python" title="Snow.Models.Category">python</a></li>
+          <li><a href="/category/tips" title="Snow.Models.Category">tips</a></li>
         </ul>
       </div>
 
@@ -70,29 +72,77 @@
         
     <h1>به نام خدا</h1>
 
-<p>امروز در حین گشت‌و‌گذار میان صفحات با آدرس *.github.io به صفحات جالبی برخوردم. یکی از صفحات مربوط به نمایش امکانات یک کتابخانه‌ی محاسبه‌ی مسیر به زبان جاوااسکریپت بود.
-کتابخانه اینطوری توصیف شده:</p>
+<h2>مقدمه</h2>
 
-<blockquote>
-  <p><em>A comprehensive path-finding library for grid based games</em></p>
-</blockquote>
+<p>اخیراً شروع به کار با زبان پایتون کردم. خیلی سبک زبان رو نپسندیدم، بخصوص با dynamic بودن هنوز کامل کنار نیامده‌ام.
+ولی زبان پایتون جامعه‌ی بسیار بزرگی دارد و نتیجه‌ی این جامعه‌ی بزرگ پروژه‌های باکیفیت و پرتعداد و پرکاربردی است که برای این زبان و با این زبان ایجاد شده‌اند. همین کتابخانه‌ها برنامه‌نویسی را برای انجام بسیاری از کارها آسان می‌کند. </p>
 
-<p><a href="https://github.com/qiao/PathFinding.js">اینجا</a> می‌توانید به کد کتابخانه دسترسی داشته باشید.</p>
+<p>برای نصب کتابخانه‌های مختلف برای این زبان، راه‌های مختلفی وجود دارد. مشهورترین این راه‌ها <code>pip</code> و <code>easy_install</code> است. همچنین با استفاده از <code>conda</code> نیز می‌توان این کار را برای بعضی از کتابخانه‌ها انجام داد.</p>
 
-<p>ولی نکته‌ی اصلی که توجهم را جلب کرد، نمایش قابلیت‌های این کتابخانه در <a href="http://qiao.github.io/PathFinding.js/visual/">این سایت</a> بود. در این سایت به خوبی نمایشی از نحوه‌ی الگوریتم‌های پیاده‌سازی‌شده در این کتابخانه وجود دارد. حتماً این صفحه را بازدید کنید.</p>
+<p>ولی راه اصلی نصب بسیاری از کتابخانه‌ها، استفاده از دستور زیر است:</p>
 
-<p>الگوریتم‌های مسیریابی پیاده‌سازی شده در این کتابخانه:</p>
+<pre><code>&gt;&gt; python setup.py install
+</code></pre>
 
-<ol>
-<li>A*</li>
-<li>IDA*</li>
-<li>Breadth-First-Search</li>
-<li>Best-First-Search</li>
-<li>Dijkstra</li>
-<li>Jump Point Search</li>
-</ol>
+<p>فایل <code>setup.py</code> در همه‌ی پروژه‌ها وجود دارد، و در واقع این فایل توسط توسعه‌دهندگان هر کدام از این کتابخانه‌ها نوشته می‌شود. با استفاده از این دستور می‌توان کتابخانه‌ی مورد نظر را به لیست پایتون اضافه کرد. </p>
 
-<p><img src="/stylesheets/images/pathfindingjs-visual.png" alt="Pathding.js Visualization" /></p>
+<p>پایتون به زبان <code>C</code> نوشته شده است و برای سرعت‌گرفتن، قسمت‌هایی از کد را می‌توان به زبان <code>C</code> نوشت و در کد پایتون استفاده کرد. همچنین پروژه‌ای همانند <code>Cython</code>  می‌تواند کد پایتون را به کد <code>C</code> تبدیل کند.</p>
+
+<h2>مشکل</h2>
+
+<p>در هنگام نصب بعضی از پروژه‌ها، لازم است قسمتی از کد توسط یک کامپایلر <code>C</code> کامپایل شود.  برای این کار باید پایتون بتواند کامپایلر درست نصب شده و تنظیمات مناسب را تشخیص دهد. اگر این مشکلی در این کار پیش بیاید، خطایی مانند زیر در هنگام نصب کتابخانه نمایش داده خواهد شد:</p>
+
+<pre><code>Error:unable to find vcvarsall.bat
+</code></pre>
+
+<p>این خطا بخصوص در ویندوز احتمال ظهور بیشتری دارد! برای اینکار راه‌حلی پیشنهاد می‌شود که در ادامه توضیح آن را خواهم داد.</p>
+
+<h2>راه‌حل</h2>
+
+<p>در مسیر زیر فایلی به نام <code>distutils.cfg</code> وجود دارد</p>
+
+<pre><code>%PYTHONDIR%\Lib\distutils\
+</code></pre>
+
+<p>که <code>%PYTHON%</code> مسیر نصب پایتون می‌باشد. مسییر پیش‌فرض مسیر زیر می‌باشد:</p>
+
+<pre><code>C:\Python27
+</code></pre>
+
+<p>اگر هم این فایل موجود نباشد، آن را ایجاد کنید. محتویات آن را به صورت زیر تغییر دهید:</p>
+
+<pre><code>[build]
+compiler=msvc
+</code></pre>
+
+<p>تنظیمات بالا با فرض این است که کامپایلر مایکروسافت بر روی سیستم نصب باشد. اگر ویژوال استودیو داشته باشید کامپایلر نصب می‌باشد. اگر کامپایلر ویژوال استودیو ندارید می‌توانید نسخه‌ی <a href="http://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx">Express</a> ویژوال استودیو را دریافت و نصب کنید.</p>
+
+<p>حال به مسیر زیر بروید:</p>
+
+<pre><code>%PYTHONDIR%\PCbuild\
+</code></pre>
+
+<p>در این پوشه فایل زیر را ایجاد کنید</p>
+
+<pre><code>msvcr&lt;num&gt;.def
+</code></pre>
+
+<p>که منظور از <code>&lt;num&gt;</code> یک شماره است که بر اساس نسخه‌ی ویژوال استودیو تعیین می‌شود</p>
+
+<ul>
+<li><code>Visual Studio 2008   -&gt;      90</code></li>
+<li><code>Visual Studio 2010   -&gt;      100</code></li>
+<li><code>Visual Studio 2012   -&gt;      110</code></li>
+<li><code>Visual Studio 2013   -&gt;      120</code></li>
+</ul>
+
+<p>حال در فایل ایجاد شده دو خط زیر را بنویسید:</p>
+
+<pre><code>LIBRARY MSVCR&lt;num&gt;.dll
+EXPORTS
+</code></pre>
+
+<p>با انجام این کارها به احتمال زیادی مشکل کامپایل‌شدن کدهای <code>C</code> برای پایتون حل خواهد شد.</p>
 
 
     <div id="disqus_thread"></div>
@@ -102,14 +152,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://erfannoury.github.io/2014/04/pathfinding-visualization/';
+                this.page.url = 'http://erfannoury.github.io/2014/04/msvc-for-python/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'enrygithubpages';
-    var disqus_url = 'http://erfannoury.github.io/2014/04/pathfinding-visualization/';
+    var disqus_url = 'http://erfannoury.github.io/2014/04/msvc-for-python/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
