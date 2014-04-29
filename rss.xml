@@ -32,7 +32,7 @@
 &lt;pre&gt;&lt;code&gt;%PYTHONDIR%\Lib\distutils\
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;که &lt;code&gt;%PYTHON%&lt;/code&gt; مسیر نصب پایتون می‌باشد. مسییر پیش‌فرض مسیر زیر می‌باشد:&lt;/p&gt;
+&lt;p&gt;که &lt;code&gt;%PYTHONDIR%&lt;/code&gt; مسیر نصب پایتون می‌باشد. مسیر پیش‌فرض مسیر زیر می‌باشد:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;C:\Python27
 &lt;/code&gt;&lt;/pre&gt;
@@ -105,7 +105,7 @@ EXPORTS
 &lt;pre&gt;&lt;code&gt;%PYTHONDIR%\Lib\distutils\
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;که &lt;code&gt;%PYTHON%&lt;/code&gt; مسیر نصب پایتون می‌باشد. مسییر پیش‌فرض مسیر زیر می‌باشد:&lt;/p&gt;
+&lt;p&gt;که &lt;code&gt;%PYTHONDIR%&lt;/code&gt; مسیر نصب پایتون می‌باشد. مسیر پیش‌فرض مسیر زیر می‌باشد:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;C:\Python27
 &lt;/code&gt;&lt;/pre&gt;
