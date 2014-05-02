@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="last-modified" content="2014-05-02T17:11:57.0705337+04:30" />
-    <meta name="keywords" content="کوتاه‌پست" />
+    <meta name="keywords" content="سی‌پلاس‌پلاس,C++,معرفی" />
     <title>Technical Enry</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
@@ -14,7 +14,7 @@
 	</script>
 
 
-   <link rel="canonical" href="http://erfannoury.github.io/2014/04/this-vs-that/" />
+   <link rel="canonical" href="http://erfannoury.github.io/2014/04/no-raw-loops/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -48,12 +48,14 @@
                   
 
 <div class="post">
-    <h1 class="post-title">این در مقابل اون</h1> 
+    <h1 class="post-title">بررسی پیاده‌سازی‌های مختلف حلقه در سی‌پلاس‌پلاس</h1> 
       <div class="meta">
-        <p class="posted"><i class="fa fa-calendar"></i> 23 Apr 2014</p>
+        <p class="posted"><i class="fa fa-calendar"></i> 30 Apr 2014</p>
         <ul class="categories">
         <i class="fa fa-tag"></i>
-          <li><a href="/category/" title="Snow.Models.Category">کوتاه‌پست</a></li>
+          <li><a href="/category/" title="Snow.Models.Category">سی‌پلاس‌پلاس</a></li>
+          <li><a href="/category/c" title="Snow.Models.Category">C++</a></li>
+          <li><a href="/category/" title="Snow.Models.Category">معرفی</a></li>
         </ul>
       </div>
 
@@ -70,21 +72,21 @@
         
     <h1>به نام خدا</h1>
 
-<p>فرض کنید یک انسان 80 سال عمر بکنه. هر سال را هم به طور  متوسط 365.25 روز می‌گیریم، هر روز هم 24  ساعت، هر ساعت 60 دقیقه و هر دقیقه هم 60 ثانیه است.</p>
+<h2>معرفی</h2>
 
-<p>انسان به طور معمول در هر ثانیه 20 تصویر را می‌بینه، ولی هنگامی که هیحان بالایی داره، این عدد ممکنه تا 60 افزایش پیدا بکنه. حالا ما فرض می‌کنیم که این فرد به طور متوسط در طول عمرش 30 تصویر در ثانیه دیده، هیچ‌وقت هم چشمانش رو نبسته.</p>
+<p>این پست، بیشتر یک پست معرفی است. امروز یک وبلاگ جدید پیدا کردم که نویسنده‌ی آن تصمیم دارد به مباحثی در برنامه‌نویسی با تمرکز بر روی زبان <code>C++</code> بپردازد. 
+وبلاگی که معرفی شد <a href="http://www.randomprogramming.com/">Random Programming</a> نام دارد.</p>
 
-<p>با این اعداد، تعداد تصاویری که این فرد در طول عمرش خواهد دید برابر خواهد بود با:
-$$ 7.5738 \times 10^{10} $$</p>
+<h2>پیشنهاد پست</h2>
 
-<p><img src="/stylesheets/images/human-eye.jpg" alt="Human Eye" /></p>
+<p>فعلاً تعداد پست‌های این وبلاگ به خاطر اینکه تازه تاسیس شده است زیاد نیست. ولی در میان پست‌های وبلاگ، یک سری از پست در مورد انواع پیاده‌سازی حلقه در حالات مختلف در <code>C++</code> می‌باشد. خواندن این پست‌ها را بسیار توصیه می‌کنم. بخصوص قسمت‌هایی از پست‌ها به پیاده‌سازی با استفاده از امکانات <code>STL</code> در <code>C++11</code> پرداخته است.</p>
 
-<p>حالا یک تصویر دیجیتال غیررنگی با سایز 512 در 512 را در نظر بگیرید. هر پیکسل از این تصویر مقداری بین 0 تا 255  به خودش می‌گیره. پس تعداد کل تصاویر ممکن برابر خواهد بود با عدد:
-$$ 4.5443 \times 10^{631305} $$</p>
-
-<p><img src="/stylesheets/images/random-image.png" alt="Random 512-by-512 grayscale image" /></p>
-
-<p>مقایسه‌ی جالبی هست به نظرم. توی این همه تصویر، تصویر صورت همه‌ی ما از همه جهات، تصویر صورت همه‌ی دوستانمون، تصویر خودروی آینده‌مون، تصویر فرزندانمون و خیلی تصاویر دیگه هست. ولی ما خیلی راحت، بدون دیدن این همه تصویر، می‌تونیم بفهمیم که توی تصویری صورت هست یا نه.</p>
+<ol>
+<li><p>در پست اول این سری، صورت مسئله این است. یک محموعه از اشیا داریم، چگونه می‌توانیم بر روی همه‌ی اشیاء این محموعه تابعی را اجرا نماییم؟ راه‌کارهایی که معرفی شده‌اند در ادامه توسط نویسنده کاملاً بررسی شده و مزایا و معایب هر کدام گفته شده است. این پست را می‌توانید در <a href="http://www.randomprogramming.com/2014/03/no-raw-loops-1/">این آدرس</a> مشاهده کنید.</p></li>
+<li><p>در این پست، مسئله مشابه پست قبلی است. فرق در این است که در اینجا علاوه بر اشیا مجموعه به تابع آرگومان دیگری نیز پاس داده می‌شود. این پست را نیز می‌توانید در <a href="http://www.randomprogramming.com/2014/04/no-raw-loops-2/">این آدرس</a> مشاهده کنید.</p></li>
+<li><p>در پست سوم این مسئله بررسی شده است که چگونه می‌توان تابع عضو (member function) را بر روی اعضای یک کلاس درون یک مجموعه صدا زد؟ این پست نیز در <a href="http://www.randomprogramming.com/2014/04/no-raw-loops-3-member-functions/">این آدرس </a>قرار دارد.</p></li>
+<li><p>مسئله چهارم به این شکل است. فرض کنید مجموعه‌ای از اشیا از یک کلاس داریم. می‌خواهیم از روی هر یک از اشیاءِ این محموعه، اشیائی از یک کلاس دیگر بسازیم و در مجموعه‌ای دیگر قرار دهیم. این کار را چگونه می‌توان انجام داد؟ راه‌حل‌های پیشنهادی برای این مسئله نیز در <a href="http://www.randomprogramming.com/2014/04/no-raw-loops-4-stdtransform/">این پست</a> آمده است.</p></li>
+</ol>
 
 
     <div id="disqus_thread"></div>
@@ -94,14 +96,14 @@ $$ 4.5443 \times 10^{631305} $$</p>
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://erfannoury.github.io/2014/04/this-vs-that/';
+                this.page.url = 'http://erfannoury.github.io/2014/04/no-raw-loops/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'enrygithubpages';
-    var disqus_url = 'http://erfannoury.github.io/2014/04/this-vs-that/';
+    var disqus_url = 'http://erfannoury.github.io/2014/04/no-raw-loops/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
