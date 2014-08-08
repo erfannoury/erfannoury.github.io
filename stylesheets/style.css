@@ -1,4 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+@font-face{
+    font-family: 'Noto Naskh Arabic'
+    src:
+        local('fonts/NotoNaskhArabic-Bold.ttf')
+        local('fonts/NotoNaskhArabic-Regular.ttf')
+}
 
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
@@ -66,7 +72,7 @@ a img {
 
 body, button, input, select, textarea {
     color: #404040;
-    font-family: sans-serif;
+    font-family: "Noto Naskh Arabic", sans-serif;
     font-size: 16px;
     font-size: 1.6rem;
     line-height: 1.5;
@@ -74,7 +80,7 @@ body, button, input, select, textarea {
 
 h1, h2, h3, h4, h5, h6 {
     clear: both;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: "Noto Naskh Arabic", 'Source Sans Pro', sans-serif;
 }
 
 hr {
@@ -86,6 +92,7 @@ hr {
 
 p {
     margin-bottom: 0.8em;
+    font-family: "Noto Naskh Arabic"
 }
 
 ul, ol {
@@ -122,7 +129,7 @@ dfn, cite, em, i {
 }
 
 blockquote {
-    font-family: Georgia,"Bitstream Charter",serif;
+    font-family: "Noto Naskh Arabic", Georgia,"Bitstream Charter",serif;
     font-style: italic;
     margin: 0.8em 1.5em;
     border-left: 4px #dfdfdf solid;
@@ -414,6 +421,13 @@ img.aligncenter {
 .menu-toggle {
     cursor: pointer;
 }
+.menu {
+    font-family: "Noto Naskh Arabic";
+}
+
+.meta {
+    font-family: "Noto Naskh Arabic";
+}
 
 .main-small-navigation .menu {
     display: none;
@@ -430,7 +444,6 @@ img.aligncenter {
 
 .hentry {
 }
-
 .entry-meta {
     clear: both;
 }
@@ -849,7 +862,7 @@ h4, h5, h6 {
   #masthead h2 {
     font-weight: normal;
     border-top: 1px #d4d4d4 solid;
-    margin: 10px 0;    
+    margin: 10px 0;
   }
 
 .head-inner h1 {
@@ -883,6 +896,7 @@ h4, h5, h6 {
     clear: both;
     padding: 40px 0;
     text-align: center;
+    font-family: "Noto Naskh Arabic";
 }
 
     .site-footer, .site-footer a {
@@ -900,7 +914,7 @@ table {
 	border-collapse:collapse;
 	margin:5px 0 10px;
 }
-th, 
+th,
 td {
 	border:1px solid #CCC;
 	padding:3px 10px;
@@ -984,7 +998,7 @@ th {
         width: 50px;
         height: 50px;
     }
-    
+
     #content p img {
       max-width: 100%;
     }
@@ -1041,7 +1055,7 @@ th {
 
 @media only screen and (max-width : 600px) {
     #masthead {
-        
+
     }
     #secondary {
       display: none;
@@ -1150,7 +1164,7 @@ div#post {
       padding-top: 5px;
       color: #999;
     }
-      
+
 ul.posts {
     list-style: none;
     margin:0;
@@ -1175,7 +1189,7 @@ ul.posts {
     .post > h1 a:hover {
         color: #888;
     }
-   
+
     .post > h1 span {
       font-size: 8pt;
       font-weight: normal;
@@ -1229,12 +1243,12 @@ ul.posts {
 .category-list,
 .archive {
     list-style: none;
-} 
+}
 
 .category-list li,
 .archive li {
     color: #222;
-}   
+}
 
 .category-list a:hover,
 .archive a:hover {
@@ -1308,7 +1322,7 @@ div.divider {
 div.logos {
     overflow: hidden;
     margin-bottom: 3px;
-} 
+}
 div.logos a {
     float: left;
     line-height: 0px;

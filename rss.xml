@@ -1,4 +1,4 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>تکنیکال اِنری</title><link>http://erfannoury.github.io/rss.xml</link><description>تکنیکال اِنری</description><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/no-raw-loops/</guid><link>http://erfannoury.github.io/2014/04/no-raw-loops/</link><title>بررسی پیاده‌سازی‌های مختلف حلقه در سی‌پلاس‌پلاس</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>تکنیکال اِنری</title><link>http://erfannoury.github.io/rss.xml</link><description>تکنیکال اِنری</description><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/no-raw-loops/</guid><link>http://erfannoury.github.io/2014/04/no-raw-loops/</link><author>ennry@outlook.com</author><category>C++</category><category>سی‌پلاس‌پلاس</category><category>معرفی</category><title>بررسی پیاده‌سازی‌های مختلف حلقه در سی‌پلاس‌پلاس</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;h2&gt;معرفی&lt;/h2&gt;
 
@@ -32,7 +32,7 @@
 &lt;li&gt;&lt;p&gt;در پست سوم این مسئله بررسی شده است که چگونه می‌توان تابع عضو (member function) را بر روی اعضای یک کلاس درون یک مجموعه صدا زد؟ این پست نیز در &lt;a href="http://www.randomprogramming.com/2014/04/no-raw-loops-3-member-functions/"&gt;این آدرس &lt;/a&gt;قرار دارد.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;مسئله چهارم به این شکل است. فرض کنید مجموعه‌ای از اشیا از یک کلاس داریم. می‌خواهیم از روی هر یک از اشیاءِ این محموعه، اشیائی از یک کلاس دیگر بسازیم و در مجموعه‌ای دیگر قرار دهیم. این کار را چگونه می‌توان انجام داد؟ راه‌حل‌های پیشنهادی برای این مسئله نیز در &lt;a href="http://www.randomprogramming.com/2014/04/no-raw-loops-4-stdtransform/"&gt;این پست&lt;/a&gt; آمده است.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/msvc-for-python/</guid><link>http://erfannoury.github.io/2014/04/msvc-for-python/</link><title>کامپایلر مایکروسافت برای پایتون</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/msvc-for-python/</guid><link>http://erfannoury.github.io/2014/04/msvc-for-python/</link><author>ennry@outlook.com</author><category>python</category><category>tips</category><category>پایتون</category><title>کامپایلر مایکروسافت برای پایتون</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;h2&gt;مقدمه&lt;/h2&gt;
 
@@ -178,7 +178,7 @@ EXPORTS
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;با انجام این کارها به احتمال زیادی مشکل کامپایل‌شدن کدهای &lt;code&gt;C&lt;/code&gt; برای پایتون حل خواهد شد.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/spectrogram/</guid><link>http://erfannoury.github.io/2014/04/spectrogram/</link><title>Spectrogram</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/spectrogram/</guid><link>http://erfannoury.github.io/2014/04/spectrogram/</link><author>ennry@outlook.com</author><category>Signal Processing</category><category>پردازش سیگنال</category><category>علمی</category><title>Spectrogram</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href="http://commons.wikimedia.org/wiki/File:Expchirp.jpg"&gt;Exponential Chirp Spectrogram&lt;/a&gt;
 &lt;img src="http://upload.wikimedia.org/wikipedia/commons/f/f1/Expchirp.jpg" alt="Exponential Chirp Spectrogram" /&gt;&lt;/p&gt;
@@ -306,7 +306,7 @@ end
 &lt;p&gt;با اجرای دستور آخر نمودار زیر ایجاد خواهد شد&lt;/p&gt;
 
 &lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/chirp-specplot.png" alt="Spectrogram waterfall plot" /&gt;&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/this-vs-that/</guid><link>http://erfannoury.github.io/2014/04/this-vs-that/</link><title>این در مقابل اون</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/this-vs-that/</guid><link>http://erfannoury.github.io/2014/04/this-vs-that/</link><author>ennry@outlook.com</author><category>کوتاه‌پست</category><title>این در مقابل اون</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;فرض کنید یک انسان 80 سال عمر بکنه. هر سال را هم به طور  متوسط 365.25 روز می‌گیریم، هر روز هم 24  ساعت، هر ساعت 60 دقیقه و هر دقیقه هم 60 ثانیه است.&lt;/p&gt;
 
@@ -340,7 +340,7 @@ $$ 4.5443 \times 10^{631305} $$&lt;/p&gt;
 &lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/random-image.png" alt="Random 512-by-512 grayscale image" /&gt;&lt;/p&gt;
 
 &lt;p&gt;مقایسه‌ی جالبی هست به نظرم. توی این همه تصویر، تصویر صورت همه‌ی ما از همه جهات، تصویر صورت همه‌ی دوستانمون، تصویر خودروی آینده‌مون، تصویر فرزندانمون و خیلی تصاویر دیگه هست. ولی ما خیلی راحت، بدون دیدن این همه تصویر، می‌تونیم بفهمیم که توی تصویری صورت هست یا نه.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/pathfinding-visualization/</guid><link>http://erfannoury.github.io/2014/04/pathfinding-visualization/</link><title>Pathfinding.js, معرفی و نمایش</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/pathfinding-visualization/</guid><link>http://erfannoury.github.io/2014/04/pathfinding-visualization/</link><author>ennry@outlook.com</author><category>معرفی</category><title>Pathfinding.js, معرفی و نمایش</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;امروز در حین گشت‌و‌گذار میان صفحات با آدرس *.github.io به صفحات جالبی برخوردم. یکی از صفحات مربوط به نمایش امکانات یک کتابخانه‌ی محاسبه‌ی مسیر به زبان جاوااسکریپت بود.
 کتابخانه اینطوری توصیف شده:&lt;/p&gt;
@@ -390,7 +390,7 @@ $$ 4.5443 \times 10^{631305} $$&lt;/p&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/pathfindingjs-visual.png" alt="Pathding.js Visualization" /&gt;&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages-copy/</guid><link>http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages-copy/</link><title>چگونه یک صفحه‌ی گیت‌هاب با استفاده از Sandra.Snow بسازیم؟</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages-copy/</guid><link>http://erfannoury.github.io/2014/04/setting-up-sandra-with-github-pages-copy/</link><author>ennry@outlook.com</author><category>آموزشی</category><category>بلاگ</category><category>عمومی</category><title>چگونه یک صفحه‌ی گیت‌هاب با استفاده از Sandra.Snow بسازیم؟</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;h2&gt;آماده‌سازی اولیه‌ی بلاگ&lt;/h2&gt;
 
@@ -450,7 +450,7 @@ $$ 4.5443 \times 10^{631305} $$&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
-</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/first-post/</guid><link>http://erfannoury.github.io/2014/04/first-post/</link><title>اولین پست، ولی آزمایشی</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/04/first-post/</guid><link>http://erfannoury.github.io/2014/04/first-post/</link><author>ennry@outlook.com</author><category>بلاگ</category><category>عمومی</category><title>اولین پست، ولی آزمایشی</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;این یک آزمایش است.&lt;/p&gt;
 
