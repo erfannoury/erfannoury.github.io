@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-08-08T04:28:08.4695764+04:30" />
-    <meta name="keywords" content="C++,python,Signal Processing,tips,آموزشی,بلاگ,پایتون,پردازش سیگنال,سی‌پلاس‌پلاس,علمی,عمومی,کوتاه‌پست,معرفی" />
+    <meta http-equiv="last-modified" content="2014-08-21T02:05:09.2323820+04:30" />
+    <meta name="keywords" content="C++,OpenCV,Programming,Python,Signal Processing,Starter Code,tips,Tutorial,آموزشی,بلاگ,پایتون,پردازش سیگنال,سی‌پلاس‌پلاس,علمی,عمومی,کوتاه‌پست,معرفی" />
     <title>Technical Enry</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
@@ -48,6 +48,55 @@
                   
 
   <ul class="posts">
+    <li class="post">
+      <h1><a href="/2014/08/opencv-python-starter/">OpenCV Python Starter Code</a></h1> 
+      <div class="meta">
+        <p class="posted"><i class="fa fa-calendar"></i> 21 Aug 2014</p>
+        <ul class="categories">
+        <i class="fa fa-tag"></i> 
+          <li><a href="/category/OpenCV" title="OpenCV">OpenCV</a></li>
+          <li><a href="/category/Programming" title="Programming">Programming</a></li>
+          <li><a href="/category/Python" title="Python">Python</a></li>
+          <li><a href="/category/Starter Code" title="Starter Code">Starter Code</a></li>
+          <li><a href="/category/Tutorial" title="Tutorial">Tutorial</a></li>
+        </ul>
+      </div>
+      
+      <h1>به نام خدا</h1>
+
+<p>معمولاً رسم هست که اولین کد در هر زبان برنامه‌نویسی رو با چاپ کردن عبارت <code>Hello World</code> در خروجی شروع می‌کنند.</p>
+
+<p>ولی جدای از زبان‌های برنامه‌نویسی گاهی نیاز هست به سرعت بفهمیم آیا تنظیم و نصب یک کتابخانه‌ی مشخص در یک زبان برنامه‌نویسی به درستی انجام گرفته یا نه. برای اینکار لازمه تکه‌کد کوچکی رو با استفاده از این کتابخانه اجرا کنیم تا به مشکلات در صورت وجود پی ببریم. معمولاً پیدا کردن همچین تکه‌کدهای کوتاه کار راحتی نیست و بیشتر از اون که باید، گاهی زمان می‌بره. به همین دلیل تصمیم گرفتم از این به بعد کدهای کوچکی با عنوان Starter Code برای کتابخانه‌هایی که استفاده می‌کنم بر روی این وبلاگ قرار بدهم تا به عنوان یک راهنمای کوتاه برای انجام این امر باشه.</p>
+
+<p>به عنوان اولین پست از این مجموعه، تکه کدی رو قرار می‌دهم تا بشه باهاش به سرعت کتابخانه‌ی <code>OpenCV</code> رو در پایتون امتحان کرد.</p>
+
+<h3>نمونه کد</h3>
+
+<pre><code>import numpy as np
+import cv2
+
+# Open the webcam to grab frames and display them
+cap = cv2.VideoCapture(0)
+
+while(True):
+    ret, frame = cap.read()
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    cv2.imshow('frame',gray)
+    if cv2.waitKey(1) &amp; 0xFF == ord('q'):
+        break
+
+# When everything done, release the capture
+cap.release()
+cv2.destroyAllWindows()
+</code></pre>
+
+<p>Sample code source: [<a href="http://opencv-python-tutroals.readthedocs.org/en/latest/py_tutorials/py_gui/py_video_display/py_video_display.html">OpenCV-Python-Tutorials</a>]</p>
+
+<p>این کد، ابتدا کتابخانه‌های لازم را بارگزاری می‌کنه. سپس اولین فریم از تصویر از وب‌کم گرفته میشه. بعد در یک لوپ تکرار شونده، در ابتدا یک فریم جدید از وب‌کم گرفته میشه، سپس با تبدیل نمایش فریم گرفته شده از حالت رنگی به سیاه‌سفید، تصویر نهایی در خروجی نمایش داده میشه. در نهایت هرگاه کلید <code>q</code> توسط کاربر وارد بشه، برنامه از لوپ خارج شده و نمایش تصاویر از وب‌کم متوقف میشه.</p>
+
+      <p><a href="/2014/08/opencv-python-starter/">ادامه‌ی مطلب</a></p>
+    </li>
+    <hr/>
     <li class="post">
       <h1><a href="/2014/04/no-raw-loops/">بررسی پیاده‌سازی‌های مختلف حلقه در سی‌پلاس‌پلاس</a></h1> 
       <div class="meta">
