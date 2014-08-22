@@ -1,4 +1,14 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>تکنیکال اِنری</title><link>http://erfannoury.github.io/rss.xml</link><description>تکنیکال اِنری</description><item><guid isPermaLink="true">http://erfannoury.github.io/2014/08/opencv-python-starter/</guid><link>http://erfannoury.github.io/2014/08/opencv-python-starter/</link><author>ennry@outlook.com</author><category>OpenCV</category><category>Programming</category><category>Python</category><category>Starter Code</category><category>Tutorial</category><title>OpenCV Python Starter Code</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>تکنیکال اِنری</title><link>http://erfannoury.github.io/rss.xml</link><description>تکنیکال اِنری</description><item><guid isPermaLink="true">http://erfannoury.github.io/2014/08/singularity-1-on-1/</guid><link>http://erfannoury.github.io/2014/08/singularity-1-on-1/</link><author>ennry@outlook.com</author><category>AI</category><category>Youtube</category><title>Ray Kurzweil on Singularity 1 on 1</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;امروز این گفتگو رو پیدا کردم. گفتگوی جالبی هست. پیشنهاد می‌کنم ببینید حتماً.&lt;/p&gt;
+
+&lt;iframe width="640" height="360" src="//www.youtube.com/embed/CEt3x3GJyKY?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+</description><pubDate>Thu, 21 Aug 2014 19:30:00 Z</pubDate><a10:updated>2014-08-21T19:30:00Z</a10:updated><a10:content type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;امروز این گفتگو رو پیدا کردم. گفتگوی جالبی هست. پیشنهاد می‌کنم ببینید حتماً.&lt;/p&gt;
+
+&lt;iframe width="640" height="360" src="//www.youtube.com/embed/CEt3x3GJyKY?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/08/opencv-python-starter/</guid><link>http://erfannoury.github.io/2014/08/opencv-python-starter/</link><author>ennry@outlook.com</author><category>OpenCV</category><category>Programming</category><category>Python</category><category>Starter Code</category><category>Tutorial</category><title>OpenCV Python Starter Code</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;معمولاً رسم هست که اولین کد در هر زبان برنامه‌نویسی رو با چاپ کردن عبارت &lt;code&gt;Hello World&lt;/code&gt; در خروجی شروع می‌کنند.&lt;/p&gt;
 
