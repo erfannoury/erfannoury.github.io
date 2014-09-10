@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="last-modified" content="2014-09-11T02:46:51.3340572+04:30" />
-    <meta name="keywords" content="Signal Processing,پردازش سیگنال,علمی" />
+    <meta name="keywords" content="Problem,Windows,Windows Update" />
     <title>Technical Enry</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
@@ -14,7 +14,7 @@
 	</script>
 
 
-   <link rel="canonical" href="http://erfannoury.github.io/2014/04/spectrogram/" />
+   <link rel="canonical" href="http://erfannoury.github.io/2014/09/windows-update-messes-up-drivers/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -48,14 +48,14 @@
                   
 
 <div class="post">
-    <h1 class="post-title">Spectrogram</h1> 
+    <h1 class="post-title">حل مشکل درایورها پس از ایجاد مشکل توسط Windows Update</h1> 
       <div class="meta">
-        <p class="posted"><i class="fa fa-calendar"></i> 25 Apr 2014</p>
+        <p class="posted"><i class="fa fa-calendar"></i> 11 Sep 2014</p>
         <ul class="categories">
         <i class="fa fa-tag"></i>
-          <li><a href="/category/signal-processing" title="Snow.Models.Category">Signal Processing</a></li>
-          <li><a href="/category/" title="Snow.Models.Category">پردازش سیگنال</a></li>
-          <li><a href="/category/" title="Snow.Models.Category">علمی</a></li>
+          <li><a href="/category/problem" title="Snow.Models.Category">Problem</a></li>
+          <li><a href="/category/windows" title="Snow.Models.Category">Windows</a></li>
+          <li><a href="/category/windows-update" title="Snow.Models.Category">Windows Update</a></li>
         </ul>
       </div>
 
@@ -72,68 +72,41 @@
         
     <h1>به نام خدا</h1>
 
-<p><a href="http://commons.wikimedia.org/wiki/File:Expchirp.jpg">Exponential Chirp Spectrogram</a>
-<img src="http://upload.wikimedia.org/wikipedia/commons/f/f1/Expchirp.jpg" alt="Exponential Chirp Spectrogram" /></p>
+<p>چند روز پیش سری به قسمت آپدیت‌های ویندوز آپدیت زدم. من خودم نصب آپدیت‌های ویندوز را در حالت خودکار گذاشتم ولی هر از چند گاهی به قسمت آپدیت‌های ویندوز سر می‌زنم تا ببینم آپدیت‌های اختیاری جدیدی وجود دارند یا نه. این با که به این قسمت سر زدم، با آپدیت جدیدی برای درایور Intel HD Graphics مواجه شدم. اینتل از چند نسل قبل در پردازنده‌های خود یک پردازنده‌ی گرافیکی نیز تعبیه کرده است. این پردازنده‌ی گرافیکی با اینکه در ابتدا توان بسیاری نداشت، ولی در نسل‌های اخیر پردازنده‌های اینتل به پردازنده‌ی بسیار قدرتمندی تبدیل شده است. همچنین به دلیل یکپارچه بودن با پردازنده، ویندوز بسیاری از پردازش‌های گرافیکی را توسط این پردازنده‌ی گرافیکی انجام می‌دهد. در این صورت بار محاسباتی بر روی پردازنده‌ی اصلی کمتر شده و همچنین مصرف برق نیز کاهش میابد. به همین خاطر است که بروزرسانی درایور این پردازنده‌ی گرافیکی در بهتر کردن تجربه‌ی کاربری ویندوز مفید است.
+البته این بار بعد از به روزرسانی درایور پردازنده‌ی گرافیکی اینتل از طریق Windows Update مشکلی رخ داد. اولین مشکل عمده این بود که امکان تغییر روشنایی نمایشگر از بین رفت و نمایشگر در روشن‌ترین حالت خود قرار گرفت و این آزاردهنده بود. مشکل دوم این بود که کیفیت تصویر به میزان بسیار قابل توجهی کاهش یافت و این مشکل، حتی بیشتر آزاردهنده بود. پس از نصب چندین و چند باره‌ی انواع درایور دیگر که اتفاقاً جدیدترین درایورها از طرف اینتل و همچنین Lenovo بودند، باز این مشکل برطرف نشد.</p>
 
-<p>(<em>Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en">Attribution-Share Alike 3.0 Unported license</a> (CC BY-SA 3.0), from Wikimedia Commons</em>)</p>
+<p>در نهایت به راه‌حل جالب دیگری دست یافتم. البته این راه‌حل، دست‌مایه‌ی جستجوهای فراوان در اینترنت است.</p>
 
-<h2>معرفی</h2>
+<p>اگر بعد از به روزرسانی درایوری مشاهده کردید که عملکرد سخت‌افزار مورد نظر با مشکل همراه است، یک روش ساده برای بازگرداندن درایور قبلی وجود دارد.</p>
 
-<p>برای بررسی ساختار فرکانسی سیگنال‌های متغییر در زمان، از روشی به نام تبدیل فوریه‌ی کوتاه-زمان (<a href="http://en.wikipedia.org/wiki/STFT">STFT</a>) استفاده می‌شود. با استفاده از این نوع تبدیل فوریه می‌توان به اطلاعات فرکانسی و فازی ناحیه‌ای کوتاه از سیگنال پی برد. در حالت پیوسته، این تبدیل از رابطه‌ی زیر به دست می‌آید:</p>
+<p>(اگر آپدیتی از طرف Windows Update مشکلی ایجاد کرد، راه‌حل کلی این است که آپدیت مورد نظر را پاک کنید، ولی کاهی امکان پاک‌کردن بعضی آپدیت‌ها وجود ندارد؛ مورد اخیر نیز از این دسته آپدیت‌ها بود)</p>
 
-<p>$$ \text{STFT} ‎\lbrace x(t) ‎\rbrace (\tau ,\omega ) \equiv X ( \tau ,\omega ) = \int _{-\infty }^{\infty} x(t)w(t-\tau )e^{-j \omega t}dt $$</p>
+<h1>راه حل</h1>
 
-<p>که تابع \( w(t)\) تابع پنجره می‌باشد.</p>
+<ol>
+<li>به Device Manager بروید. در ویندوز 8 می‌توان با جستجوی این عبارت به مکان مورد نظر رفت. در ویندوزهای قبلی نیز می‌توان با راست‌کلیک بر روی آیکون My Computer و انتخاب <code>Manage</code>، به Device Manager رفت.</li>
+<li>از لیست سخت‌افزارها، سخت‌افزار مورد نظر که درایور آن مشکل پیدا کرده است را پیدا کنید.</li>
+<li><p>بر روی نام درایور راست‌کلیک کنید و گزینه‌ی</p>
 
-<p>رابطه‌ی تبدیل فوریه‌ی کوتاه-زمان برای حالت گسسته نیز مشابه می‌باشد.</p>
+<p>Update Driver Software...</p>
 
-<p>$$ \text{STFT} \lbrace x[n] \rbrace (m,\omega )\equiv X(m,\omega )=\sum _{n=-\infty }^{\infty } x[n]w[n-m]e^{-j \omega  n} $$</p>
+<p>را انتخاب کنید.</p></li>
+<li><p>در صفحه‌ای که باز می‌شود گزینه‌ی</p>
 
-<p>برای تهیه‌ی اسپکتروگرام، سیگنال به بازه‌هایی با طول کمتر از طول سیگنال تقسیم می‌شود (لزومی ندارد این بازه‌ها مجزا باشند)، برای هر کدام از این بازه‌ها تبدیل فوریه محاسبه می‌شود، و سپس اندازه‌ی این تبدیل فوریه برای بازه‌های مختلف در کنار یکدیگر قرار می‌گیرد تا تصویری دو یا سه بعدی از اسپکتروگرام سیگنال اصلی ایجاد شود. </p>
+<p>Browse my computer for driver software</p>
 
-<h2>پیاده‌سازی</h2>
+<p>را انتخاب نمایید.</p></li>
+<li><p>در صفحه‌ی بعدی که باز می‌شود، گزینه‌ی</p>
 
-<p>(نمونه کدها، به زبان متلب می‌باشند)</p>
+<p>Let me pick from a list of device drivers on my computer</p>
 
-<p>برای ایجاد نمودار اسپکتروگرام برای یک سیگنال، ابتدا لازم است سیگنال را به تعدادی بازه تقسیم کرده و سپس برای هر بازه، ضرایب فوریه را محاسبه نماییم. در نهایت با جمع‌آوری همه‌ی این ضرایب به دست‌آمده، می‌توانیم نمودار آبشاری اسپکتروگرام را رسم کنیم.</p>
+<p>را انتخاب کنید.</p></li>
+<li>در نهایت، در صفحه‌ای که باز می‌شود، از لیست موجود، درایوری از تاریخی گذشته را که سخت‌افزار بدون مشکل عمل می‌کرد انتخاب نمایید. توجه کنید که تیک قسمت <code>Show Compatible Hardware</code> زده شده باشد.</li>
+</ol>
 
-<p>کد زیر یک پیاده‌سازی ابتدایی برای این کار است:</p>
+<p><img src="/stylesheets/images/device-manager.png" alt="Device Manager - Revert to old driver software" /></p>
 
-<pre><code>function specPlot(x, windlen)
-% x: input signal
-% windlen: length of the time window inside which fourier coefficients will be calculated, note that since our signal is real, only half of the coefficients are needed
-
-% preallocating magnitude matrix for speedup
-numofwinds = floor(length(x)/windlen);
-magnitude = zeros(numofwinds, floor(windlen/2));
-for i = 0:(numofwinds - 1)
-    startIdx = i*windlen;
-    partfft = abs(fft(x((1+startIdx):(startIdx+windlen))))/windlen;
-    magnitude((i+1),:) = partfft(1:length(partfft)/2);
-end
-waterfall(1:windlen/2, 0:(length(x)/windlen -1), magnitude);
-xlabel('frequency');
-ylabel('time');
-zlabel('magnitude');
-end
-</code></pre>
-
-<p>حال این توابع را بر روی یک سیگنال نمونه امتحان می‌کنیم.</p>
-
-<p>سیگنال زیر را که یک سیگنال جیر با رابطه‌ی \( y=sin(1600\pi t^2) \) می‌باشد در نظر بگیرید. نمودار این سیگنال به صورت زیر است:</p>
-
-<p><img src="/stylesheets/images/chirp-limited.png" alt="Chirp Plot, limited" /></p>
-
-<p><img src="/stylesheets/images/chirp.png" alt="Chirp Plot" /></p>
-
-<pre><code>&gt;&gt; t = [0:1/8000:1-1/8000];
-&gt;&gt; y = sin(2*pi*800*(t.*t));
-&gt;&gt; specPlot(y,800);
-</code></pre>
-
-<p>با اجرای دستور آخر نمودار زیر ایجاد خواهد شد</p>
-
-<p><img src="/stylesheets/images/chirp-specplot.png" alt="Spectrogram waterfall plot" /></p>
+<p>با انجام این دستورات، می‌توانید درایور سخت‌افزاری مورد نظر را به تاریخی گذشته برگردانید و مشکل را حل نمایید.</p>
 
 
     <div id="disqus_thread"></div>
@@ -143,14 +116,14 @@ end
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://erfannoury.github.io/2014/04/spectrogram/';
+                this.page.url = 'http://erfannoury.github.io/2014/09/windows-update-messes-up-drivers/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'enrygithubpages';
-    var disqus_url = 'http://erfannoury.github.io/2014/04/spectrogram/';
+    var disqus_url = 'http://erfannoury.github.io/2014/09/windows-update-messes-up-drivers/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

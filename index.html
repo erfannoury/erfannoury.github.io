@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-08-22T23:21:42.2163438+04:30" />
-    <meta name="keywords" content="AI,C++,OpenCV,Programming,Python,Signal Processing,Starter Code,tips,Tutorial,Youtube,آموزشی,بلاگ,پایتون,پردازش سیگنال,سی‌پلاس‌پلاس,علمی,عمومی,کوتاه‌پست,معرفی" />
+    <meta http-equiv="last-modified" content="2014-09-11T02:46:51.3340572+04:30" />
+    <meta name="keywords" content="AI,C++,OpenCV,Problem,Programming,Python,Signal Processing,Starter Code,tips,Tutorial,Windows,Windows Update,Youtube,آموزشی,بلاگ,پایتون,پردازش سیگنال,سی‌پلاس‌پلاس,علمی,عمومی,کوتاه‌پست,معرفی" />
     <title>Technical Enry</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
@@ -48,6 +48,59 @@
                   
 
   <ul class="posts">
+    <li class="post">
+      <h1><a href="/2014/09/windows-update-messes-up-drivers/">حل مشکل درایورها پس از ایجاد مشکل توسط Windows Update</a></h1> 
+      <div class="meta">
+        <p class="posted"><i class="fa fa-calendar"></i> 11 Sep 2014</p>
+        <ul class="categories">
+        <i class="fa fa-tag"></i> 
+          <li><a href="/category/Problem" title="Problem">Problem</a></li>
+          <li><a href="/category/Windows" title="Windows">Windows</a></li>
+          <li><a href="/category/Windows Update" title="Windows Update">Windows Update</a></li>
+        </ul>
+      </div>
+      
+      <h1>به نام خدا</h1>
+
+<p>چند روز پیش سری به قسمت آپدیت‌های ویندوز آپدیت زدم. من خودم نصب آپدیت‌های ویندوز را در حالت خودکار گذاشتم ولی هر از چند گاهی به قسمت آپدیت‌های ویندوز سر می‌زنم تا ببینم آپدیت‌های اختیاری جدیدی وجود دارند یا نه. این با که به این قسمت سر زدم، با آپدیت جدیدی برای درایور Intel HD Graphics مواجه شدم. اینتل از چند نسل قبل در پردازنده‌های خود یک پردازنده‌ی گرافیکی نیز تعبیه کرده است. این پردازنده‌ی گرافیکی با اینکه در ابتدا توان بسیاری نداشت، ولی در نسل‌های اخیر پردازنده‌های اینتل به پردازنده‌ی بسیار قدرتمندی تبدیل شده است. همچنین به دلیل یکپارچه بودن با پردازنده، ویندوز بسیاری از پردازش‌های گرافیکی را توسط این پردازنده‌ی گرافیکی انجام می‌دهد. در این صورت بار محاسباتی بر روی پردازنده‌ی اصلی کمتر شده و همچنین مصرف برق نیز کاهش میابد. به همین خاطر است که بروزرسانی درایور این پردازنده‌ی گرافیکی در بهتر کردن تجربه‌ی کاربری ویندوز مفید است.
+البته این بار بعد از به روزرسانی درایور پردازنده‌ی گرافیکی اینتل از طریق Windows Update مشکلی رخ داد. اولین مشکل عمده این بود که امکان تغییر روشنایی نمایشگر از بین رفت و نمایشگر در روشن‌ترین حالت خود قرار گرفت و این آزاردهنده بود. مشکل دوم این بود که کیفیت تصویر به میزان بسیار قابل توجهی کاهش یافت و این مشکل، حتی بیشتر آزاردهنده بود. پس از نصب چندین و چند باره‌ی انواع درایور دیگر که اتفاقاً جدیدترین درایورها از طرف اینتل و همچنین Lenovo بودند، باز این مشکل برطرف نشد.</p>
+
+<p>در نهایت به راه‌حل جالب دیگری دست یافتم. البته این راه‌حل، دست‌مایه‌ی جستجوهای فراوان در اینترنت است.</p>
+
+<p>اگر بعد از به روزرسانی درایوری مشاهده کردید که عملکرد سخت‌افزار مورد نظر با مشکل همراه است، یک روش ساده برای بازگرداندن درایور قبلی وجود دارد.</p>
+
+<p>(اگر آپدیتی از طرف Windows Update مشکلی ایجاد کرد، راه‌حل کلی این است که آپدیت مورد نظر را پاک کنید، ولی کاهی امکان پاک‌کردن بعضی آپدیت‌ها وجود ندارد؛ مورد اخیر نیز از این دسته آپدیت‌ها بود)</p>
+
+<h1>راه حل</h1>
+
+<ol>
+<li>به Device Manager بروید. در ویندوز 8 می‌توان با جستجوی این عبارت به مکان مورد نظر رفت. در ویندوزهای قبلی نیز می‌توان با راست‌کلیک بر روی آیکون My Computer و انتخاب <code>Manage</code>، به Device Manager رفت.</li>
+<li>از لیست سخت‌افزارها، سخت‌افزار مورد نظر که درایور آن مشکل پیدا کرده است را پیدا کنید.</li>
+<li><p>بر روی نام درایور راست‌کلیک کنید و گزینه‌ی</p>
+
+<p>Update Driver Software...</p>
+
+<p>را انتخاب کنید.</p></li>
+<li><p>در صفحه‌ای که باز می‌شود گزینه‌ی</p>
+
+<p>Browse my computer for driver software</p>
+
+<p>را انتخاب نمایید.</p></li>
+<li><p>در صفحه‌ی بعدی که باز می‌شود، گزینه‌ی</p>
+
+<p>Let me pick from a list of device drivers on my computer</p>
+
+<p>را انتخاب کنید.</p></li>
+<li>در نهایت، در صفحه‌ای که باز می‌شود، از لیست موجود، درایوری از تاریخی گذشته را که سخت‌افزار بدون مشکل عمل می‌کرد انتخاب نمایید. توجه کنید که تیک قسمت <code>Show Compatible Hardware</code> زده شده باشد.</li>
+</ol>
+
+<p><img src="/stylesheets/images/device-manager.png" alt="Device Manager - Revert to old driver software" /></p>
+
+<p>با انجام این دستورات، می‌توانید درایور سخت‌افزاری مورد نظر را به تاریخی گذشته برگردانید و مشکل را حل نمایید.</p>
+
+      <p><a href="/2014/09/windows-update-messes-up-drivers/">ادامه‌ی مطلب</a></p>
+    </li>
+    <hr/>
     <li class="post">
       <h1><a href="/2014/08/singularity-1-on-1/">Ray Kurzweil on Singularity 1 on 1</a></h1> 
       <div class="meta">
