@@ -1,4 +1,30 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>تکنیکال اِنری</title><link>http://erfannoury.github.io/rss.xml</link><description>تکنیکال اِنری</description><item><guid isPermaLink="true">http://erfannoury.github.io/2014/12/my-year-in-pocket/</guid><link>http://erfannoury.github.io/2014/12/my-year-in-pocket/</link><author>ennry@outlook.com</author><category>Fun</category><category>Pocket</category><title>سال 2014 با پاکت</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>تکنیکال اِنری</title><link>http://erfannoury.github.io/rss.xml</link><description>تکنیکال اِنری</description><item><guid isPermaLink="true">http://erfannoury.github.io/2015/01/computers-which-learn/</guid><link>http://erfannoury.github.io/2015/01/computers-which-learn/</link><author>ennry@outlook.com</author><category>AI</category><category>Deep Learning</category><category>Machine Learning</category><category>TEDx</category><title>کامپیوترهایی که یاد می‌گیرند</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;امروز یک ویدیو بسیار جالب از TEDxBrussels میدیدم در مورد کامپیوترهایی که می‌توانند یاد بگیرند. جای تعجب نداره که صحبت در مورد پیشرفت‌هایی بود که از طریق به کارگیری چارچون یادگیری موسوم به یادگیری عمیق (Deep Learning) به دست آمده. باز صحبت در مورد این بود که کامپیوترها قراره بسیاری از شغل‌های انسانی رو در اختیار بگیرن. ولی در این صحبت روی دو جنبه‌ی دیگه هم بحث کوتاهی شد که کمتر قبلاً دیده بودم.&lt;/p&gt;
+
+&lt;p&gt;اول اینکه انسان به همراه کامپیوتر در بسیاری از کارها می‌تونن بسیار کارآمدتر و هوشمندتر عمل کنن. این دید متفاوتیه از این دید غالب و تاریخی که کامپیوترها رو در مقابل انسان‌ها قرار میده. البته بحث در مورد اینکه آیا واقعاً روزی کامپیوترهای هوشمند در مقابل انسان قرار خواهند گرفت یک بحث طولانی هست که نیاز به چند پست دیگه و مطالعات بیشتری از جانب من داره. ولی این دید حداقل در چشم‌انداز آینده‌ای نزدیک دیدی هست که می‌تونه بسیار مفید باشه و چیزی هست که واقعاً باهاش مواجه خواهیم شد. در این مورد یک demo خیلی جالب هم نشون میده.&lt;/p&gt;
+
+&lt;p&gt;موضوع دیگه، هر چند مرتبط به موضوع قبلی، در مورد اثر کامپیوترها بر کشورهای کمتر توسعه ‌یافته یا بهتره بگم کشورهای غیر جهان اول هست. اگر به توزیع شغل‌ها در این کشورها نگاهی بیاندازیم، بیشتر ای شغل‌ها به سرعت و راحتی می‌تونن با سیستم‌های کامپیوتری جایگزین بشن و این کار می‌تونه اثر بسیار بزرگی بر اقتصاد این کشورها که  بیشتر جمعیت دنیا رو هم تشکیل میدن داشته باشه.&lt;/p&gt;
+
+&lt;p&gt;به هر حال مسئله‌ی هوشمند شدن سیستم‌های کامپیوتری مسئله‌ای هست که بشر برای اولین بار داره در طول تاریخ باهاش مواجه میشه و باید برای عواقب این تغییر آماده باشیم و در موردش فکر کرده باشیم. الان میشه گفت کامپیوترها در بیشتر کارها به حد بالایی از هوشمندی رسیدن و با نرخ بالایی هوشمندی اونها داره بالاتر هم میره. پس در وحله‌ی اول باید در مورد رفتارمون در مقابل این هوشمندی و اثراتش فکر کنیم و چاره بیاندیشیم. و به این موضوع هم توجه کنیم که هوشمندی مقوله‌ای جدا از خودآگاهیه.&lt;/p&gt;
+
+&lt;p&gt;این هم ویدیویی که در موردش گفتم، با سخنرانی آقای Jeremy Howard&lt;/p&gt;
+
+&lt;iframe src="https://embed-ssl.ted.com/talks/jeremy_howard_the_wonderful_and_terrifying_implications_of_computers_that_can_learn.html" width="854" height="480" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;
+</description><pubDate>Thu, 08 Jan 2015 20:30:00 Z</pubDate><a10:updated>2015-01-08T20:30:00Z</a10:updated><a10:content type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;امروز یک ویدیو بسیار جالب از TEDxBrussels میدیدم در مورد کامپیوترهایی که می‌توانند یاد بگیرند. جای تعجب نداره که صحبت در مورد پیشرفت‌هایی بود که از طریق به کارگیری چارچون یادگیری موسوم به یادگیری عمیق (Deep Learning) به دست آمده. باز صحبت در مورد این بود که کامپیوترها قراره بسیاری از شغل‌های انسانی رو در اختیار بگیرن. ولی در این صحبت روی دو جنبه‌ی دیگه هم بحث کوتاهی شد که کمتر قبلاً دیده بودم.&lt;/p&gt;
+
+&lt;p&gt;اول اینکه انسان به همراه کامپیوتر در بسیاری از کارها می‌تونن بسیار کارآمدتر و هوشمندتر عمل کنن. این دید متفاوتیه از این دید غالب و تاریخی که کامپیوترها رو در مقابل انسان‌ها قرار میده. البته بحث در مورد اینکه آیا واقعاً روزی کامپیوترهای هوشمند در مقابل انسان قرار خواهند گرفت یک بحث طولانی هست که نیاز به چند پست دیگه و مطالعات بیشتری از جانب من داره. ولی این دید حداقل در چشم‌انداز آینده‌ای نزدیک دیدی هست که می‌تونه بسیار مفید باشه و چیزی هست که واقعاً باهاش مواجه خواهیم شد. در این مورد یک demo خیلی جالب هم نشون میده.&lt;/p&gt;
+
+&lt;p&gt;موضوع دیگه، هر چند مرتبط به موضوع قبلی، در مورد اثر کامپیوترها بر کشورهای کمتر توسعه ‌یافته یا بهتره بگم کشورهای غیر جهان اول هست. اگر به توزیع شغل‌ها در این کشورها نگاهی بیاندازیم، بیشتر ای شغل‌ها به سرعت و راحتی می‌تونن با سیستم‌های کامپیوتری جایگزین بشن و این کار می‌تونه اثر بسیار بزرگی بر اقتصاد این کشورها که  بیشتر جمعیت دنیا رو هم تشکیل میدن داشته باشه.&lt;/p&gt;
+
+&lt;p&gt;به هر حال مسئله‌ی هوشمند شدن سیستم‌های کامپیوتری مسئله‌ای هست که بشر برای اولین بار داره در طول تاریخ باهاش مواجه میشه و باید برای عواقب این تغییر آماده باشیم و در موردش فکر کرده باشیم. الان میشه گفت کامپیوترها در بیشتر کارها به حد بالایی از هوشمندی رسیدن و با نرخ بالایی هوشمندی اونها داره بالاتر هم میره. پس در وحله‌ی اول باید در مورد رفتارمون در مقابل این هوشمندی و اثراتش فکر کنیم و چاره بیاندیشیم. و به این موضوع هم توجه کنیم که هوشمندی مقوله‌ای جدا از خودآگاهیه.&lt;/p&gt;
+
+&lt;p&gt;این هم ویدیویی که در موردش گفتم، با سخنرانی آقای Jeremy Howard&lt;/p&gt;
+
+&lt;iframe src="https://embed-ssl.ted.com/talks/jeremy_howard_the_wonderful_and_terrifying_implications_of_computers_that_can_learn.html" width="854" height="480" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;
+</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/12/my-year-in-pocket/</guid><link>http://erfannoury.github.io/2014/12/my-year-in-pocket/</link><author>ennry@outlook.com</author><category>Fun</category><category>Pocket</category><title>سال 2014 با پاکت</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;امروز ایمیلی از طرف پاکت بهم رسید که در اون نوشته شده بود من جزو Top 5% readers پاکت شدم.&lt;/p&gt;
 
