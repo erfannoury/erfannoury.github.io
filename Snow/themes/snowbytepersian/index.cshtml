@@ -7,11 +7,11 @@
   <ul class="posts">
     @foreach(var postPaged in Model.PostsPaged) {
     <li class="post">
-      <h1><a href="@postPaged.Url">@postPaged.Title</a></h1> 
+      <h1><a href="@postPaged.Url">@postPaged.Title</a></h1>
       <div class="meta">
         <p class="posted"><i class="fa fa-calendar"></i> @postPaged.Date.ToString("dd MMM yyyy")</p>
         <ul class="categories">
-        <i class="fa fa-tag"></i> 
+        <i class="fa fa-tag"></i>
         @foreach(var category in @postPaged.Categories.ToList()) {
           <li><a href="/category/@category" title="@category">@category</a></li>
         }
@@ -23,12 +23,12 @@
     </li>
     <hr/>
     }
-  </ul> 
+  </ul>
 
   <!-- Pagination links -->
   <div id="post-pagination" class="pagination">
 
-   
+
      @if (Model.HasPreviousPage) {
       if (Model.PreviousPage == 1) {
       <p class="previous">
@@ -43,9 +43,9 @@
     }
 
     @if (!Model.HasPreviousPage) {
-    
+
       <!--<a href="/">صفحه‌ی قبلی</a>-->
-    
+
     }
 
     @if (Model.HasNextPage) {
@@ -55,4 +55,3 @@
     }
 
   </div>
-
