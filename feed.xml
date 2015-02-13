@@ -1,4 +1,168 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">تکنیکال اِنری</title><subtitle type="text">تکنیکال اِنری</subtitle><id>http://erfannoury.github.io/</id><updated>2015-01-16T16:13:50+03:30</updated><author><name>عرفان</name><uri>http://erfannoury.github.io</uri><email>ennry@outlook.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://erfannoury.github.io/feed.xml" /><link rel="self" type="text/html" title="تکنیکال اِنری" href="http://erfannoury.github.io/feed.xml" /><entry><id>http://erfannoury.github.io/2015/01/computers-which-learn/</id><title type="text">کامپیوترهایی که یاد می‌گیرند</title><summary type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">تکنیکال اِنری</title><subtitle type="text">تکنیکال اِنری</subtitle><id>http://erfannoury.github.io/</id><updated>2015-02-13T19:34:18+03:30</updated><author><name>عرفان</name><uri>http://erfannoury.github.io</uri><email>ennry@outlook.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://erfannoury.github.io/feed.xml" /><link rel="self" type="text/html" title="تکنیکال اِنری" href="http://erfannoury.github.io/feed.xml" /><entry><id>http://erfannoury.github.io/2015/02/installing-theano/</id><title type="text">نصب کتابخانه‌ی Theano در ویندوز</title><summary type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;یکی از مهم‌ترین برتری‌های زبان پایتون، مجموعه‌ی بسیار کامل کتابخانه‌هایی هست که برای کارهای مختلف در دسترس برنامه‌نویس هست. این موضوع باعث شده که برای کاربردهای بسیاری، بتوان کتابخانه‌های بسیار با کیفیتی پیدا کرد و از اونها استفاده کرد.&lt;/p&gt;
+
+&lt;p&gt;یکی از حوزه‌هایی که از این مورد مستثنی نیست، موضوع کتابخانه‌های مربوط به &lt;em&gt;یادگیری عمیق&lt;/em&gt; یا &lt;em&gt;Deep Learning&lt;/em&gt; هست. از روی مشاهداتم می‌تونم بگم که بیشترین کتابخانه‌ها برای اینکار رو زبان پایتون داره و حتی اگر کتابخانه‌ای مثلاً در زبانی مثل C++ نوشته شده باشه، به احتمال زیادی یک پوشش (wrapper) برای زبان پایتون داره.&lt;/p&gt;
+
+&lt;p&gt;یک منبع مناسب که تعدادی از کتابخانه‌های مربوط به یادگیری عمیق رو با هم مقایسه کرده،
+&lt;a href="https://github.com/soumith/convnet-benchmarks"&gt;soumith/convnet-benchmarks&lt;/a&gt;
+ هست. در اینجا می‌تونیم ببینیم که سهم زبان‌های Python و Lua در کنار زبان C++ از کتابخانه‌های با کیفیت و مطرح بالا است.&lt;/p&gt;
+
+&lt;p&gt;مشکلی که بسیاری از این کتابخانه‌ها دارن اینه که با در نظر گرفتن ویندوز ایجاد نشدن. بخاطر همین نمیشه به راحتی خیلی از اونها رو در ویندوز استفاده کرد. برای کاری که می‌خوام انجام بدم تصمیم گرفتم این کتابخانه‌ها رو با هم مقایسه کنم و نهایت سعی‌ام رو بکنم که روی ویندوز اجراشون کنم. در ابتدا و بخاطر اینکه خیلی بیشتر ازش استفاده میشه، از کتابخانه‌ی Theano شروع کردم.&lt;/p&gt;
+
+&lt;h2&gt;معرفی &lt;a href="http://www.deeplearning.net/software/theano/"&gt;Theano&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;طبق تعریفی که در خود سایت نوشته شده، &lt;em&gt;Theano&lt;/em&gt; «یک کتابخانه برای تعریف، بهینه‌سازی و اجرای عبارت‌های ریاضی شامل آرایه‌های چندبعدی به صورت بهینه است.»&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Theano is a Python library that allows you to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;از ویژگی‌های این کتابخانه میشه به تعامل با کتابخانه‌ی NumPy (استفاده از &lt;code&gt;numpy.ndarray&lt;/code&gt;)، استفاده از واحد پردازش گرافیکی برای تسریع عملیات، مشتق‌گیری سریع عبارت‌های ریاضی و همچنین تولید پویای کد به زبان C اشاره کرد.
+ این کتابخانه توسط آزمایشگاه LISA دانشگاه مونترال کانادا تهیه میشه و معمولاً شامل جدیدترین الگوریتم‌ها و معماری شبکه‌های عمیق از جدیدترین مقالات هست.&lt;/p&gt;
+
+&lt;h3&gt;نصب Theano&lt;/h3&gt;
+
+&lt;p&gt;با وجود اینکه در ابتدا تصور می‌کردم نصب این کتابخانه، با توجه به اینکه از CUDA هم استفاده می‌کنه، در ویندوز کار بسیار سختی خواهد بود، ولی به هیچ عنوان اینگونه نبود. برای نصب این کتابخانه ابتدا آخرین نسخه‌ی کد رو با استفاده از دستور زیر از گیت‌هاب گرفتم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/Theano/Theano
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;بعد از گرفتن کد مربوط به این کتابخانه، در مسیر کاربری خودم در ویندوز، یعنی &lt;code&gt;C:\Users\&amp;lt;username&amp;gt;\&lt;/code&gt;، یک فایل با نام &lt;code&gt;.theanorc&lt;/code&gt; ایجاد کردم تا بتونم در این فایل تنظیماتی رو به این کتابخانه بدم. تنظیمات مربوط به طور کامل در &lt;a href="http://www.deeplearning.net/software/theano/install.html#bleeding-edge-installation"&gt;این آدرس&lt;/a&gt; نوشته شده. بعد از اینکه فایل تنظیمات مورد نظر رو تکمیل کردم (تنظیمات مربوط به CUDA رو هم اعمال کردم) با دستور زیر کتابخانه ساخت و نصب شد، به همین سادگی&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd theano
+python setup.py install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;برای اینکه ببینید استفاده از کارت گرافیکی در این کتابخانه، به طور خاص، و کتابخانه، به طور عام درست ساخت و نصب شده، از آدرس زیر برنامه‌ی مورد نظر رو اجرا کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd theano\misc
+python check_blas.py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;&lt;a href="https://github.com/lisa-lab/pylearn2"&gt;Pylearn2&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;کتابخانه‌ی Pylearn2 یک کتابخانه‌ی یادگیری ماشین هست که بر روی کتابخانه‌ی Theano توسط آزمایشگاه LISA ایجاد شده. این کتابخانه به سرعت در حال تغییره و الگوریتم‌های بسیاری بهش اضافه میشن. به نظر میومد که نصب این کتابخانه چون وابسته به theano بود خیلی سخت نباشه، ولی اینطوری نبود. طبق معمول بقیه‌ی کتابخانه‌ها، کد این کتابخانه رو از روی گیت‌هاب گرفتم. بعد که خواستم نصبش کنم، با این خطا مواجه شدم که نمی‌تونست کامپایلر Microsoft Visual C++ 2008 یا همون VC90 رو پیدا بکنه. قبلاً هم این مشکل رو داشتم ولی تونسته بودم حلش کنم (&lt;a href="http://erfannoury.github.io/2014/04/msvc-for-python/"&gt;در اینجا توضیح دادم چطوری&lt;/a&gt;)،ولی این بار متاسفانه مشکل به این راحتی حل نشد.&lt;/p&gt;
+
+&lt;p&gt;با وجود اینکه تنظیمات رو تغییر دادم تا از کامپایلر Microsoft Visual C++ 2013 یا همون VC120 استفاده بشه، ولی باز درخواست کامپایر قدیمی رو می‌کرد. چاره‌ای نداشتم جز اینکه این کامپایلر رو نصب کنم. خوشبختانه برای حل این مشکل مایکروسافت یک دانلود کم حجم از این نسخه از کامپایلر برای پایتون 2.7 قرار داده.
+&lt;a href="http://aka.ms/vcpython27"&gt;از این آدرس&lt;/a&gt; میشه این نسخه از کامپایلر رو دانلود کرد. بعد از نصب این نسخه‌ی قدیمی از کامپایلر مشکل پیدا کردنش حل شد، ولی در کل استفاده از چنین نسخه‌ی قدیمی مشکل‌سازه. از توی کد کتابخانه نتونستم چیزی پیدا کنم که مربوط به محدودیت استفاده از این نسخه از کامپایلر باشه، بنابراین حدس می‌زنم که مشکل از setuptools پایتون هست. بعد از کمی جستجو و پیدا کردن پروژه‌ای موسوم به &lt;a href="http://pythonwheels.com/"&gt;Python Wheels&lt;/a&gt; حدسم قوت گرفت. فکر می‌کنم مشکل از همین باشه و این پروژه سعی داره این مشکل رو حل بکنه. فعلاً که خیلی از کتابخانه‌های مطرح پایتون از این پروژه پشتیبانی نمی‌کنن، چه برسه به پروژه‌ای مثل Pylearn2. خلاصه در نهایت مجبور به استفاده از همین نسخه از کامپایلر شدم.&lt;/p&gt;
+
+&lt;p&gt;بعد از حل مشکل اومدم و طبق گفته‌ی سایت از دستور زیر برای نصب استفاده کردم&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;python setup.py develop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ولی در نهایت تاسف، با پیام خطای زیر در مورد یکی از فایل‌ها مواجه شدم.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;LINK : fatal error LNK1181: cannot open input file 'Vault\Github\pylearn2\pylearn2\utils\_window_flip.pyd'
+error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0\VC\Bin\amd64\link.exe /DLL /nologo /INCREMENTAL:NO /LIBPATH:C:\Anaconda\libs /LIBPATH:C:\Anaconda\PCbuild\amd64 /EXPORT:init_window_flip build\temp.win-amd64-2.7\Release\pylearn2/utils\_window_flip.obj /OUT:E:\Code Vault\Github\pylearn2\pylearn2\utils\_window_flip.pyd /IMPLIB:build\temp.win-amd64-2.7\Release\pylearn2/utils\_window_flip.lib /MANIFESTFILE:build\temp.win-amd64-2.7\Release\pylearn2/utils\_window_flip.pyd.manifest" failed with exit status 1181
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;راستش فعلاً پیدا نکردم که مشکل از چیه و چطوری میشه حلش کرد (به صورت اصولی)، ولی به جاش از دستور زیر برای نصب استفاده کردم و بدون مشکل کتابخانه نصب شد&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;python setup.py install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;بعد از این کار و نصب ظاهراً موفق این کتابخانه، با اجرای دستور &lt;code&gt;import pylearn2&lt;/code&gt;، پیام اخطاری مشاهده نشد. بنابراین احتمالاً بدون خطا نصب شده. البته باید بیشتر از کتابخانه استفاده بکنم تا بفهمم که آیا درست نصب شده یا نه.&lt;/p&gt;
+
+&lt;h2&gt;&lt;a href="https://github.com/benanne/Lasagne"&gt;Lasagne&lt;/a&gt;, &lt;a href="https://github.com/bartvm/blocks"&gt;blocks&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;این دو کتابخانه به طور خاص برای ساخت شبکه‌های عصبی و بخصوص شبکه‌های عمیق ساخته شدن. هر دو مبتنی بر Theano هستن و هدف هر دو ساده‌تر کردن و ماژولار کردن ساخت این شبکه‌ها و پیاده‌سازی یادگیری این شبکه‌ها است.&lt;/p&gt;
+
+&lt;p&gt;نصب این دو کتابخانه هم خیلی ساده بود. بعد از این که کد هر کدوم رو از گیت‌هاب گرفتم، با دستور &lt;code&gt;python setup.py install&lt;/code&gt; هر دو به سادگی نصب شدن.&lt;/p&gt;
+
+&lt;h2&gt;جمع‌بندی&lt;/h2&gt;
+
+&lt;p&gt;در نهایت همونطوری که گفتم، تونستم یکی از کتابخانه‌های مهم پایتون و همچنین سه تا از کتابخانه‌های مهم یادگیری عمیق رو بر روی ویندوز نصب کنم.&lt;/p&gt;
+
+&lt;p&gt;لازم هست بگم که از Windows 8.1 Pro x64 و CUDA 6.5 بر روی nVidia Quadro K1100M استفاده می‌کنم. همچنین پایتون رو با استفاده از &lt;a href="https://store.continuum.io/cshop/anaconda/"&gt;Anaconda&lt;/a&gt; روی ویندوز نصب کردم؛ نسخه‌ی 2.7.6 پایتون بر روی Anaconda نسخه‌ی 2.0 به طور دقیق‌تر. نصب پایتون رو از این طریق خیلی پیشنهاد می‌کنم. چون بسیاری از کتابخانه‌های مهم پایتون همراه باهاش نصب میشن و یه IDE خوب به نام Spyder هم نصب میشه که خیلی می‌تونه کمک دست خوبی باشه.&lt;/p&gt;
+
+&lt;p&gt;این از مرحله‌ی نصب این کتابخانه‌ها که به نظر می‌رسه با موفقیت به اتمام رسید. حالا می‌مونه استفاده از این کتابخانه‌ها و کار مفید انجام دادن باهاشون که البته مرحله‌ی مهم‌تریه.&lt;/p&gt;
+
+&lt;p&gt;در آینده، انشالله، بیشتر در موردشون خواهم نوشت.&lt;/p&gt;
+</summary><published>2015-02-12T20:30:00Z</published><updated>2015-02-12T20:30:00Z</updated><link rel="alternate" href="http://erfannoury.github.io/2015/02/installing-theano/" /><content type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;یکی از مهم‌ترین برتری‌های زبان پایتون، مجموعه‌ی بسیار کامل کتابخانه‌هایی هست که برای کارهای مختلف در دسترس برنامه‌نویس هست. این موضوع باعث شده که برای کاربردهای بسیاری، بتوان کتابخانه‌های بسیار با کیفیتی پیدا کرد و از اونها استفاده کرد.&lt;/p&gt;
+
+&lt;p&gt;یکی از حوزه‌هایی که از این مورد مستثنی نیست، موضوع کتابخانه‌های مربوط به &lt;em&gt;یادگیری عمیق&lt;/em&gt; یا &lt;em&gt;Deep Learning&lt;/em&gt; هست. از روی مشاهداتم می‌تونم بگم که بیشترین کتابخانه‌ها برای اینکار رو زبان پایتون داره و حتی اگر کتابخانه‌ای مثلاً در زبانی مثل C++ نوشته شده باشه، به احتمال زیادی یک پوشش (wrapper) برای زبان پایتون داره.&lt;/p&gt;
+
+&lt;p&gt;یک منبع مناسب که تعدادی از کتابخانه‌های مربوط به یادگیری عمیق رو با هم مقایسه کرده،
+&lt;a href="https://github.com/soumith/convnet-benchmarks"&gt;soumith/convnet-benchmarks&lt;/a&gt;
+ هست. در اینجا می‌تونیم ببینیم که سهم زبان‌های Python و Lua در کنار زبان C++ از کتابخانه‌های با کیفیت و مطرح بالا است.&lt;/p&gt;
+
+&lt;p&gt;مشکلی که بسیاری از این کتابخانه‌ها دارن اینه که با در نظر گرفتن ویندوز ایجاد نشدن. بخاطر همین نمیشه به راحتی خیلی از اونها رو در ویندوز استفاده کرد. برای کاری که می‌خوام انجام بدم تصمیم گرفتم این کتابخانه‌ها رو با هم مقایسه کنم و نهایت سعی‌ام رو بکنم که روی ویندوز اجراشون کنم. در ابتدا و بخاطر اینکه خیلی بیشتر ازش استفاده میشه، از کتابخانه‌ی Theano شروع کردم.&lt;/p&gt;
+
+&lt;h2&gt;معرفی &lt;a href="http://www.deeplearning.net/software/theano/"&gt;Theano&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;طبق تعریفی که در خود سایت نوشته شده، &lt;em&gt;Theano&lt;/em&gt; «یک کتابخانه برای تعریف، بهینه‌سازی و اجرای عبارت‌های ریاضی شامل آرایه‌های چندبعدی به صورت بهینه است.»&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Theano is a Python library that allows you to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;از ویژگی‌های این کتابخانه میشه به تعامل با کتابخانه‌ی NumPy (استفاده از &lt;code&gt;numpy.ndarray&lt;/code&gt;)، استفاده از واحد پردازش گرافیکی برای تسریع عملیات، مشتق‌گیری سریع عبارت‌های ریاضی و همچنین تولید پویای کد به زبان C اشاره کرد.
+ این کتابخانه توسط آزمایشگاه LISA دانشگاه مونترال کانادا تهیه میشه و معمولاً شامل جدیدترین الگوریتم‌ها و معماری شبکه‌های عمیق از جدیدترین مقالات هست.&lt;/p&gt;
+
+&lt;h3&gt;نصب Theano&lt;/h3&gt;
+
+&lt;p&gt;با وجود اینکه در ابتدا تصور می‌کردم نصب این کتابخانه، با توجه به اینکه از CUDA هم استفاده می‌کنه، در ویندوز کار بسیار سختی خواهد بود، ولی به هیچ عنوان اینگونه نبود. برای نصب این کتابخانه ابتدا آخرین نسخه‌ی کد رو با استفاده از دستور زیر از گیت‌هاب گرفتم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/Theano/Theano
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;بعد از گرفتن کد مربوط به این کتابخانه، در مسیر کاربری خودم در ویندوز، یعنی &lt;code&gt;C:\Users\&amp;lt;username&amp;gt;\&lt;/code&gt;، یک فایل با نام &lt;code&gt;.theanorc&lt;/code&gt; ایجاد کردم تا بتونم در این فایل تنظیماتی رو به این کتابخانه بدم. تنظیمات مربوط به طور کامل در &lt;a href="http://www.deeplearning.net/software/theano/install.html#bleeding-edge-installation"&gt;این آدرس&lt;/a&gt; نوشته شده. بعد از اینکه فایل تنظیمات مورد نظر رو تکمیل کردم (تنظیمات مربوط به CUDA رو هم اعمال کردم) با دستور زیر کتابخانه ساخت و نصب شد، به همین سادگی&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd theano
+python setup.py install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;برای اینکه ببینید استفاده از کارت گرافیکی در این کتابخانه، به طور خاص، و کتابخانه، به طور عام درست ساخت و نصب شده، از آدرس زیر برنامه‌ی مورد نظر رو اجرا کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd theano\misc
+python check_blas.py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;&lt;a href="https://github.com/lisa-lab/pylearn2"&gt;Pylearn2&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;کتابخانه‌ی Pylearn2 یک کتابخانه‌ی یادگیری ماشین هست که بر روی کتابخانه‌ی Theano توسط آزمایشگاه LISA ایجاد شده. این کتابخانه به سرعت در حال تغییره و الگوریتم‌های بسیاری بهش اضافه میشن. به نظر میومد که نصب این کتابخانه چون وابسته به theano بود خیلی سخت نباشه، ولی اینطوری نبود. طبق معمول بقیه‌ی کتابخانه‌ها، کد این کتابخانه رو از روی گیت‌هاب گرفتم. بعد که خواستم نصبش کنم، با این خطا مواجه شدم که نمی‌تونست کامپایلر Microsoft Visual C++ 2008 یا همون VC90 رو پیدا بکنه. قبلاً هم این مشکل رو داشتم ولی تونسته بودم حلش کنم (&lt;a href="http://erfannoury.github.io/2014/04/msvc-for-python/"&gt;در اینجا توضیح دادم چطوری&lt;/a&gt;)،ولی این بار متاسفانه مشکل به این راحتی حل نشد.&lt;/p&gt;
+
+&lt;p&gt;با وجود اینکه تنظیمات رو تغییر دادم تا از کامپایلر Microsoft Visual C++ 2013 یا همون VC120 استفاده بشه، ولی باز درخواست کامپایر قدیمی رو می‌کرد. چاره‌ای نداشتم جز اینکه این کامپایلر رو نصب کنم. خوشبختانه برای حل این مشکل مایکروسافت یک دانلود کم حجم از این نسخه از کامپایلر برای پایتون 2.7 قرار داده.
+&lt;a href="http://aka.ms/vcpython27"&gt;از این آدرس&lt;/a&gt; میشه این نسخه از کامپایلر رو دانلود کرد. بعد از نصب این نسخه‌ی قدیمی از کامپایلر مشکل پیدا کردنش حل شد، ولی در کل استفاده از چنین نسخه‌ی قدیمی مشکل‌سازه. از توی کد کتابخانه نتونستم چیزی پیدا کنم که مربوط به محدودیت استفاده از این نسخه از کامپایلر باشه، بنابراین حدس می‌زنم که مشکل از setuptools پایتون هست. بعد از کمی جستجو و پیدا کردن پروژه‌ای موسوم به &lt;a href="http://pythonwheels.com/"&gt;Python Wheels&lt;/a&gt; حدسم قوت گرفت. فکر می‌کنم مشکل از همین باشه و این پروژه سعی داره این مشکل رو حل بکنه. فعلاً که خیلی از کتابخانه‌های مطرح پایتون از این پروژه پشتیبانی نمی‌کنن، چه برسه به پروژه‌ای مثل Pylearn2. خلاصه در نهایت مجبور به استفاده از همین نسخه از کامپایلر شدم.&lt;/p&gt;
+
+&lt;p&gt;بعد از حل مشکل اومدم و طبق گفته‌ی سایت از دستور زیر برای نصب استفاده کردم&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;python setup.py develop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ولی در نهایت تاسف، با پیام خطای زیر در مورد یکی از فایل‌ها مواجه شدم.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;LINK : fatal error LNK1181: cannot open input file 'Vault\Github\pylearn2\pylearn2\utils\_window_flip.pyd'
+error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0\VC\Bin\amd64\link.exe /DLL /nologo /INCREMENTAL:NO /LIBPATH:C:\Anaconda\libs /LIBPATH:C:\Anaconda\PCbuild\amd64 /EXPORT:init_window_flip build\temp.win-amd64-2.7\Release\pylearn2/utils\_window_flip.obj /OUT:E:\Code Vault\Github\pylearn2\pylearn2\utils\_window_flip.pyd /IMPLIB:build\temp.win-amd64-2.7\Release\pylearn2/utils\_window_flip.lib /MANIFESTFILE:build\temp.win-amd64-2.7\Release\pylearn2/utils\_window_flip.pyd.manifest" failed with exit status 1181
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;راستش فعلاً پیدا نکردم که مشکل از چیه و چطوری میشه حلش کرد (به صورت اصولی)، ولی به جاش از دستور زیر برای نصب استفاده کردم و بدون مشکل کتابخانه نصب شد&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;python setup.py install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;بعد از این کار و نصب ظاهراً موفق این کتابخانه، با اجرای دستور &lt;code&gt;import pylearn2&lt;/code&gt;، پیام اخطاری مشاهده نشد. بنابراین احتمالاً بدون خطا نصب شده. البته باید بیشتر از کتابخانه استفاده بکنم تا بفهمم که آیا درست نصب شده یا نه.&lt;/p&gt;
+
+&lt;h2&gt;&lt;a href="https://github.com/benanne/Lasagne"&gt;Lasagne&lt;/a&gt;, &lt;a href="https://github.com/bartvm/blocks"&gt;blocks&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;این دو کتابخانه به طور خاص برای ساخت شبکه‌های عصبی و بخصوص شبکه‌های عمیق ساخته شدن. هر دو مبتنی بر Theano هستن و هدف هر دو ساده‌تر کردن و ماژولار کردن ساخت این شبکه‌ها و پیاده‌سازی یادگیری این شبکه‌ها است.&lt;/p&gt;
+
+&lt;p&gt;نصب این دو کتابخانه هم خیلی ساده بود. بعد از این که کد هر کدوم رو از گیت‌هاب گرفتم، با دستور &lt;code&gt;python setup.py install&lt;/code&gt; هر دو به سادگی نصب شدن.&lt;/p&gt;
+
+&lt;h2&gt;جمع‌بندی&lt;/h2&gt;
+
+&lt;p&gt;در نهایت همونطوری که گفتم، تونستم یکی از کتابخانه‌های مهم پایتون و همچنین سه تا از کتابخانه‌های مهم یادگیری عمیق رو بر روی ویندوز نصب کنم.&lt;/p&gt;
+
+&lt;p&gt;لازم هست بگم که از Windows 8.1 Pro x64 و CUDA 6.5 بر روی nVidia Quadro K1100M استفاده می‌کنم. همچنین پایتون رو با استفاده از &lt;a href="https://store.continuum.io/cshop/anaconda/"&gt;Anaconda&lt;/a&gt; روی ویندوز نصب کردم؛ نسخه‌ی 2.7.6 پایتون بر روی Anaconda نسخه‌ی 2.0 به طور دقیق‌تر. نصب پایتون رو از این طریق خیلی پیشنهاد می‌کنم. چون بسیاری از کتابخانه‌های مهم پایتون همراه باهاش نصب میشن و یه IDE خوب به نام Spyder هم نصب میشه که خیلی می‌تونه کمک دست خوبی باشه.&lt;/p&gt;
+
+&lt;p&gt;این از مرحله‌ی نصب این کتابخانه‌ها که به نظر می‌رسه با موفقیت به اتمام رسید. حالا می‌مونه استفاده از این کتابخانه‌ها و کار مفید انجام دادن باهاشون که البته مرحله‌ی مهم‌تریه.&lt;/p&gt;
+
+&lt;p&gt;در آینده، انشالله، بیشتر در موردشون خواهم نوشت.&lt;/p&gt;
+</content></entry><entry><id>http://erfannoury.github.io/2015/01/computers-which-learn/</id><title type="text">کامپیوترهایی که یاد می‌گیرند</title><summary type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;امروز یک ویدیو بسیار جالب از TEDxBrussels میدیدم در مورد کامپیوترهایی که می‌توانند یاد بگیرند. جای تعجب نداره که صحبت در مورد پیشرفت‌هایی بود که از طریق به کارگیری چارچون یادگیری موسوم به یادگیری عمیق (Deep Learning) به دست آمده. باز صحبت در مورد این بود که کامپیوترها قراره بسیاری از شغل‌های انسانی رو در اختیار بگیرن. ولی در این صحبت روی دو جنبه‌ی دیگه هم بحث کوتاهی شد که کمتر قبلاً دیده بودم.&lt;/p&gt;
 
