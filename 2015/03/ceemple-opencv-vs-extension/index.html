@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="last-modified" content="2015-03-20T01:18:00.9685455+03:30" />
-    <meta name="keywords" content="بلاگ,عمومی" />
+    <meta name="keywords" content="Ceemple,Computer Vision,OpenCV" />
     <title>Technical Enry</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
@@ -14,7 +14,7 @@
 	</script>
 
 
-   <link rel="canonical" href="http://erfannoury.github.io/2014/04/first-post/" />
+   <link rel="canonical" href="http://erfannoury.github.io/2015/03/ceemple-opencv-vs-extension/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -49,13 +49,14 @@
                   
 
 <div class="post">
-    <h1 class="post-title">اولین پست، ولی آزمایشی</h1> 
+    <h1 class="post-title">OpenCV آسان در ویندوز با استفاده از Ceemple</h1> 
       <div class="meta">
-        <p class="posted"><i class="fa fa-calendar"></i> 16 Apr 2014</p>
+        <p class="posted"><i class="fa fa-calendar"></i> 20 Mar 2015</p>
         <ul class="categories">
         <i class="fa fa-tag"></i>
-          <li><a href="/category/" title="Snow.Models.Category">بلاگ</a></li>
-          <li><a href="/category/" title="Snow.Models.Category">عمومی</a></li>
+          <li><a href="/category/ceemple" title="Snow.Models.Category">Ceemple</a></li>
+          <li><a href="/category/computer-vision" title="Snow.Models.Category">Computer Vision</a></li>
+          <li><a href="/category/opencv" title="Snow.Models.Category">OpenCV</a></li>
         </ul>
       </div>
 
@@ -72,44 +73,31 @@
         
     <h1>به نام خدا</h1>
 
-<p>این یک آزمایش است.</p>
+<h2>OpenCV</h2>
 
-<p>This is only a test.</p>
+<p>یکی از مهم‌ترین کتابخانه‌های پردازش تصویر و بینایی ماشین، کتابخانه‌ی <a href="http://opencv.org">OpenCV</a> هست. این کتابخانه که با استفاده از C/C++ نوشته شده و بسیاری از الگوریتم‌های مورد نیاز برای پردازش تصویر، بینایی ماشین و یادگیری ماشین رو پیاده‌سازی کرده. این کتابخانه از بسیاری از سیستم‌های عامل و معماری‌های سخت‌افزاری پشتیبانی می‌کنه و تقریباً همه جا می‌تونید ازش استفاده بکنید. همچنین اگر با زبان C++ راحت نباشید، این کتابخانه رو میشه به راحتی از زبان‌های جاوا و پایتون هم صدا زد و استفاده کرد.</p>
 
-<p>بعد از اینکه  دیدم سایت <a href="www.koding.com">Koding</a> داون شد، دیدم که مطمئن‌ترین جا برای نوشتن این پست‌ها، همین کامپیوتر خودم هست. بخاطر همین هم Octopress و Jekyll رو کلاً انداختم کنار و رو آوردم به the real thing، یعنی .Net :دی</p>
+<p>با توجه به اینکه این کتابخانه از نظر حجم کد و همچنین وابستگی‌های خارجی به کتابخانه‌های دیگه، یک کتابخانه‌ی بسیار بزرگ به حساب میاد، بنابراین آماده‌کردن اون برای استفاده کار نسبتاً سختیه. برای اینکه بتونید از این کتابخانه استفاده بکنید، لازمه که کد این کتابخانه، به همراه کتابخانه‌های خارجی دیگری که کد به اونها وابسته هست کامپایل بشن تا بعد بشه ازشون استفاده کرد. این کار، بخصوص بر روی ویندوز نسبتاً سخت و وقت‌گیر هست. در این پست قصد دارم راه‌حل آسانی رو برای حل این مشکل معرفی کنم. OpenCV سخت در ویندوز رو بعداً توضیح خواهم داد.</p>
 
-<p>الان دارم از یک نسخه‌ی تغییر یافته از پروژه‌ی <a href="https://github.com/Sandra/Sandra.Snow">Sandra.Snow</a> استفاده می‌کنم. بعضی تغییرات رو توش اعمال کردم تا کلاً بلاگ برای نمایش فارسی بهتر بشه. البته از کد جاوااسکریپ <a href="https://github.com/hasenj/bidiweb">bidiweb</a> هم استفاده کردم تا متونی که احیاناً بخاطر تغییر زبان به هم بریزن رو درست بکنه. همچنین از کتابخونه‌ی خیلی خوب <a href="http://mathjax.org">MathJax</a> هم برای نمایش \(\LaTeX\) استفاده کردم. بعضی وقتا شاید به درد بخورن. </p>
+<h2>Ceemple OpenCV for Visual Studio</h2>
 
-<p>حالا یکم قابلیت‌هایش رو تست بکنیم.</p>
+<h3><a href="http://www.ceemple.com/ceemple-opencv-visual-studio/">دریافت این افزونه</a></h3>
 
-<p>This is a text written in English, and yes it is displayed correctly (not that it wouldn't normally :D)</p>
+<p><img src="http://www.ceemple.com/wp-content/uploads/2015/01/Capture5-1024x555.png" alt="Ceemple OpenCV for Visual Studio" /></p>
 
-<p>این هم یه تیکه کد:</p>
+<p><a href="http://ceemple.com">Ceemple</a> یک راه‌حل مناسب برای این مشکل ارائه داده. اونا یک extension برای ویژوال استودیو ارائه دادن که شامل OpenCV 3.0 کامپایل‌شده و آماده‌ی استفاده به همراه کتابخانه‌های جانبی مهمی مثل CUDA، OpenCL، OpenMP و IPP هست.
+شاید اطلاع داشته باشید که خود OpenCV هم DLLهای از پیش‌ساخته‌شده‌ی کتابخانه رو برای ویندوز ارائه میده. ولی این فایل‌ها، با حداقل استفاده از کتابخانه‌های جانبی بخصوص CUDA و IPP ارائه میشن که این موضوع باعث میشه این کتابخانه از تمام امکانات سخت‌افزاری برای پردازش بهره نبره. ولی در نسخه‌ای که Ceemple ارائه میده، این کتابخانه‌های مهم جانبی وجود دارن و شما می‌تونید از سرعت بیشتر اجرای کد بر روی پردازنده‌ یا پردازنده‌ی گرافیکی خودتون استفاده کنید.</p>
 
-<pre><code>using System;
+<p>همچنین با نصب این افزونه، امکان ساخت پروژه‌های OpenCV به صورت مستقیم از درون ویژوال استودیو ایجاد میشه. به این ترتیب خیلی سریع و بدون نیاز به تنظیم دسترسی پروژه به فایل‌های header و dll و lib مربوط به OpenCV و کتابخانه‌های جانبی، می‌تونید شروع به کد زدن بکنید و به تولید برنامه بپردازید.</p>
 
-public class test
-{
-    public static void Main(string[] args)
-    {
-        Console.WriteLine("Hello World, from Sandra.Snow!");
-    }
-}
-</code></pre>
+<p><img src="http://www.ceemple.com/wp-content/uploads/2015/01/Capture.png" alt="New OpenCV project dialoge in VS" /></p>
 
-<p>و حالا یکم ریاضی درون یک نوشته‌ی انگلیسی</p>
+<p>علاوه بر نکات مثبت گفته شده، با نصب این افزونه، افزونه‌ی <a href="https://visualstudiogallery.msdn.microsoft.com/e682d542-7ef3-402c-b857-bbfba714f78d">Image Watch</a> هم بر روی ویژوال استودیو نصب میشه. این افزونه‌ی بسیار مفید به شما در هنگام debug کردن برنامه در ویژوال استودیو کمک می‌کنه. با استفاده از این افزونه، در هنگام debug کردن، می‌تونید تصاویری که در کدتون استفاده می‌کنید و بر روی حافظه هستن رو ببینید و به راحتی به جریان کدتون پی ببرید و مشکلات احتمالی رو به راحتی پیدا و رفع کنید. این افزونه بسیار افزونه‌ی مفیدیه و برای کارهای پردازش تصویر و بینایی ماشین بسیار توصیه میشه.
+(<a href="http://channel9.msdn.com/posts/Introducing-Image-Watch">توضیح بیشتر در مورد Image Watch</a>)</p>
 
-<p>When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
+<p><img src="http://www.ceemple.com/wp-content/uploads/2015/01/Capture7-1024x559.png" alt="Image Watch VS extension" /></p>
 
-<p>و همون پاراگراف قبلی به صورت یک پاراگراف فارسی</p>
-
-<p>هرگاه \(a \ne 0\)، دو پاسخ برای معادله‌ی \(ax^2 + bx + c = 0\) داریم که برابر هستند با:
-$$ x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2 a}$$.</p>
-
-<p>و همین دیگه. امیدوارم اونطوری که می‌خوام بتونم بنویسم اینجا و برای خودم و دیگران هم مفید باشه.</p>
-
-<p>تا پستِ بعدی :)</p>
+<p><strong>توجه</strong>: <em>تصاویر برگرفته از سایت <a href="http://ceemple.com">ceemple</a> هستند.</em></p>
 
 
     <div id="disqus_thread"></div>
@@ -119,14 +107,14 @@ $$ x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2 a}$$.</p>
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://erfannoury.github.io/2014/04/first-post/';
+                this.page.url = 'http://erfannoury.github.io/2015/03/ceemple-opencv-vs-extension/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'enrygithubpages';
-    var disqus_url = 'http://erfannoury.github.io/2014/04/first-post/';
+    var disqus_url = 'http://erfannoury.github.io/2015/03/ceemple-opencv-vs-extension/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

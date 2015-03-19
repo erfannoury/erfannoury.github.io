@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2015-02-13T19:34:14.5275405+03:30" />
-    <meta name="keywords" content="AI,Blog,C++,Deep Learning,Fun,Machine Learning,OpenCV,Pocket,Problem,Programming,Python,Signal Processing,Starter Code,TEDx,tips,Tutorial,Visualization,Windows,Windows Update,Youtube,آموزشی,بلاگ,پایتون,پردازش سیگنال,سی‌پلاس‌پلاس,علمی,عمومی,کوتاه‌پست,معرفی" />
+    <meta http-equiv="last-modified" content="2015-03-20T01:18:00.9685455+03:30" />
+    <meta name="keywords" content="AI,Blog,C++,Ceemple,Computer Vision,Deep Learning,Fun,Machine Learning,OpenCV,Pocket,Problem,Programming,Python,Signal Processing,Starter Code,TEDx,tips,Tutorial,Visualization,Windows,Windows Update,Youtube,آموزشی,بلاگ,پایتون,پردازش سیگنال,سی‌پلاس‌پلاس,علمی,عمومی,کوتاه‌پست,معرفی" />
     <title>Technical Enry</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
@@ -49,6 +49,49 @@
                   
 
   <ul class="posts">
+    <li class="post">
+      <h1><a href="/2015/03/ceemple-opencv-vs-extension/">OpenCV آسان در ویندوز با استفاده از Ceemple</a></h1>
+      <div class="meta">
+        <p class="posted"><i class="fa fa-calendar"></i> 20 Mar 2015</p>
+        <ul class="categories">
+        <i class="fa fa-tag"></i>
+          <li><a href="/category/Ceemple" title="Ceemple">Ceemple</a></li>
+          <li><a href="/category/Computer Vision" title="Computer Vision">Computer Vision</a></li>
+          <li><a href="/category/OpenCV" title="OpenCV">OpenCV</a></li>
+        </ul>
+      </div>
+      
+      <h1>به نام خدا</h1>
+
+<h2>OpenCV</h2>
+
+<p>یکی از مهم‌ترین کتابخانه‌های پردازش تصویر و بینایی ماشین، کتابخانه‌ی <a href="http://opencv.org">OpenCV</a> هست. این کتابخانه که با استفاده از C/C++ نوشته شده و بسیاری از الگوریتم‌های مورد نیاز برای پردازش تصویر، بینایی ماشین و یادگیری ماشین رو پیاده‌سازی کرده. این کتابخانه از بسیاری از سیستم‌های عامل و معماری‌های سخت‌افزاری پشتیبانی می‌کنه و تقریباً همه جا می‌تونید ازش استفاده بکنید. همچنین اگر با زبان C++ راحت نباشید، این کتابخانه رو میشه به راحتی از زبان‌های جاوا و پایتون هم صدا زد و استفاده کرد.</p>
+
+<p>با توجه به اینکه این کتابخانه از نظر حجم کد و همچنین وابستگی‌های خارجی به کتابخانه‌های دیگه، یک کتابخانه‌ی بسیار بزرگ به حساب میاد، بنابراین آماده‌کردن اون برای استفاده کار نسبتاً سختیه. برای اینکه بتونید از این کتابخانه استفاده بکنید، لازمه که کد این کتابخانه، به همراه کتابخانه‌های خارجی دیگری که کد به اونها وابسته هست کامپایل بشن تا بعد بشه ازشون استفاده کرد. این کار، بخصوص بر روی ویندوز نسبتاً سخت و وقت‌گیر هست. در این پست قصد دارم راه‌حل آسانی رو برای حل این مشکل معرفی کنم. OpenCV سخت در ویندوز رو بعداً توضیح خواهم داد.</p>
+
+<h2>Ceemple OpenCV for Visual Studio</h2>
+
+<h3><a href="http://www.ceemple.com/ceemple-opencv-visual-studio/">دریافت این افزونه</a></h3>
+
+<p><img src="http://www.ceemple.com/wp-content/uploads/2015/01/Capture5-1024x555.png" alt="Ceemple OpenCV for Visual Studio" /></p>
+
+<p><a href="http://ceemple.com">Ceemple</a> یک راه‌حل مناسب برای این مشکل ارائه داده. اونا یک extension برای ویژوال استودیو ارائه دادن که شامل OpenCV 3.0 کامپایل‌شده و آماده‌ی استفاده به همراه کتابخانه‌های جانبی مهمی مثل CUDA، OpenCL، OpenMP و IPP هست.
+شاید اطلاع داشته باشید که خود OpenCV هم DLLهای از پیش‌ساخته‌شده‌ی کتابخانه رو برای ویندوز ارائه میده. ولی این فایل‌ها، با حداقل استفاده از کتابخانه‌های جانبی بخصوص CUDA و IPP ارائه میشن که این موضوع باعث میشه این کتابخانه از تمام امکانات سخت‌افزاری برای پردازش بهره نبره. ولی در نسخه‌ای که Ceemple ارائه میده، این کتابخانه‌های مهم جانبی وجود دارن و شما می‌تونید از سرعت بیشتر اجرای کد بر روی پردازنده‌ یا پردازنده‌ی گرافیکی خودتون استفاده کنید.</p>
+
+<p>همچنین با نصب این افزونه، امکان ساخت پروژه‌های OpenCV به صورت مستقیم از درون ویژوال استودیو ایجاد میشه. به این ترتیب خیلی سریع و بدون نیاز به تنظیم دسترسی پروژه به فایل‌های header و dll و lib مربوط به OpenCV و کتابخانه‌های جانبی، می‌تونید شروع به کد زدن بکنید و به تولید برنامه بپردازید.</p>
+
+<p><img src="http://www.ceemple.com/wp-content/uploads/2015/01/Capture.png" alt="New OpenCV project dialoge in VS" /></p>
+
+<p>علاوه بر نکات مثبت گفته شده، با نصب این افزونه، افزونه‌ی <a href="https://visualstudiogallery.msdn.microsoft.com/e682d542-7ef3-402c-b857-bbfba714f78d">Image Watch</a> هم بر روی ویژوال استودیو نصب میشه. این افزونه‌ی بسیار مفید به شما در هنگام debug کردن برنامه در ویژوال استودیو کمک می‌کنه. با استفاده از این افزونه، در هنگام debug کردن، می‌تونید تصاویری که در کدتون استفاده می‌کنید و بر روی حافظه هستن رو ببینید و به راحتی به جریان کدتون پی ببرید و مشکلات احتمالی رو به راحتی پیدا و رفع کنید. این افزونه بسیار افزونه‌ی مفیدیه و برای کارهای پردازش تصویر و بینایی ماشین بسیار توصیه میشه.
+(<a href="http://channel9.msdn.com/posts/Introducing-Image-Watch">توضیح بیشتر در مورد Image Watch</a>)</p>
+
+<p><img src="http://www.ceemple.com/wp-content/uploads/2015/01/Capture7-1024x559.png" alt="Image Watch VS extension" /></p>
+
+<p><strong>توجه</strong>: <em>تصاویر برگرفته از سایت <a href="http://ceemple.com">ceemple</a> هستند.</em></p>
+
+      <p><a href="/2015/03/ceemple-opencv-vs-extension/">ادامه‌ی مطلب</a></p>
+    </li>
+    <hr/>
     <li class="post">
       <h1><a href="/2015/02/installing-theano/">نصب کتابخانه‌ی Theano در ویندوز</a></h1>
       <div class="meta">
@@ -452,95 +495,6 @@ cv2.destroyAllWindows()
 </ol>
 
       <p><a href="/2014/04/no-raw-loops/">ادامه‌ی مطلب</a></p>
-    </li>
-    <hr/>
-    <li class="post">
-      <h1><a href="/2014/04/msvc-for-python/">کامپایلر مایکروسافت برای پایتون</a></h1>
-      <div class="meta">
-        <p class="posted"><i class="fa fa-calendar"></i> 30 Apr 2014</p>
-        <ul class="categories">
-        <i class="fa fa-tag"></i>
-          <li><a href="/category/python" title="python">python</a></li>
-          <li><a href="/category/tips" title="tips">tips</a></li>
-          <li><a href="/category/پایتون" title="پایتون">پایتون</a></li>
-        </ul>
-      </div>
-      
-      <h1>به نام خدا</h1>
-
-<h2>مقدمه</h2>
-
-<p>اخیراً شروع به کار با زبان پایتون کردم. خیلی سبک زبان رو نپسندیدم، بخصوص با dynamic بودن هنوز کامل کنار نیامده‌ام.
-ولی زبان پایتون جامعه‌ی بسیار بزرگی دارد و نتیجه‌ی این جامعه‌ی بزرگ پروژه‌های باکیفیت و پرتعداد و پرکاربردی است که برای این زبان و با این زبان ایجاد شده‌اند. همین کتابخانه‌ها برنامه‌نویسی را برای انجام بسیاری از کارها آسان می‌کند. </p>
-
-<p>برای نصب کتابخانه‌های مختلف برای این زبان، راه‌های مختلفی وجود دارد. مشهورترین این راه‌ها <code>pip</code> و <code>easy_install</code> است. همچنین با استفاده از <code>conda</code> نیز می‌توان این کار را برای بعضی از کتابخانه‌ها انجام داد.</p>
-
-<p>ولی راه اصلی نصب بسیاری از کتابخانه‌ها، استفاده از دستور زیر است:</p>
-
-<pre><code>&gt;&gt; python setup.py install
-</code></pre>
-
-<p>فایل <code>setup.py</code> در همه‌ی پروژه‌ها وجود دارد، و در واقع این فایل توسط توسعه‌دهندگان هر کدام از این کتابخانه‌ها نوشته می‌شود. با استفاده از این دستور می‌توان کتابخانه‌ی مورد نظر را به لیست پایتون اضافه کرد. </p>
-
-<p>پایتون به زبان <code>C</code> نوشته شده است و برای سرعت‌گرفتن، قسمت‌هایی از کد را می‌توان به زبان <code>C</code> نوشت و در کد پایتون استفاده کرد. همچنین پروژه‌ای همانند <code>Cython</code>  می‌تواند کد پایتون را به کد <code>C</code> تبدیل کند.</p>
-
-<h2>مشکل</h2>
-
-<p>در هنگام نصب بعضی از پروژه‌ها، لازم است قسمتی از کد توسط یک کامپایلر <code>C</code> کامپایل شود.  برای این کار باید پایتون بتواند کامپایلر درست نصب شده و تنظیمات مناسب را تشخیص دهد. اگر این مشکلی در این کار پیش بیاید، خطایی مانند زیر در هنگام نصب کتابخانه نمایش داده خواهد شد:</p>
-
-<pre><code>Error:unable to find vcvarsall.bat
-</code></pre>
-
-<p>این خطا بخصوص در ویندوز احتمال ظهور بیشتری دارد! برای اینکار راه‌حلی پیشنهاد می‌شود که در ادامه توضیح آن را خواهم داد.</p>
-
-<h2>راه‌حل</h2>
-
-<p>در مسیر زیر فایلی به نام <code>distutils.cfg</code> وجود دارد</p>
-
-<pre><code>%PYTHONDIR%\Lib\distutils\
-</code></pre>
-
-<p>اگر هم این فایل موجود نباشد، آن را ایجاد کنید. محتویات آن را به صورت زیر تغییر دهید:</p>
-
-<pre><code>[build]
-compiler=msvc
-</code></pre>
-
-<p><code>%PYTHONDIR%</code> مسیر نصب پایتون می‌باشد. مسیر پیش‌فرض مسیر زیر می‌باشد:</p>
-
-<pre><code>C:\Python27
-</code></pre>
-
-<p>تنظیمات بالا با فرض این است که کامپایلر مایکروسافت بر روی سیستم نصب باشد. اگر ویژوال استودیو داشته باشید کامپایلر نصب می‌باشد. اگر کامپایلر ویژوال استودیو ندارید می‌توانید نسخه‌ی <a href="http://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx">Express</a> ویژوال استودیو را دریافت و نصب کنید.</p>
-
-<p>حال به مسیر زیر بروید:</p>
-
-<pre><code>%PYTHONDIR%\PCbuild\
-</code></pre>
-
-<p>در این پوشه فایل زیر را ایجاد کنید</p>
-
-<pre><code>msvcr&lt;num&gt;.def
-</code></pre>
-
-<p>که منظور از <code>&lt;num&gt;</code> یک شماره است که بر اساس نسخه‌ی ویژوال استودیو تعیین می‌شود</p>
-
-<ul>
-<li><code>Visual Studio 2008   -&gt;      90</code></li>
-<li><code>Visual Studio 2010   -&gt;      100</code></li>
-<li><code>Visual Studio 2012   -&gt;      110</code></li>
-<li><code>Visual Studio 2013   -&gt;      120</code></li>
-</ul>
-
-<p>حال در فایل ایجاد شده دو خط زیر را بنویسید:</p>
-
-<pre><code>LIBRARY MSVCR&lt;num&gt;.dll
-EXPORTS
-</code></pre>
-
-<p>با انجام این کارها به احتمال زیادی مشکل کامپایل‌شدن کدهای <code>C</code> برای پایتون حل خواهد شد.</p>
-
-      <p><a href="/2014/04/msvc-for-python/">ادامه‌ی مطلب</a></p>
     </li>
     <hr/>
   </ul>

@@ -1,4 +1,58 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>تکنیکال اِنری</title><link>http://erfannoury.github.io/rss.xml</link><description>تکنیکال اِنری</description><item><guid isPermaLink="true">http://erfannoury.github.io/2015/02/installing-theano/</guid><link>http://erfannoury.github.io/2015/02/installing-theano/</link><author>ennry@outlook.com</author><category>AI</category><category>Deep Learning</category><category>Machine Learning</category><category>Python</category><title>نصب کتابخانه‌ی Theano در ویندوز</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>تکنیکال اِنری</title><link>http://erfannoury.github.io/rss.xml</link><description>تکنیکال اِنری</description><item><guid isPermaLink="true">http://erfannoury.github.io/2015/03/ceemple-opencv-vs-extension/</guid><link>http://erfannoury.github.io/2015/03/ceemple-opencv-vs-extension/</link><author>ennry@outlook.com</author><category>Ceemple</category><category>Computer Vision</category><category>OpenCV</category><title>OpenCV آسان در ویندوز با استفاده از Ceemple</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;h2&gt;OpenCV&lt;/h2&gt;
+
+&lt;p&gt;یکی از مهم‌ترین کتابخانه‌های پردازش تصویر و بینایی ماشین، کتابخانه‌ی &lt;a href="http://opencv.org"&gt;OpenCV&lt;/a&gt; هست. این کتابخانه که با استفاده از C/C++ نوشته شده و بسیاری از الگوریتم‌های مورد نیاز برای پردازش تصویر، بینایی ماشین و یادگیری ماشین رو پیاده‌سازی کرده. این کتابخانه از بسیاری از سیستم‌های عامل و معماری‌های سخت‌افزاری پشتیبانی می‌کنه و تقریباً همه جا می‌تونید ازش استفاده بکنید. همچنین اگر با زبان C++ راحت نباشید، این کتابخانه رو میشه به راحتی از زبان‌های جاوا و پایتون هم صدا زد و استفاده کرد.&lt;/p&gt;
+
+&lt;p&gt;با توجه به اینکه این کتابخانه از نظر حجم کد و همچنین وابستگی‌های خارجی به کتابخانه‌های دیگه، یک کتابخانه‌ی بسیار بزرگ به حساب میاد، بنابراین آماده‌کردن اون برای استفاده کار نسبتاً سختیه. برای اینکه بتونید از این کتابخانه استفاده بکنید، لازمه که کد این کتابخانه، به همراه کتابخانه‌های خارجی دیگری که کد به اونها وابسته هست کامپایل بشن تا بعد بشه ازشون استفاده کرد. این کار، بخصوص بر روی ویندوز نسبتاً سخت و وقت‌گیر هست. در این پست قصد دارم راه‌حل آسانی رو برای حل این مشکل معرفی کنم. OpenCV سخت در ویندوز رو بعداً توضیح خواهم داد.&lt;/p&gt;
+
+&lt;h2&gt;Ceemple OpenCV for Visual Studio&lt;/h2&gt;
+
+&lt;h3&gt;&lt;a href="http://www.ceemple.com/ceemple-opencv-visual-studio/"&gt;دریافت این افزونه&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="http://www.ceemple.com/wp-content/uploads/2015/01/Capture5-1024x555.png" alt="Ceemple OpenCV for Visual Studio" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://ceemple.com"&gt;Ceemple&lt;/a&gt; یک راه‌حل مناسب برای این مشکل ارائه داده. اونا یک extension برای ویژوال استودیو ارائه دادن که شامل OpenCV 3.0 کامپایل‌شده و آماده‌ی استفاده به همراه کتابخانه‌های جانبی مهمی مثل CUDA، OpenCL، OpenMP و IPP هست.
+شاید اطلاع داشته باشید که خود OpenCV هم DLLهای از پیش‌ساخته‌شده‌ی کتابخانه رو برای ویندوز ارائه میده. ولی این فایل‌ها، با حداقل استفاده از کتابخانه‌های جانبی بخصوص CUDA و IPP ارائه میشن که این موضوع باعث میشه این کتابخانه از تمام امکانات سخت‌افزاری برای پردازش بهره نبره. ولی در نسخه‌ای که Ceemple ارائه میده، این کتابخانه‌های مهم جانبی وجود دارن و شما می‌تونید از سرعت بیشتر اجرای کد بر روی پردازنده‌ یا پردازنده‌ی گرافیکی خودتون استفاده کنید.&lt;/p&gt;
+
+&lt;p&gt;همچنین با نصب این افزونه، امکان ساخت پروژه‌های OpenCV به صورت مستقیم از درون ویژوال استودیو ایجاد میشه. به این ترتیب خیلی سریع و بدون نیاز به تنظیم دسترسی پروژه به فایل‌های header و dll و lib مربوط به OpenCV و کتابخانه‌های جانبی، می‌تونید شروع به کد زدن بکنید و به تولید برنامه بپردازید.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://www.ceemple.com/wp-content/uploads/2015/01/Capture.png" alt="New OpenCV project dialoge in VS" /&gt;&lt;/p&gt;
+
+&lt;p&gt;علاوه بر نکات مثبت گفته شده، با نصب این افزونه، افزونه‌ی &lt;a href="https://visualstudiogallery.msdn.microsoft.com/e682d542-7ef3-402c-b857-bbfba714f78d"&gt;Image Watch&lt;/a&gt; هم بر روی ویژوال استودیو نصب میشه. این افزونه‌ی بسیار مفید به شما در هنگام debug کردن برنامه در ویژوال استودیو کمک می‌کنه. با استفاده از این افزونه، در هنگام debug کردن، می‌تونید تصاویری که در کدتون استفاده می‌کنید و بر روی حافظه هستن رو ببینید و به راحتی به جریان کدتون پی ببرید و مشکلات احتمالی رو به راحتی پیدا و رفع کنید. این افزونه بسیار افزونه‌ی مفیدیه و برای کارهای پردازش تصویر و بینایی ماشین بسیار توصیه میشه.
+(&lt;a href="http://channel9.msdn.com/posts/Introducing-Image-Watch"&gt;توضیح بیشتر در مورد Image Watch&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://www.ceemple.com/wp-content/uploads/2015/01/Capture7-1024x559.png" alt="Image Watch VS extension" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;توجه&lt;/strong&gt;: &lt;em&gt;تصاویر برگرفته از سایت &lt;a href="http://ceemple.com"&gt;ceemple&lt;/a&gt; هستند.&lt;/em&gt;&lt;/p&gt;
+</description><pubDate>Thu, 19 Mar 2015 20:30:00 Z</pubDate><a10:updated>2015-03-19T20:30:00Z</a10:updated><a10:content type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;h2&gt;OpenCV&lt;/h2&gt;
+
+&lt;p&gt;یکی از مهم‌ترین کتابخانه‌های پردازش تصویر و بینایی ماشین، کتابخانه‌ی &lt;a href="http://opencv.org"&gt;OpenCV&lt;/a&gt; هست. این کتابخانه که با استفاده از C/C++ نوشته شده و بسیاری از الگوریتم‌های مورد نیاز برای پردازش تصویر، بینایی ماشین و یادگیری ماشین رو پیاده‌سازی کرده. این کتابخانه از بسیاری از سیستم‌های عامل و معماری‌های سخت‌افزاری پشتیبانی می‌کنه و تقریباً همه جا می‌تونید ازش استفاده بکنید. همچنین اگر با زبان C++ راحت نباشید، این کتابخانه رو میشه به راحتی از زبان‌های جاوا و پایتون هم صدا زد و استفاده کرد.&lt;/p&gt;
+
+&lt;p&gt;با توجه به اینکه این کتابخانه از نظر حجم کد و همچنین وابستگی‌های خارجی به کتابخانه‌های دیگه، یک کتابخانه‌ی بسیار بزرگ به حساب میاد، بنابراین آماده‌کردن اون برای استفاده کار نسبتاً سختیه. برای اینکه بتونید از این کتابخانه استفاده بکنید، لازمه که کد این کتابخانه، به همراه کتابخانه‌های خارجی دیگری که کد به اونها وابسته هست کامپایل بشن تا بعد بشه ازشون استفاده کرد. این کار، بخصوص بر روی ویندوز نسبتاً سخت و وقت‌گیر هست. در این پست قصد دارم راه‌حل آسانی رو برای حل این مشکل معرفی کنم. OpenCV سخت در ویندوز رو بعداً توضیح خواهم داد.&lt;/p&gt;
+
+&lt;h2&gt;Ceemple OpenCV for Visual Studio&lt;/h2&gt;
+
+&lt;h3&gt;&lt;a href="http://www.ceemple.com/ceemple-opencv-visual-studio/"&gt;دریافت این افزونه&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="http://www.ceemple.com/wp-content/uploads/2015/01/Capture5-1024x555.png" alt="Ceemple OpenCV for Visual Studio" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://ceemple.com"&gt;Ceemple&lt;/a&gt; یک راه‌حل مناسب برای این مشکل ارائه داده. اونا یک extension برای ویژوال استودیو ارائه دادن که شامل OpenCV 3.0 کامپایل‌شده و آماده‌ی استفاده به همراه کتابخانه‌های جانبی مهمی مثل CUDA، OpenCL، OpenMP و IPP هست.
+شاید اطلاع داشته باشید که خود OpenCV هم DLLهای از پیش‌ساخته‌شده‌ی کتابخانه رو برای ویندوز ارائه میده. ولی این فایل‌ها، با حداقل استفاده از کتابخانه‌های جانبی بخصوص CUDA و IPP ارائه میشن که این موضوع باعث میشه این کتابخانه از تمام امکانات سخت‌افزاری برای پردازش بهره نبره. ولی در نسخه‌ای که Ceemple ارائه میده، این کتابخانه‌های مهم جانبی وجود دارن و شما می‌تونید از سرعت بیشتر اجرای کد بر روی پردازنده‌ یا پردازنده‌ی گرافیکی خودتون استفاده کنید.&lt;/p&gt;
+
+&lt;p&gt;همچنین با نصب این افزونه، امکان ساخت پروژه‌های OpenCV به صورت مستقیم از درون ویژوال استودیو ایجاد میشه. به این ترتیب خیلی سریع و بدون نیاز به تنظیم دسترسی پروژه به فایل‌های header و dll و lib مربوط به OpenCV و کتابخانه‌های جانبی، می‌تونید شروع به کد زدن بکنید و به تولید برنامه بپردازید.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://www.ceemple.com/wp-content/uploads/2015/01/Capture.png" alt="New OpenCV project dialoge in VS" /&gt;&lt;/p&gt;
+
+&lt;p&gt;علاوه بر نکات مثبت گفته شده، با نصب این افزونه، افزونه‌ی &lt;a href="https://visualstudiogallery.msdn.microsoft.com/e682d542-7ef3-402c-b857-bbfba714f78d"&gt;Image Watch&lt;/a&gt; هم بر روی ویژوال استودیو نصب میشه. این افزونه‌ی بسیار مفید به شما در هنگام debug کردن برنامه در ویژوال استودیو کمک می‌کنه. با استفاده از این افزونه، در هنگام debug کردن، می‌تونید تصاویری که در کدتون استفاده می‌کنید و بر روی حافظه هستن رو ببینید و به راحتی به جریان کدتون پی ببرید و مشکلات احتمالی رو به راحتی پیدا و رفع کنید. این افزونه بسیار افزونه‌ی مفیدیه و برای کارهای پردازش تصویر و بینایی ماشین بسیار توصیه میشه.
+(&lt;a href="http://channel9.msdn.com/posts/Introducing-Image-Watch"&gt;توضیح بیشتر در مورد Image Watch&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://www.ceemple.com/wp-content/uploads/2015/01/Capture7-1024x559.png" alt="Image Watch VS extension" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;توجه&lt;/strong&gt;: &lt;em&gt;تصاویر برگرفته از سایت &lt;a href="http://ceemple.com"&gt;ceemple&lt;/a&gt; هستند.&lt;/em&gt;&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2015/02/installing-theano/</guid><link>http://erfannoury.github.io/2015/02/installing-theano/</link><author>ennry@outlook.com</author><category>AI</category><category>Deep Learning</category><category>Machine Learning</category><category>Python</category><title>نصب کتابخانه‌ی Theano در ویندوز</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;یکی از مهم‌ترین برتری‌های زبان پایتون، مجموعه‌ی بسیار کامل کتابخانه‌هایی هست که برای کارهای مختلف در دسترس برنامه‌نویس هست. این موضوع باعث شده که برای کاربردهای بسیاری، بتوان کتابخانه‌های بسیار با کیفیتی پیدا کرد و از اونها استفاده کرد.&lt;/p&gt;
 
