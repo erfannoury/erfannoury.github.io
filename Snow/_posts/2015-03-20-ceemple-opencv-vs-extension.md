@@ -34,3 +34,7 @@ title: OpenCV آسان در ویندوز با استفاده از Ceemple
 
 
 __توجه__: _تصاویر برگرفته از سایت [ceemple](http://ceemple.com) هستند._
+
+## به‌روزرسانی 1
+با استفاده از biicode هم می‌تونید به سادگی از OpenCV استفاده کنید. در این
+[لینک](http://docs.opencv.org/master/d3/d82/tutorial_biicode.html) در این مورد توضیح داده شده. 
