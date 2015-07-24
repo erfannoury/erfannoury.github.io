@@ -10,13 +10,14 @@
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
     border: 0;
     font-family: inherit;
-    font-size: 100%;
+    font-size: 104%;
     font-style: inherit;
     font-weight: inherit;
     margin: 0;
     outline: 0;
     padding: 0;
     vertical-align: baseline;
+    line-height: 1.8;
 }
 
 html {
@@ -710,14 +711,15 @@ body {
 
 .site-title {
     line-height: 1.2;
-    font-size: 38px;
+    font-size: 250%;
     font-weight: 200;
     margin: 10px 0 0 0;
 }
 
 .site-title small {
-    font-size: 0.5em;
-    font-style: italic;
+    font-size: 40%;
+    /*font-style: italic;*/
+    margin: 0 0 0 0;
 }
 
 .site-description {
@@ -803,15 +805,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 27px;
+    font-size: 170%;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 140%;
 }
 
 h3 {
-    font-size: 15px;
+    font-size: 115%;
 }
 
 h4, h5, h6 {
@@ -846,7 +848,7 @@ h4, h5, h6 {
     }
 
 #page {
-    max-width: 950px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -855,7 +857,7 @@ h4, h5, h6 {
     margin-top: 0;
     float: none;
     margin-bottom: 0;
-    padding: 15px;
+    padding: 2px;
     text-align: center;
 }
 
@@ -1178,6 +1180,8 @@ ul.posts {
   .post > h1 {
     text-align: center;
     font-weight: 400;
+    font-size: 190%;
+    margin-top: 50;
   }
     .post > h1,
     .post > h1 a {
@@ -1204,11 +1208,12 @@ ul.posts {
     }
 
     .post .meta .posted {
-        width: 150px;
+        width: 200px;
         padding: 10px 0 5px;
         margin: 0 auto;
         border-top: 1px solid #ddd;
         text-transform: uppercase;
+        text-align: center;
     }
 
     .post .meta .categories {
