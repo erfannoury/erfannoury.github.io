@@ -19,7 +19,7 @@
     </script>
 
 
-   <link rel="canonical" href="http://blog.erfan.xyz/2015/01/computers-which-learn/" />
+   <link rel="canonical" href="http://blog.erfan.xyz/2015/09/installing-theano-2/" />
    <script type="text/javascript">
       window.heap=window.heap||[],heap.load=function(t,e){window.heap.appid=t,window.heap.config=e;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+t+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(t){return function(){heap.push([t].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
       heap.load("2204913712");
@@ -59,15 +59,15 @@
                   
 
 <div class="post">
-    <h1 class="post-title">کامپیوترهایی که یاد می‌گیرند</h1> 
+    <h1 class="post-title">نصب کتابخانه‌ی Theano در ویندوز (به‌روزرسانی)</h1> 
       <div class="meta">
-        <p class="posted"><i class="fa fa-calendar"></i> 09 Jan 2015</p>
+        <p class="posted"><i class="fa fa-calendar"></i> 04 Sep 2015</p>
         <ul class="categories">
         <i class="fa fa-tag"></i>
           <li><a href="/category/ai" title="Snow.Models.Category">AI</a></li>
           <li><a href="/category/deep-learning" title="Snow.Models.Category">Deep Learning</a></li>
           <li><a href="/category/machine-learning" title="Snow.Models.Category">Machine Learning</a></li>
-          <li><a href="/category/tedx" title="Snow.Models.Category">TEDx</a></li>
+          <li><a href="/category/python" title="Snow.Models.Category">Python</a></li>
         </ul>
       </div>
 
@@ -84,17 +84,52 @@
         
     <h1>به نام خدا</h1>
 
-<p>امروز یک ویدیو بسیار جالب از TEDxBrussels میدیدم در مورد کامپیوترهایی که می‌توانند یاد بگیرند. جای تعجب نداره که صحبت در مورد پیشرفت‌هایی بود که از طریق به کارگیری چارچون یادگیری موسوم به یادگیری عمیق (Deep Learning) به دست آمده. باز صحبت در مورد این بود که کامپیوترها قراره بسیاری از شغل‌های انسانی رو در اختیار بگیرن. ولی در این صحبت روی دو جنبه‌ی دیگه هم بحث کوتاهی شد که کمتر قبلاً دیده بودم.</p>
+<p>بعد از پست قبلی در مورد نصب Theano بر روی ویندوز، تغییرات زیادی در این زمینه و کتابخانه‌های یادگیری عمیق و وضعیت نصب اونها روی ویندوز ایجاد شده. این پست به نوعی به‌روزرسانی بر روی موضوع نصب این کتابخانه‌ی پایه‌ای و بعد معرفی یک کتابخانه‌ی جدیده.</p>
 
-<p>اول اینکه انسان به همراه کامپیوتر در بسیاری از کارها می‌تونن بسیار کارآمدتر و هوشمندتر عمل کنن. این دید متفاوتیه از این دید غالب و تاریخی که کامپیوترها رو در مقابل انسان‌ها قرار میده. البته بحث در مورد اینکه آیا واقعاً روزی کامپیوترهای هوشمند در مقابل انسان قرار خواهند گرفت یک بحث طولانی هست که نیاز به چند پست دیگه و مطالعات بیشتری از جانب من داره. ولی این دید حداقل در چشم‌انداز آینده‌ای نزدیک دیدی هست که می‌تونه بسیار مفید باشه و چیزی هست که واقعاً باهاش مواجه خواهیم شد. در این مورد یک demo خیلی جالب هم نشون میده.</p>
+<h2>نکات جدید برای نصب Theano</h2>
 
-<p>موضوع دیگه، هر چند مرتبط به موضوع قبلی، در مورد اثر کامپیوترها بر کشورهای کمتر توسعه ‌یافته یا بهتره بگم کشورهای غیر جهان اول هست. اگر به توزیع شغل‌ها در این کشورها نگاهی بیاندازیم، بیشتر ای شغل‌ها به سرعت و راحتی می‌تونن با سیستم‌های کامپیوتری جایگزین بشن و این کار می‌تونه اثر بسیار بزرگی بر اقتصاد این کشورها که  بیشتر جمعیت دنیا رو هم تشکیل میدن داشته باشه.</p>
+<p>چند روز پیش می‌خواستم این کتابخانه رو روی یک کامپیوتر جدید نصب کنم.
+اولین کاری که کردم دانلود کردن و نصب Anaconda Python، CUDA 7.0 و البته Visual Studio 2013 بود. بخاطر اینکه هنوز CUDA از Visual Studio 2015 پشتیبانی نمی‌کنه، سراغ نسخه‌ی جدیدش نرفتم.
+بعد از اینکه اینا رو نصب کردم (اول ویژوال استودیو، بعد پایتون، در نهایت کودا) رفتم سراغ نصب gcc. درسته که برای کامپایل‌کردن قسمت اصلی کد Theano از کامپایلر مایکروسافت استفاده میشه، ولی بعضی از تیکه‌های کد نیاز به gcc دارن.
+برای اینکار <a href="http://tdm-gcc.tdragon.net/">TDM GCC</a> رو دانلود و نصب کردم. این نسخه از بقیه زودتر آپدیت میشه و چیز اضافی‌ای هم نصب نمی‌کنه.
+بعد از اینکه همه‌ی اینها رو نصب کردم و مطمئن شدم که همه‌ی چیزهای لازم در مسیر سیستم قرار گرفتن رفتم سراغ نصب Theano.</p>
 
-<p>به هر حال مسئله‌ی هوشمند شدن سیستم‌های کامپیوتری مسئله‌ای هست که بشر برای اولین بار داره در طول تاریخ باهاش مواجه میشه و باید برای عواقب این تغییر آماده باشیم و در موردش فکر کرده باشیم. الان میشه گفت کامپیوترها در بیشتر کارها به حد بالایی از هوشمندی رسیدن و با نرخ بالایی هوشمندی اونها داره بالاتر هم میره. پس در وحله‌ی اول باید در مورد رفتارمون در مقابل این هوشمندی و اثراتش فکر کنیم و چاره بیاندیشیم. و به این موضوع هم توجه کنیم که هوشمندی مقوله‌ای جدا از خودآگاهیه.</p>
+<p>اولین مشکلی که خوردم این بود که وقتی از gcc می‌خواست استفاده کنه خطای عدم وجود فایل‌های لازم برای پایتون رو میداد. رفتم خوب مسیر پایتون (پوشه‌ی libs) رو بررسی کردم. دیدم که همه چیز درسته.
+بعد از کمی جستجو، فهمیدم که gcc نیاز به فایل‌های کتابخانه‌ای با فرمت <code>libpython27.a</code> داره، نه <code>python27.lib</code>. بنابراین باید اول این فایل رو پیدا (یا درست) می‌کردم و بعد در همون پوشه قرار میدادم. بعد از اینکار یکی از مشکلات کامپایل حل شد.</p>
 
-<p>این هم ویدیویی که در موردش گفتم، با سخنرانی آقای Jeremy Howard</p>
+<p>مشکل دیگه یه مشکل خیلی عجیب بود. اینکه <code>C:\Windows\System32</code> تو مسیرهای سیستمی نبود. خیلی عجیب بود این موضوع برام و باعث ایجاد کلی مشکل و گرفتن کلی وقت شد. ولی بعد از اضافه کردن مسیر، کتابخانه به صورت کامل کامپایل شد.</p>
 
-<iframe src="https://embed-ssl.ted.com/talks/jeremy_howard_the_wonderful_and_terrifying_implications_of_computers_that_can_learn.html" width="854" height="480" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<p>بعد از این، نوبت درست کردن فایل تنظیمات کتابخانه، یعنی <code>.theanorc</code> بود. این رو هم در مسیر کاربری قرار دادم و بعدش رفتم سراغ اجرای کتابخانه که بدون مشکل اجرا شد. اینجا به عنوان مرجع، محتوای فایل تنظیمات Theano رو میذارم.</p>
+
+<pre><code>[blas]
+ldflags = 
+[nvcc]
+flags=-LC:\Anaconda\libs
+compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin
+optimizer_including=dnn
+fastmath = True
+[global]
+device = gpu
+floatX = float32
+[cuda]
+root=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.0
+</code></pre>
+
+<p>البته اگر خوب ببینید قسمت blas خالیه. برای اون قسمت هم کتابخانه‌ی OpenBLAS رو دانلود کردم و مسیر اون کتابخانه و همچنین اسم فایل کتابخانه‌ی OpenBLAS رو به عنوان ورودی دادم. </p>
+
+<p>بعد از این مراحل فکر نمی‌کنم مشکلی در نصب Theano پیش بیاد.</p>
+
+<p>اون <strong>dnn</strong> هم که نوشتم همون cuDNN هست که انویدیا عرضه کرده تا محاسبات مرتبط با یادگیری عمیق سریعتر بشه. نصب اون هم راحته. بعد از اینکه فایل‌هاش رو دانلود کردید، تو پوشه‌های مرتبط توی محل نصب CUDA قرارشون بدید و اینجا هم اون خط رو به فایل تنظیمات اضافه کنید. cuDNN 2 روی ویندوز بدون مشکل کار می‌کنه، ولی cuDNN 3 رو هنوز امتحان نکردم.</p>
+
+<h2>کتابخانه‌ی <a href="https://github.com/fchollet/keras">Keras</a></h2>
+
+<p>کتابخانه‌ی یادگیری عمیق Keras یکی از اون کتابخانه‌های یادگیری عمیقه که به نظر میاد آینده‌ی بسیار درخشانی داشته باشه. این کتابخانه روی Theano ساخته شده، ولی API اون از Torch7 الهام گرفته شده و خیلی خوش‌دسته. برخلاف پیچیدگی‌های بالای کار با Theano، کد مربوط به این کتابخانه خیلی خوانا است و به راحتی می‌تونید توش به طراحی مدل و آموزش و تحلیل مدل بپردازید. واقعاً بین همه‌ی کتابخانه‌های یادگیری عمیقی که بررسی کردم (برای پایتون البته)، این بهترین گزینه برای شروع کاره. آموزش‌ها و راهنمایی‌های بسیار خوبی هم تو <a href="http://keras.io/">این آدرس</a> گذاشتن. حتماً اگر تصمیم دارید کار روی یادگیری عمیق رو بدون مشکلات زیاد شروع کنید نگاهی به این کتابخانه بندازید.</p>
+
+<p>در کل بخاطر اینکه افراد و شرکت‌های زیادی پشت کتابخانه‌های Caffe و Torch7 بودن بقیه‌ی کتابخانه‌ها تقریباً عقب مونده بودن. ولی اخیراً احساس می‌کنم که کتابخانه‌های مبتنی بر Theano دارن جایگاه خودشون رو قوی‌تر می‌کنن. خیلی از مقالات اخیر با این کتابخانه‌های پیاده‌سازی شدن و همچنین پیاده‌سازی مقالات زیادی توسط افراد ثالث برای این کتابخانه‌ها انجام می‌گیره. </p>
+
+<p>هر چقدر گزینه‌ها برای کار کردن زیاد باشن، بهتره. امیدوارم که روز به روز کتابخانه‌ها پیشرفته‌تر و البته ورود به اون‌ها ساده‌تر بشه.</p>
+
+<p>فکر می‌کنم در روزهای آتی پست‌های متعددی داشته باشم.</p>
 
 
     <div id="disqus_thread"></div>
@@ -104,14 +139,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://blog.erfan.xyz/2015/01/computers-which-learn/';
+                this.page.url = 'http://blog.erfan.xyz/2015/09/installing-theano-2/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'enrygithubpages';
-    var disqus_url = 'http://blog.erfan.xyz/2015/01/computers-which-learn/';
+    var disqus_url = 'http://blog.erfan.xyz/2015/09/installing-theano-2/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

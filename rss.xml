@@ -1,4 +1,100 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>تکنیکال اِنری</title><link>http://erfannoury.github.io/rss.xml</link><description>تکنیکال اِنری</description><item><guid isPermaLink="true">http://erfannoury.github.io/2015/03/code-org/</guid><link>http://erfannoury.github.io/2015/03/code-org/</link><author>ennry@outlook.com</author><category>Programming</category><title>Code.org</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>تکنیکال اِنری</title><link>http://blog.erfan.xyz/rss.xml</link><description>تکنیکال اِنری</description><item><guid isPermaLink="true">http://blog.erfan.xyz/2015/09/installing-theano-2/</guid><link>http://blog.erfan.xyz/2015/09/installing-theano-2/</link><author>ennry@outlook.com</author><category>AI</category><category>Deep Learning</category><category>Machine Learning</category><category>Python</category><title>نصب کتابخانه‌ی Theano در ویندوز (به‌روزرسانی)</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;بعد از پست قبلی در مورد نصب Theano بر روی ویندوز، تغییرات زیادی در این زمینه و کتابخانه‌های یادگیری عمیق و وضعیت نصب اونها روی ویندوز ایجاد شده. این پست به نوعی به‌روزرسانی بر روی موضوع نصب این کتابخانه‌ی پایه‌ای و بعد معرفی یک کتابخانه‌ی جدیده.&lt;/p&gt;
+
+&lt;h2&gt;نکات جدید برای نصب Theano&lt;/h2&gt;
+
+&lt;p&gt;چند روز پیش می‌خواستم این کتابخانه رو روی یک کامپیوتر جدید نصب کنم.
+اولین کاری که کردم دانلود کردن و نصب Anaconda Python، CUDA 7.0 و البته Visual Studio 2013 بود. بخاطر اینکه هنوز CUDA از Visual Studio 2015 پشتیبانی نمی‌کنه، سراغ نسخه‌ی جدیدش نرفتم.
+بعد از اینکه اینا رو نصب کردم (اول ویژوال استودیو، بعد پایتون، در نهایت کودا) رفتم سراغ نصب gcc. درسته که برای کامپایل‌کردن قسمت اصلی کد Theano از کامپایلر مایکروسافت استفاده میشه، ولی بعضی از تیکه‌های کد نیاز به gcc دارن.
+برای اینکار &lt;a href="http://tdm-gcc.tdragon.net/"&gt;TDM GCC&lt;/a&gt; رو دانلود و نصب کردم. این نسخه از بقیه زودتر آپدیت میشه و چیز اضافی‌ای هم نصب نمی‌کنه.
+بعد از اینکه همه‌ی اینها رو نصب کردم و مطمئن شدم که همه‌ی چیزهای لازم در مسیر سیستم قرار گرفتن رفتم سراغ نصب Theano.&lt;/p&gt;
+
+&lt;p&gt;اولین مشکلی که خوردم این بود که وقتی از gcc می‌خواست استفاده کنه خطای عدم وجود فایل‌های لازم برای پایتون رو میداد. رفتم خوب مسیر پایتون (پوشه‌ی libs) رو بررسی کردم. دیدم که همه چیز درسته.
+بعد از کمی جستجو، فهمیدم که gcc نیاز به فایل‌های کتابخانه‌ای با فرمت &lt;code&gt;libpython27.a&lt;/code&gt; داره، نه &lt;code&gt;python27.lib&lt;/code&gt;. بنابراین باید اول این فایل رو پیدا (یا درست) می‌کردم و بعد در همون پوشه قرار میدادم. بعد از اینکار یکی از مشکلات کامپایل حل شد.&lt;/p&gt;
+
+&lt;p&gt;مشکل دیگه یه مشکل خیلی عجیب بود. اینکه &lt;code&gt;C:\Windows\System32&lt;/code&gt; تو مسیرهای سیستمی نبود. خیلی عجیب بود این موضوع برام و باعث ایجاد کلی مشکل و گرفتن کلی وقت شد. ولی بعد از اضافه کردن مسیر، کتابخانه به صورت کامل کامپایل شد.&lt;/p&gt;
+
+&lt;p&gt;بعد از این، نوبت درست کردن فایل تنظیمات کتابخانه، یعنی &lt;code&gt;.theanorc&lt;/code&gt; بود. این رو هم در مسیر کاربری قرار دادم و بعدش رفتم سراغ اجرای کتابخانه که بدون مشکل اجرا شد. اینجا به عنوان مرجع، محتوای فایل تنظیمات Theano رو میذارم.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[blas]
+ldflags = 
+[nvcc]
+flags=-LC:\Anaconda\libs
+compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin
+optimizer_including=dnn
+fastmath = True
+[global]
+device = gpu
+floatX = float32
+[cuda]
+root=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;البته اگر خوب ببینید قسمت blas خالیه. برای اون قسمت هم کتابخانه‌ی OpenBLAS رو دانلود کردم و مسیر اون کتابخانه و همچنین اسم فایل کتابخانه‌ی OpenBLAS رو به عنوان ورودی دادم. &lt;/p&gt;
+
+&lt;p&gt;بعد از این مراحل فکر نمی‌کنم مشکلی در نصب Theano پیش بیاد.&lt;/p&gt;
+
+&lt;p&gt;اون &lt;strong&gt;dnn&lt;/strong&gt; هم که نوشتم همون cuDNN هست که انویدیا عرضه کرده تا محاسبات مرتبط با یادگیری عمیق سریعتر بشه. نصب اون هم راحته. بعد از اینکه فایل‌هاش رو دانلود کردید، تو پوشه‌های مرتبط توی محل نصب CUDA قرارشون بدید و اینجا هم اون خط رو به فایل تنظیمات اضافه کنید. cuDNN 2 روی ویندوز بدون مشکل کار می‌کنه، ولی cuDNN 3 رو هنوز امتحان نکردم.&lt;/p&gt;
+
+&lt;h2&gt;کتابخانه‌ی &lt;a href="https://github.com/fchollet/keras"&gt;Keras&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;کتابخانه‌ی یادگیری عمیق Keras یکی از اون کتابخانه‌های یادگیری عمیقه که به نظر میاد آینده‌ی بسیار درخشانی داشته باشه. این کتابخانه روی Theano ساخته شده، ولی API اون از Torch7 الهام گرفته شده و خیلی خوش‌دسته. برخلاف پیچیدگی‌های بالای کار با Theano، کد مربوط به این کتابخانه خیلی خوانا است و به راحتی می‌تونید توش به طراحی مدل و آموزش و تحلیل مدل بپردازید. واقعاً بین همه‌ی کتابخانه‌های یادگیری عمیقی که بررسی کردم (برای پایتون البته)، این بهترین گزینه برای شروع کاره. آموزش‌ها و راهنمایی‌های بسیار خوبی هم تو &lt;a href="http://keras.io/"&gt;این آدرس&lt;/a&gt; گذاشتن. حتماً اگر تصمیم دارید کار روی یادگیری عمیق رو بدون مشکلات زیاد شروع کنید نگاهی به این کتابخانه بندازید.&lt;/p&gt;
+
+&lt;p&gt;در کل بخاطر اینکه افراد و شرکت‌های زیادی پشت کتابخانه‌های Caffe و Torch7 بودن بقیه‌ی کتابخانه‌ها تقریباً عقب مونده بودن. ولی اخیراً احساس می‌کنم که کتابخانه‌های مبتنی بر Theano دارن جایگاه خودشون رو قوی‌تر می‌کنن. خیلی از مقالات اخیر با این کتابخانه‌های پیاده‌سازی شدن و همچنین پیاده‌سازی مقالات زیادی توسط افراد ثالث برای این کتابخانه‌ها انجام می‌گیره. &lt;/p&gt;
+
+&lt;p&gt;هر چقدر گزینه‌ها برای کار کردن زیاد باشن، بهتره. امیدوارم که روز به روز کتابخانه‌ها پیشرفته‌تر و البته ورود به اون‌ها ساده‌تر بشه.&lt;/p&gt;
+
+&lt;p&gt;فکر می‌کنم در روزهای آتی پست‌های متعددی داشته باشم.&lt;/p&gt;
+</description><pubDate>Thu, 03 Sep 2015 19:30:00 Z</pubDate><a10:updated>2015-09-03T19:30:00Z</a10:updated><a10:content type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;بعد از پست قبلی در مورد نصب Theano بر روی ویندوز، تغییرات زیادی در این زمینه و کتابخانه‌های یادگیری عمیق و وضعیت نصب اونها روی ویندوز ایجاد شده. این پست به نوعی به‌روزرسانی بر روی موضوع نصب این کتابخانه‌ی پایه‌ای و بعد معرفی یک کتابخانه‌ی جدیده.&lt;/p&gt;
+
+&lt;h2&gt;نکات جدید برای نصب Theano&lt;/h2&gt;
+
+&lt;p&gt;چند روز پیش می‌خواستم این کتابخانه رو روی یک کامپیوتر جدید نصب کنم.
+اولین کاری که کردم دانلود کردن و نصب Anaconda Python، CUDA 7.0 و البته Visual Studio 2013 بود. بخاطر اینکه هنوز CUDA از Visual Studio 2015 پشتیبانی نمی‌کنه، سراغ نسخه‌ی جدیدش نرفتم.
+بعد از اینکه اینا رو نصب کردم (اول ویژوال استودیو، بعد پایتون، در نهایت کودا) رفتم سراغ نصب gcc. درسته که برای کامپایل‌کردن قسمت اصلی کد Theano از کامپایلر مایکروسافت استفاده میشه، ولی بعضی از تیکه‌های کد نیاز به gcc دارن.
+برای اینکار &lt;a href="http://tdm-gcc.tdragon.net/"&gt;TDM GCC&lt;/a&gt; رو دانلود و نصب کردم. این نسخه از بقیه زودتر آپدیت میشه و چیز اضافی‌ای هم نصب نمی‌کنه.
+بعد از اینکه همه‌ی اینها رو نصب کردم و مطمئن شدم که همه‌ی چیزهای لازم در مسیر سیستم قرار گرفتن رفتم سراغ نصب Theano.&lt;/p&gt;
+
+&lt;p&gt;اولین مشکلی که خوردم این بود که وقتی از gcc می‌خواست استفاده کنه خطای عدم وجود فایل‌های لازم برای پایتون رو میداد. رفتم خوب مسیر پایتون (پوشه‌ی libs) رو بررسی کردم. دیدم که همه چیز درسته.
+بعد از کمی جستجو، فهمیدم که gcc نیاز به فایل‌های کتابخانه‌ای با فرمت &lt;code&gt;libpython27.a&lt;/code&gt; داره، نه &lt;code&gt;python27.lib&lt;/code&gt;. بنابراین باید اول این فایل رو پیدا (یا درست) می‌کردم و بعد در همون پوشه قرار میدادم. بعد از اینکار یکی از مشکلات کامپایل حل شد.&lt;/p&gt;
+
+&lt;p&gt;مشکل دیگه یه مشکل خیلی عجیب بود. اینکه &lt;code&gt;C:\Windows\System32&lt;/code&gt; تو مسیرهای سیستمی نبود. خیلی عجیب بود این موضوع برام و باعث ایجاد کلی مشکل و گرفتن کلی وقت شد. ولی بعد از اضافه کردن مسیر، کتابخانه به صورت کامل کامپایل شد.&lt;/p&gt;
+
+&lt;p&gt;بعد از این، نوبت درست کردن فایل تنظیمات کتابخانه، یعنی &lt;code&gt;.theanorc&lt;/code&gt; بود. این رو هم در مسیر کاربری قرار دادم و بعدش رفتم سراغ اجرای کتابخانه که بدون مشکل اجرا شد. اینجا به عنوان مرجع، محتوای فایل تنظیمات Theano رو میذارم.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[blas]
+ldflags = 
+[nvcc]
+flags=-LC:\Anaconda\libs
+compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin
+optimizer_including=dnn
+fastmath = True
+[global]
+device = gpu
+floatX = float32
+[cuda]
+root=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;البته اگر خوب ببینید قسمت blas خالیه. برای اون قسمت هم کتابخانه‌ی OpenBLAS رو دانلود کردم و مسیر اون کتابخانه و همچنین اسم فایل کتابخانه‌ی OpenBLAS رو به عنوان ورودی دادم. &lt;/p&gt;
+
+&lt;p&gt;بعد از این مراحل فکر نمی‌کنم مشکلی در نصب Theano پیش بیاد.&lt;/p&gt;
+
+&lt;p&gt;اون &lt;strong&gt;dnn&lt;/strong&gt; هم که نوشتم همون cuDNN هست که انویدیا عرضه کرده تا محاسبات مرتبط با یادگیری عمیق سریعتر بشه. نصب اون هم راحته. بعد از اینکه فایل‌هاش رو دانلود کردید، تو پوشه‌های مرتبط توی محل نصب CUDA قرارشون بدید و اینجا هم اون خط رو به فایل تنظیمات اضافه کنید. cuDNN 2 روی ویندوز بدون مشکل کار می‌کنه، ولی cuDNN 3 رو هنوز امتحان نکردم.&lt;/p&gt;
+
+&lt;h2&gt;کتابخانه‌ی &lt;a href="https://github.com/fchollet/keras"&gt;Keras&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;کتابخانه‌ی یادگیری عمیق Keras یکی از اون کتابخانه‌های یادگیری عمیقه که به نظر میاد آینده‌ی بسیار درخشانی داشته باشه. این کتابخانه روی Theano ساخته شده، ولی API اون از Torch7 الهام گرفته شده و خیلی خوش‌دسته. برخلاف پیچیدگی‌های بالای کار با Theano، کد مربوط به این کتابخانه خیلی خوانا است و به راحتی می‌تونید توش به طراحی مدل و آموزش و تحلیل مدل بپردازید. واقعاً بین همه‌ی کتابخانه‌های یادگیری عمیقی که بررسی کردم (برای پایتون البته)، این بهترین گزینه برای شروع کاره. آموزش‌ها و راهنمایی‌های بسیار خوبی هم تو &lt;a href="http://keras.io/"&gt;این آدرس&lt;/a&gt; گذاشتن. حتماً اگر تصمیم دارید کار روی یادگیری عمیق رو بدون مشکلات زیاد شروع کنید نگاهی به این کتابخانه بندازید.&lt;/p&gt;
+
+&lt;p&gt;در کل بخاطر اینکه افراد و شرکت‌های زیادی پشت کتابخانه‌های Caffe و Torch7 بودن بقیه‌ی کتابخانه‌ها تقریباً عقب مونده بودن. ولی اخیراً احساس می‌کنم که کتابخانه‌های مبتنی بر Theano دارن جایگاه خودشون رو قوی‌تر می‌کنن. خیلی از مقالات اخیر با این کتابخانه‌های پیاده‌سازی شدن و همچنین پیاده‌سازی مقالات زیادی توسط افراد ثالث برای این کتابخانه‌ها انجام می‌گیره. &lt;/p&gt;
+
+&lt;p&gt;هر چقدر گزینه‌ها برای کار کردن زیاد باشن، بهتره. امیدوارم که روز به روز کتابخانه‌ها پیشرفته‌تر و البته ورود به اون‌ها ساده‌تر بشه.&lt;/p&gt;
+
+&lt;p&gt;فکر می‌کنم در روزهای آتی پست‌های متعددی داشته باشم.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.erfan.xyz/2015/03/code-org/</guid><link>http://blog.erfan.xyz/2015/03/code-org/</link><author>ennry@outlook.com</author><category>Programming</category><title>Code.org</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;شاید اسم برنامه‌ی «ساعتی با کد» یا "Hour of Code" رو شنیده باشید. هدف این برنامه اینه که در طی یک ساعت، تجربه‌ی ایجاد برنامه رو به افراد مختلف ارائه بکنه.&lt;br /&gt;
 سایت &lt;a href="http://code.org"&gt;Code.org&lt;/a&gt; که موسس آن &lt;a href="http://code.org/about/leadership/hadi_partovi"&gt;هادی پرتوی&lt;/a&gt; هست، مجری این برنامه در جهان هست. در این سایت افراد می‌تونن در قالب کاراکترهای مشهوری مانند پرنده‌های بازی Angry Birds یا کاراکترهای انیمیشن Frozen تکه‌کدهایی بنویسن و تجربه‌ی برنامه‌نویسی رو داشته باشن. دوره‌ی اول کدنویسی در این سایت که حداکثر شاید یک ساعت طول بکشه یک برنامه‌ی مفرح و شاد هست که
@@ -8,7 +104,7 @@
 
 &lt;p&gt;انجام این برنامه رو به خواهرم پیشنهاد دادم و بعد از اتمام موفقیت‌آمیز این برنامه، این مدرک بهش داده شد که باعث شد هم خوشحال بشه و هم مشتاق‌تر بشه و تصمیم بگیره که بقیه‌ی دوره‌های برنامه‌نویسی این سایت رو انجام بده.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/codeorg-hour-of-code-cert.jpg" alt="Code.org Hour of Code certificate" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/codeorg-hour-of-code-cert.jpg" alt="Code.org Hour of Code certificate" /&gt;&lt;/p&gt;
 
 &lt;p&gt;من هم پیشنهاد می‌کنم این سایت رو به بچه‌های فامیل و آشنا و هر کسی که مشتاق باشه و یا از وسایل کامپیوتری استفاده بکنه معرفی بکنید، مطمئنم خیلی لذت خواهند برد و خیلی چیزها هم یاد خواهند گرفت.&lt;/p&gt;
 
@@ -25,14 +121,14 @@
 
 &lt;p&gt;انجام این برنامه رو به خواهرم پیشنهاد دادم و بعد از اتمام موفقیت‌آمیز این برنامه، این مدرک بهش داده شد که باعث شد هم خوشحال بشه و هم مشتاق‌تر بشه و تصمیم بگیره که بقیه‌ی دوره‌های برنامه‌نویسی این سایت رو انجام بده.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/codeorg-hour-of-code-cert.jpg" alt="Code.org Hour of Code certificate" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/codeorg-hour-of-code-cert.jpg" alt="Code.org Hour of Code certificate" /&gt;&lt;/p&gt;
 
 &lt;p&gt;من هم پیشنهاد می‌کنم این سایت رو به بچه‌های فامیل و آشنا و هر کسی که مشتاق باشه و یا از وسایل کامپیوتری استفاده بکنه معرفی بکنید، مطمئنم خیلی لذت خواهند برد و خیلی چیزها هم یاد خواهند گرفت.&lt;/p&gt;
 
 &lt;p&gt;یک نکته‌ی مثبت دیگه هم اینه که این سایت نسخه‌ی فارسی هم داره. یادتون باشه از پایین صفحه زبان رو فارسی انتخاب کنید تا همه‌ی نوشته‌های سایت فارسی بشن. همچنین در این صورت زیرنویس ویدیوها هم فارسی میشه.&lt;/p&gt;
 
 &lt;p&gt;امیدوارم که با همچین برنامه‌هایی، سواد عمومی از کامپیوترها حداقل در نسل آینده بیشتر باشه و کامپیوتر و گوشی و اینترنت رو فقط مساوی با وایبر و بازی‌هایی مثل Clash of Clans ندونیم (این دو تا رو گفتم چون فکر می‌کنم اینا بیشترین مصرف رو در جامعه‌ی ایران داشته باشن)&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2015/03/ceemple-opencv-vs-extension/</guid><link>http://erfannoury.github.io/2015/03/ceemple-opencv-vs-extension/</link><author>ennry@outlook.com</author><category>Ceemple</category><category>Computer Vision</category><category>OpenCV</category><title>OpenCV آسان در ویندوز با استفاده از Ceemple</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.erfan.xyz/2015/03/ceemple-opencv-vs-extension/</guid><link>http://blog.erfan.xyz/2015/03/ceemple-opencv-vs-extension/</link><author>ennry@outlook.com</author><category>Ceemple</category><category>Computer Vision</category><category>OpenCV</category><title>OpenCV آسان در ویندوز با استفاده از Ceemple</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;h2&gt;OpenCV&lt;/h2&gt;
 
@@ -96,7 +192,7 @@
 
 &lt;p&gt;با استفاده از biicode هم می‌تونید به سادگی از OpenCV استفاده کنید. در این
 &lt;a href="http://docs.opencv.org/master/d3/d82/tutorial_biicode.html"&gt;لینک&lt;/a&gt; در این مورد توضیح داده شده. &lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2015/02/installing-theano/</guid><link>http://erfannoury.github.io/2015/02/installing-theano/</link><author>ennry@outlook.com</author><category>AI</category><category>Deep Learning</category><category>Machine Learning</category><category>Python</category><title>نصب کتابخانه‌ی Theano در ویندوز</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.erfan.xyz/2015/02/installing-theano/</guid><link>http://blog.erfan.xyz/2015/02/installing-theano/</link><author>ennry@outlook.com</author><category>AI</category><category>Deep Learning</category><category>Machine Learning</category><category>Python</category><title>نصب کتابخانه‌ی Theano در ویندوز</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;یکی از مهم‌ترین برتری‌های زبان پایتون، مجموعه‌ی بسیار کامل کتابخانه‌هایی هست که برای کارهای مختلف در دسترس برنامه‌نویس هست. این موضوع باعث شده که برای کاربردهای بسیاری، بتوان کتابخانه‌های بسیار با کیفیتی پیدا کرد و از اونها استفاده کرد.&lt;/p&gt;
 
@@ -260,7 +356,7 @@ error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C+
 &lt;p&gt;این از مرحله‌ی نصب این کتابخانه‌ها که به نظر می‌رسه با موفقیت به اتمام رسید. حالا می‌مونه استفاده از این کتابخانه‌ها و کار مفید انجام دادن باهاشون که البته مرحله‌ی مهم‌تریه.&lt;/p&gt;
 
 &lt;p&gt;در آینده، انشالله، بیشتر در موردشون خواهم نوشت.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2015/01/computers-which-learn/</guid><link>http://erfannoury.github.io/2015/01/computers-which-learn/</link><author>ennry@outlook.com</author><category>AI</category><category>Deep Learning</category><category>Machine Learning</category><category>TEDx</category><title>کامپیوترهایی که یاد می‌گیرند</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.erfan.xyz/2015/01/computers-which-learn/</guid><link>http://blog.erfan.xyz/2015/01/computers-which-learn/</link><author>ennry@outlook.com</author><category>AI</category><category>Deep Learning</category><category>Machine Learning</category><category>TEDx</category><title>کامپیوترهایی که یاد می‌گیرند</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;امروز یک ویدیو بسیار جالب از TEDxBrussels میدیدم در مورد کامپیوترهایی که می‌توانند یاد بگیرند. جای تعجب نداره که صحبت در مورد پیشرفت‌هایی بود که از طریق به کارگیری چارچون یادگیری موسوم به یادگیری عمیق (Deep Learning) به دست آمده. باز صحبت در مورد این بود که کامپیوترها قراره بسیاری از شغل‌های انسانی رو در اختیار بگیرن. ولی در این صحبت روی دو جنبه‌ی دیگه هم بحث کوتاهی شد که کمتر قبلاً دیده بودم.&lt;/p&gt;
 
@@ -286,33 +382,33 @@ error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C+
 &lt;p&gt;این هم ویدیویی که در موردش گفتم، با سخنرانی آقای Jeremy Howard&lt;/p&gt;
 
 &lt;iframe src="https://embed-ssl.ted.com/talks/jeremy_howard_the_wonderful_and_terrifying_implications_of_computers_that_can_learn.html" width="854" height="480" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;
-</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/12/my-year-in-pocket/</guid><link>http://erfannoury.github.io/2014/12/my-year-in-pocket/</link><author>ennry@outlook.com</author><category>Fun</category><category>Pocket</category><title>سال 2014 با پاکت</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.erfan.xyz/2014/12/my-year-in-pocket/</guid><link>http://blog.erfan.xyz/2014/12/my-year-in-pocket/</link><author>ennry@outlook.com</author><category>Fun</category><category>Pocket</category><title>سال 2014 با پاکت</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;امروز ایمیلی از طرف پاکت بهم رسید که در اون نوشته شده بود من جزو Top 5% readers پاکت شدم.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/year-in-pocket-stats.png" alt="Year in Pocket total stats" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/year-in-pocket-stats.png" alt="Year in Pocket total stats" /&gt;&lt;/p&gt;
 
 &lt;p&gt;به همین مناسبت صفحه‌ای نیز درست کردن که توی این صفحه به طور خلاصه گزارشی از کاربری از این سرویس در سال گذشته نشون داده میشه.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="http://getpocket.com/stats/fe03daf0177ae04ea6ac629620daab94a5b2000dea6cbe6e852c377e655f3fd1?utm_source=bronto&amp;amp;utm_medium=email&amp;amp;utm_term=See+your+Year+in+Pocket%21&amp;amp;utm_content=%25%25first_name%25%25%2C+you+made+the+Top+1%25+of+readers+on+Pocket+this+year%21&amp;amp;utm_campaign=EOY_2014_1%25_Name&amp;amp;utm_source=bronto&amp;amp;utm_medium=email&amp;amp;utm_term=See+Your+Year+in+Pocket%21&amp;amp;utm_content=%25%25first_name%25%25%2C+you+made+the+Top+5%25+of+readers+on+Pocket+this+year%21&amp;amp;utm_campaign=EOY_2014_5%25_Name"&gt;My 2014 Year in Pocket&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/year-in-pocket-weekly-stat.png" alt="Year in Pocket weekly stats" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/year-in-pocket-weekly-stat.png" alt="Year in Pocket weekly stats" /&gt;&lt;/p&gt;
 
 &lt;p&gt;امیدوارم در سال بعد، یعنی سال 2015، بیشتر مطالعه داشته باشم، هم با استفاده از این سرویس، هم به طرق دیگه.&lt;/p&gt;
 </description><pubDate>Tue, 16 Dec 2014 20:30:00 Z</pubDate><a10:updated>2014-12-16T20:30:00Z</a10:updated><a10:content type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;امروز ایمیلی از طرف پاکت بهم رسید که در اون نوشته شده بود من جزو Top 5% readers پاکت شدم.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/year-in-pocket-stats.png" alt="Year in Pocket total stats" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/year-in-pocket-stats.png" alt="Year in Pocket total stats" /&gt;&lt;/p&gt;
 
 &lt;p&gt;به همین مناسبت صفحه‌ای نیز درست کردن که توی این صفحه به طور خلاصه گزارشی از کاربری از این سرویس در سال گذشته نشون داده میشه.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="http://getpocket.com/stats/fe03daf0177ae04ea6ac629620daab94a5b2000dea6cbe6e852c377e655f3fd1?utm_source=bronto&amp;amp;utm_medium=email&amp;amp;utm_term=See+your+Year+in+Pocket%21&amp;amp;utm_content=%25%25first_name%25%25%2C+you+made+the+Top+1%25+of+readers+on+Pocket+this+year%21&amp;amp;utm_campaign=EOY_2014_1%25_Name&amp;amp;utm_source=bronto&amp;amp;utm_medium=email&amp;amp;utm_term=See+Your+Year+in+Pocket%21&amp;amp;utm_content=%25%25first_name%25%25%2C+you+made+the+Top+5%25+of+readers+on+Pocket+this+year%21&amp;amp;utm_campaign=EOY_2014_5%25_Name"&gt;My 2014 Year in Pocket&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/year-in-pocket-weekly-stat.png" alt="Year in Pocket weekly stats" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/year-in-pocket-weekly-stat.png" alt="Year in Pocket weekly stats" /&gt;&lt;/p&gt;
 
 &lt;p&gt;امیدوارم در سال بعد، یعنی سال 2015، بیشتر مطالعه داشته باشم، هم با استفاده از این سرویس، هم به طرق دیگه.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/12/1024-vs-1000/</guid><link>http://erfannoury.github.io/2014/12/1024-vs-1000/</link><author>ennry@outlook.com</author><category>Fun</category><title>1024 vs. 1000</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.erfan.xyz/2014/12/1024-vs-1000/</guid><link>http://blog.erfan.xyz/2014/12/1024-vs-1000/</link><author>ennry@outlook.com</author><category>Fun</category><title>1024 vs. 1000</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;راستش رو بخوایید من هم هنوز دقیق نمی‌دونم وقتی به مدل‌های مختلفی می‌نویسن منظور کدومه.&lt;/p&gt;
 
@@ -322,7 +418,7 @@ error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C+
 &lt;p&gt;راستش رو بخوایید من هم هنوز دقیق نمی‌دونم وقتی به مدل‌های مختلفی می‌نویسن منظور کدومه.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src="http://imgs.xkcd.com/comics/kilobyte.png" alt="1024 vs. 1000" /&gt;&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/10/blog-second-anniversary/</guid><link>http://erfannoury.github.io/2014/10/blog-second-anniversary/</link><author>ennry@outlook.com</author><category>Blog</category><category>Visualization</category><title>دومین سالگرد وبلاگ :)</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.erfan.xyz/2014/10/blog-second-anniversary/</guid><link>http://blog.erfan.xyz/2014/10/blog-second-anniversary/</link><author>ennry@outlook.com</author><category>Blog</category><category>Visualization</category><title>دومین سالگرد وبلاگ :)</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;امروز دومین سالگرد اون یکی وبلاگمه. دو سال پیش در همین روز بود که اولین پستم رو توی اون بلاگ منتشر کردم.امروز به مناسبت دومین سالگرد چون حوصله‌ی پست نوشتن اونجا رو نداشتم، یعنی در واقع حوصله‌ی پست‌نویسی به سبک اونجا رو نداشتم، تصمیم گرفتم اینجا در مورد اون بلاگ بنویسم.&lt;/p&gt;
 
@@ -330,21 +426,21 @@ error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C+
 
 &lt;p&gt;تو این مدت دو ساله، 77 پست رو ارسال کردم تو اون یکی بلاگم&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/timeline_raw.png" alt="Timeline post distribution" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/timeline_raw.png" alt="Timeline post distribution" /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/timeline_distribution.png" alt="Timeline post distribution" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/timeline_distribution.png" alt="Timeline post distribution" /&gt;&lt;/p&gt;
 
 &lt;p&gt;خیلی واضحه از روی پست که در یکسال اول، خیلی بیشتر از یکسال دوم پست نوشتم. شاید نشون میده که یکسال دوم، یعنی از یکسال پیش، آرامیش بیشتری به زندگیم حاکم بوده. از طرف دیگه شاید بشه گفت که  هیجان زندگیم کمتر شده، چیز کمتری بوده تو زندگیم که در موردش بنویسم. البته اگر به آخرهای این مدت زمان نگاهی بندازیم، میبینیم که باز شروع کرده بودم به مرتب نوشتن، ولی باز از حوصله افتادم و الان خیلی وقته که ننوشتم. درسته که فقط دوبار اتفاق افتاده، ولی شاید این تحلیل رو هم بشه کرد که در نزدیکی‌های سالگردها، خیلی کمتر نوشتم.&lt;/p&gt;
 
 &lt;p&gt;از نظر زمانی فکر می‌کردم بیشتر پست‌هام رو در روزهای آخر هفته می‌نوشتم. ولی این نمودار چیز دیگه‌ای رو نشون میده&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/weekly_distribution.png" alt="Weekly post distribution" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/weekly_distribution.png" alt="Weekly post distribution" /&gt;&lt;/p&gt;
 
 &lt;p&gt;اینطوری که مشخصه بیشترین پست‌هام رو در روز دوشنبه منتشر کردم. هر چند آخرهفته‌ها هم فعال بودم.&lt;/p&gt;
 
 &lt;p&gt;یه موضوع دیگه‌ای که مطرحه اینه که بیشتر در چه زمان‌هایی از شبانه‌روز اقدام به ارسال پست می‌کردم؟ حدس خودم اینه که شب‌ها بیشتر می‌نوشتم. داده‌ها هم این حدس رو تایید می‌کنن.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/daily_distribution.png" alt="Daily post distribution" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/daily_distribution.png" alt="Daily post distribution" /&gt;&lt;/p&gt;
 
 &lt;p&gt;البته خیلی هم مطابقت نداره با حدسم. بیشترین پست‌ها رو ساعت 20 شب منتشر کردم. در حالی که من حدس می‌زدم زمان ارسال‌هام چند ساعتی دیرتر باشن. این نکته هم جالبه که ساعت 2 و 3 بامداد و همچنین نیمه‌ی روز هیچوقت ارسال پست نداشتم.&lt;/p&gt;
 
@@ -352,23 +448,23 @@ error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C+
 
 &lt;p&gt;نمودار پایین هم توزیع پست‌ها بر اساس طولشون رو نشون میده. هر دسته بازه‌ای به طول 400 کلمه است.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/post_length_hist.png" alt="Daily post distribution" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/post_length_hist.png" alt="Daily post distribution" /&gt;&lt;/p&gt;
 
 &lt;p&gt;نکته‌ی دیگه‌ای که بهش پرداختم، بررسی رابطه‌ی بین طول پست و زمان ارسال پست بود. یعنی بعضی شبا که میشینم، با خودم هی فکر می‌کنم، آیا نتیجه‌اش این میشه که پست‌های طولانی می‌نویسم؟
 محور عمودی طول پست، و محور افقی زمان ارسال پست هست.
 شکل پایین این موضوع رو بررسی کرده.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/length_vs_time_scatter.png" alt="Post length vs. Publishing time scatter plot" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/length_vs_time_scatter.png" alt="Post length vs. Publishing time scatter plot" /&gt;&lt;/p&gt;
 
 &lt;p&gt;یا اگر جور دیگه‌ای بهش نگاه کنیم، اینطوری:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/length_vs_time_hex.png" alt="Post length vs. Publishing time hex plot" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/length_vs_time_hex.png" alt="Post length vs. Publishing time hex plot" /&gt;&lt;/p&gt;
 
 &lt;p&gt;این نمودار آخر به خوبی این ارتباط رو نشون میده. این که بیشتر شب‌ها پست‌های طولانی‌تری می‌نویسم.البته چون داده‌های زمانی ه صورت ترتیبی نیستن، بلکه دوری هستن، نمیشه یک رابطه‌ی خطی بینشون پیدا کرد. اگر بتونم راه‌حلی برای این مورد پیدا کنم، سعی می‌کنم فرمولی برای این رابطه به دست بیارم.&lt;/p&gt;
 
 &lt;p&gt;بجز این موارد چیز دیگه‌ای به ذهنم نرسید. یعنی بیشتر به تحلیل متن احتیاج داشتم، ولی همچین چیزی فعلاً بلد نیستم. تنها کاری که تونستم انجام بدم این بود که ماتریس شباهت پست‌هام رو به هم پیدا کردم. در شکل پایین ماتریس شباهت پست‌ها رو می‌بینید.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/post_similarity.png" alt="Post Similarity Matrix" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/post_similarity.png" alt="Post Similarity Matrix" /&gt;&lt;/p&gt;
 
 &lt;p&gt;انتظار دیدن همچین چیزی رو نداشتم. به طرز عجیبی بین سه تا از پست‌ها شباهت زیادی وجود داره، یعنی پست‌های "یه دوست خاص"، "متاسفم"، و "عصبانی". برام این موضوع خیلی عجیب بود. چون نباید این اتفاق میوفتاد. اینقدر شباهت در متن پست‌ها خیلی عجیبه. در نتیجه تصمیم گرفتم متن این پست‌ها رو به دقت و از نزدیک بررسی کنم. وقتی که این کار رو کردم به این نوشته در همه‌شون رسیدم:&lt;/p&gt;
 
@@ -389,21 +485,21 @@ error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C+
 
 &lt;p&gt;تو این مدت دو ساله، 77 پست رو ارسال کردم تو اون یکی بلاگم&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/timeline_raw.png" alt="Timeline post distribution" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/timeline_raw.png" alt="Timeline post distribution" /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/timeline_distribution.png" alt="Timeline post distribution" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/timeline_distribution.png" alt="Timeline post distribution" /&gt;&lt;/p&gt;
 
 &lt;p&gt;خیلی واضحه از روی پست که در یکسال اول، خیلی بیشتر از یکسال دوم پست نوشتم. شاید نشون میده که یکسال دوم، یعنی از یکسال پیش، آرامیش بیشتری به زندگیم حاکم بوده. از طرف دیگه شاید بشه گفت که  هیجان زندگیم کمتر شده، چیز کمتری بوده تو زندگیم که در موردش بنویسم. البته اگر به آخرهای این مدت زمان نگاهی بندازیم، میبینیم که باز شروع کرده بودم به مرتب نوشتن، ولی باز از حوصله افتادم و الان خیلی وقته که ننوشتم. درسته که فقط دوبار اتفاق افتاده، ولی شاید این تحلیل رو هم بشه کرد که در نزدیکی‌های سالگردها، خیلی کمتر نوشتم.&lt;/p&gt;
 
 &lt;p&gt;از نظر زمانی فکر می‌کردم بیشتر پست‌هام رو در روزهای آخر هفته می‌نوشتم. ولی این نمودار چیز دیگه‌ای رو نشون میده&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/weekly_distribution.png" alt="Weekly post distribution" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/weekly_distribution.png" alt="Weekly post distribution" /&gt;&lt;/p&gt;
 
 &lt;p&gt;اینطوری که مشخصه بیشترین پست‌هام رو در روز دوشنبه منتشر کردم. هر چند آخرهفته‌ها هم فعال بودم.&lt;/p&gt;
 
 &lt;p&gt;یه موضوع دیگه‌ای که مطرحه اینه که بیشتر در چه زمان‌هایی از شبانه‌روز اقدام به ارسال پست می‌کردم؟ حدس خودم اینه که شب‌ها بیشتر می‌نوشتم. داده‌ها هم این حدس رو تایید می‌کنن.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/daily_distribution.png" alt="Daily post distribution" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/daily_distribution.png" alt="Daily post distribution" /&gt;&lt;/p&gt;
 
 &lt;p&gt;البته خیلی هم مطابقت نداره با حدسم. بیشترین پست‌ها رو ساعت 20 شب منتشر کردم. در حالی که من حدس می‌زدم زمان ارسال‌هام چند ساعتی دیرتر باشن. این نکته هم جالبه که ساعت 2 و 3 بامداد و همچنین نیمه‌ی روز هیچوقت ارسال پست نداشتم.&lt;/p&gt;
 
@@ -411,23 +507,23 @@ error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C+
 
 &lt;p&gt;نمودار پایین هم توزیع پست‌ها بر اساس طولشون رو نشون میده. هر دسته بازه‌ای به طول 400 کلمه است.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/post_length_hist.png" alt="Daily post distribution" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/post_length_hist.png" alt="Daily post distribution" /&gt;&lt;/p&gt;
 
 &lt;p&gt;نکته‌ی دیگه‌ای که بهش پرداختم، بررسی رابطه‌ی بین طول پست و زمان ارسال پست بود. یعنی بعضی شبا که میشینم، با خودم هی فکر می‌کنم، آیا نتیجه‌اش این میشه که پست‌های طولانی می‌نویسم؟
 محور عمودی طول پست، و محور افقی زمان ارسال پست هست.
 شکل پایین این موضوع رو بررسی کرده.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/length_vs_time_scatter.png" alt="Post length vs. Publishing time scatter plot" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/length_vs_time_scatter.png" alt="Post length vs. Publishing time scatter plot" /&gt;&lt;/p&gt;
 
 &lt;p&gt;یا اگر جور دیگه‌ای بهش نگاه کنیم، اینطوری:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/length_vs_time_hex.png" alt="Post length vs. Publishing time hex plot" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/length_vs_time_hex.png" alt="Post length vs. Publishing time hex plot" /&gt;&lt;/p&gt;
 
 &lt;p&gt;این نمودار آخر به خوبی این ارتباط رو نشون میده. این که بیشتر شب‌ها پست‌های طولانی‌تری می‌نویسم.البته چون داده‌های زمانی ه صورت ترتیبی نیستن، بلکه دوری هستن، نمیشه یک رابطه‌ی خطی بینشون پیدا کرد. اگر بتونم راه‌حلی برای این مورد پیدا کنم، سعی می‌کنم فرمولی برای این رابطه به دست بیارم.&lt;/p&gt;
 
 &lt;p&gt;بجز این موارد چیز دیگه‌ای به ذهنم نرسید. یعنی بیشتر به تحلیل متن احتیاج داشتم، ولی همچین چیزی فعلاً بلد نیستم. تنها کاری که تونستم انجام بدم این بود که ماتریس شباهت پست‌هام رو به هم پیدا کردم. در شکل پایین ماتریس شباهت پست‌ها رو می‌بینید.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/post_similarity.png" alt="Post Similarity Matrix" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/post_similarity.png" alt="Post Similarity Matrix" /&gt;&lt;/p&gt;
 
 &lt;p&gt;انتظار دیدن همچین چیزی رو نداشتم. به طرز عجیبی بین سه تا از پست‌ها شباهت زیادی وجود داره، یعنی پست‌های "یه دوست خاص"، "متاسفم"، و "عصبانی". برام این موضوع خیلی عجیب بود. چون نباید این اتفاق میوفتاد. اینقدر شباهت در متن پست‌ها خیلی عجیبه. در نتیجه تصمیم گرفتم متن این پست‌ها رو به دقت و از نزدیک بررسی کنم. وقتی که این کار رو کردم به این نوشته در همه‌شون رسیدم:&lt;/p&gt;
 
@@ -440,7 +536,7 @@ error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C+
 &lt;p&gt;اگر بهتر به این ماتریس نگاه کنیم، تعدادی پست‌ها هستن که خیلی با پست‌های دیگه تفاوت دارن. اینا پست‌هایی هستن که توشون کلمات انگلیسی زیادی به کار برده شده. ولی بین بعضی دیگر از پست‌ها شباهت‌های خوبی هست. نیاز هست که دقیق‌تر این پست‌ها رو باز بررسی کنم.&lt;/p&gt;
 
 &lt;p&gt;نکته‌ی جالبی که رخ داد اینه که بیان دسترسیم رو بلاگم قطع کرده بخاطر اینکه درخواست زیاد فرستادم.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/09/windows-update-messes-up-drivers/</guid><link>http://erfannoury.github.io/2014/09/windows-update-messes-up-drivers/</link><author>ennry@outlook.com</author><category>Problem</category><category>Windows</category><category>Windows Update</category><title>حل مشکل درایورها پس از ایجاد مشکل توسط Windows Update</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.erfan.xyz/2014/09/windows-update-messes-up-drivers/</guid><link>http://blog.erfan.xyz/2014/09/windows-update-messes-up-drivers/</link><author>ennry@outlook.com</author><category>Problem</category><category>Windows</category><category>Windows Update</category><title>حل مشکل درایورها پس از ایجاد مشکل توسط Windows Update</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;چند روز پیش سری به قسمت آپدیت‌های ویندوز آپدیت زدم. من خودم نصب آپدیت‌های ویندوز را در حالت خودکار گذاشتم ولی هر از چند گاهی به قسمت آپدیت‌های ویندوز سر می‌زنم تا ببینم آپدیت‌های اختیاری جدیدی وجود دارند یا نه. این با که به این قسمت سر زدم، با آپدیت جدیدی برای درایور Intel HD Graphics مواجه شدم. اینتل از چند نسل قبل در پردازنده‌های خود یک پردازنده‌ی گرافیکی نیز تعبیه کرده است. این پردازنده‌ی گرافیکی با اینکه در ابتدا توان بسیاری نداشت، ولی در نسل‌های اخیر پردازنده‌های اینتل به پردازنده‌ی بسیار قدرتمندی تبدیل شده است. همچنین به دلیل یکپارچه بودن با پردازنده، ویندوز بسیاری از پردازش‌های گرافیکی را توسط این پردازنده‌ی گرافیکی انجام می‌دهد. در این صورت بار محاسباتی بر روی پردازنده‌ی اصلی کمتر شده و همچنین مصرف برق نیز کاهش میابد. به همین خاطر است که بروزرسانی درایور این پردازنده‌ی گرافیکی در بهتر کردن تجربه‌ی کاربری ویندوز مفید است.
 البته این بار بعد از به روزرسانی درایور پردازنده‌ی گرافیکی اینتل از طریق Windows Update مشکلی رخ داد. اولین مشکل عمده این بود که امکان تغییر روشنایی نمایشگر از بین رفت و نمایشگر در روشن‌ترین حالت خود قرار گرفت و این آزاردهنده بود. مشکل دوم این بود که کیفیت تصویر به میزان بسیار قابل توجهی کاهش یافت و این مشکل، حتی بیشتر آزاردهنده بود. پس از نصب چندین و چند باره‌ی انواع درایور دیگر که اتفاقاً جدیدترین درایورها از طرف اینتل و همچنین Lenovo بودند، باز این مشکل برطرف نشد.&lt;/p&gt;
@@ -474,7 +570,7 @@ error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C+
 &lt;li&gt;در نهایت، در صفحه‌ای که باز می‌شود، از لیست موجود، درایوری از تاریخی گذشته را که سخت‌افزار بدون مشکل عمل می‌کرد انتخاب نمایید. توجه کنید که تیک قسمت &lt;code&gt;Show Compatible Hardware&lt;/code&gt; زده شده باشد.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/device-manager.png" alt="Device Manager - Revert to old driver software" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/device-manager.png" alt="Device Manager - Revert to old driver software" /&gt;&lt;/p&gt;
 
 &lt;p&gt;با انجام این دستورات، می‌توانید درایور سخت‌افزاری مورد نظر را به تاریخی گذشته برگردانید و مشکل را حل نمایید.&lt;/p&gt;
 </description><pubDate>Wed, 10 Sep 2014 19:30:00 Z</pubDate><a10:updated>2014-09-10T19:30:00Z</a10:updated><a10:content type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
@@ -511,10 +607,10 @@ error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C+
 &lt;li&gt;در نهایت، در صفحه‌ای که باز می‌شود، از لیست موجود، درایوری از تاریخی گذشته را که سخت‌افزار بدون مشکل عمل می‌کرد انتخاب نمایید. توجه کنید که تیک قسمت &lt;code&gt;Show Compatible Hardware&lt;/code&gt; زده شده باشد.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src="http://erfannoury.github.io/stylesheets/images/device-manager.png" alt="Device Manager - Revert to old driver software" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/device-manager.png" alt="Device Manager - Revert to old driver software" /&gt;&lt;/p&gt;
 
 &lt;p&gt;با انجام این دستورات، می‌توانید درایور سخت‌افزاری مورد نظر را به تاریخی گذشته برگردانید و مشکل را حل نمایید.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/08/singularity-1-on-1/</guid><link>http://erfannoury.github.io/2014/08/singularity-1-on-1/</link><author>ennry@outlook.com</author><category>AI</category><category>Youtube</category><title>Ray Kurzweil on Singularity 1 on 1</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.erfan.xyz/2014/08/singularity-1-on-1/</guid><link>http://blog.erfan.xyz/2014/08/singularity-1-on-1/</link><author>ennry@outlook.com</author><category>AI</category><category>Youtube</category><title>Ray Kurzweil on Singularity 1 on 1</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;امروز این گفتگو رو پیدا کردم. گفتگوی جالبی هست. پیشنهاد می‌کنم ببینید حتماً.&lt;/p&gt;
 
@@ -524,66 +620,4 @@ error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C+
 &lt;p&gt;امروز این گفتگو رو پیدا کردم. گفتگوی جالبی هست. پیشنهاد می‌کنم ببینید حتماً.&lt;/p&gt;
 
 &lt;iframe width="640" height="360" src="https://www.youtube.com/embed/CEt3x3GJyKY?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
-</a10:content></item><item><guid isPermaLink="true">http://erfannoury.github.io/2014/08/opencv-python-starter/</guid><link>http://erfannoury.github.io/2014/08/opencv-python-starter/</link><author>ennry@outlook.com</author><category>OpenCV</category><category>Programming</category><category>Python</category><category>Starter Code</category><category>Tutorial</category><title>OpenCV Python Starter Code</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
-
-&lt;p&gt;معمولاً رسم هست که اولین کد در هر زبان برنامه‌نویسی رو با چاپ کردن عبارت &lt;code&gt;Hello World&lt;/code&gt; در خروجی شروع می‌کنند.&lt;/p&gt;
-
-&lt;p&gt;ولی جدای از زبان‌های برنامه‌نویسی گاهی نیاز هست به سرعت بفهمیم آیا تنظیم و نصب یک کتابخانه‌ی مشخص در یک زبان برنامه‌نویسی به درستی انجام گرفته یا نه. برای اینکار لازمه تکه‌کد کوچکی رو با استفاده از این کتابخانه اجرا کنیم تا به مشکلات در صورت وجود پی ببریم. معمولاً پیدا کردن همچین تکه‌کدهای کوتاه کار راحتی نیست و بیشتر از اون که باید، گاهی زمان می‌بره. به همین دلیل تصمیم گرفتم از این به بعد کدهای کوچکی با عنوان Starter Code برای کتابخانه‌هایی که استفاده می‌کنم بر روی این وبلاگ قرار بدهم تا به عنوان یک راهنمای کوتاه برای انجام این امر باشه.&lt;/p&gt;
-
-&lt;p&gt;به عنوان اولین پست از این مجموعه، تکه کدی رو قرار می‌دهم تا بشه باهاش به سرعت کتابخانه‌ی &lt;code&gt;OpenCV&lt;/code&gt; رو در پایتون امتحان کرد.&lt;/p&gt;
-
-&lt;h3&gt;نمونه کد&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;import numpy as np
-import cv2
-
-# Open the webcam to grab frames and display them
-cap = cv2.VideoCapture(0)
-
-while(True):
-    ret, frame = cap.read()
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    cv2.imshow('frame',gray)
-    if cv2.waitKey(1) &amp;amp; 0xFF == ord('q'):
-        break
-
-# When everything done, release the capture
-cap.release()
-cv2.destroyAllWindows()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Sample code source: [&lt;a href="http://opencv-python-tutroals.readthedocs.org/en/latest/py_tutorials/py_gui/py_video_display/py_video_display.html"&gt;OpenCV-Python-Tutorials&lt;/a&gt;]&lt;/p&gt;
-
-&lt;p&gt;این کد، ابتدا کتابخانه‌های لازم را بارگزاری می‌کنه. سپس اولین فریم از تصویر از وب‌کم گرفته میشه. بعد در یک لوپ تکرار شونده، در ابتدا یک فریم جدید از وب‌کم گرفته میشه، سپس با تبدیل نمایش فریم گرفته شده از حالت رنگی به سیاه‌سفید، تصویر نهایی در خروجی نمایش داده میشه. در نهایت هرگاه کلید &lt;code&gt;q&lt;/code&gt; توسط کاربر وارد بشه، برنامه از لوپ خارج شده و نمایش تصاویر از وب‌کم متوقف میشه.&lt;/p&gt;
-</description><pubDate>Wed, 20 Aug 2014 19:30:00 Z</pubDate><a10:updated>2014-08-20T19:30:00Z</a10:updated><a10:content type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
-
-&lt;p&gt;معمولاً رسم هست که اولین کد در هر زبان برنامه‌نویسی رو با چاپ کردن عبارت &lt;code&gt;Hello World&lt;/code&gt; در خروجی شروع می‌کنند.&lt;/p&gt;
-
-&lt;p&gt;ولی جدای از زبان‌های برنامه‌نویسی گاهی نیاز هست به سرعت بفهمیم آیا تنظیم و نصب یک کتابخانه‌ی مشخص در یک زبان برنامه‌نویسی به درستی انجام گرفته یا نه. برای اینکار لازمه تکه‌کد کوچکی رو با استفاده از این کتابخانه اجرا کنیم تا به مشکلات در صورت وجود پی ببریم. معمولاً پیدا کردن همچین تکه‌کدهای کوتاه کار راحتی نیست و بیشتر از اون که باید، گاهی زمان می‌بره. به همین دلیل تصمیم گرفتم از این به بعد کدهای کوچکی با عنوان Starter Code برای کتابخانه‌هایی که استفاده می‌کنم بر روی این وبلاگ قرار بدهم تا به عنوان یک راهنمای کوتاه برای انجام این امر باشه.&lt;/p&gt;
-
-&lt;p&gt;به عنوان اولین پست از این مجموعه، تکه کدی رو قرار می‌دهم تا بشه باهاش به سرعت کتابخانه‌ی &lt;code&gt;OpenCV&lt;/code&gt; رو در پایتون امتحان کرد.&lt;/p&gt;
-
-&lt;h3&gt;نمونه کد&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;import numpy as np
-import cv2
-
-# Open the webcam to grab frames and display them
-cap = cv2.VideoCapture(0)
-
-while(True):
-    ret, frame = cap.read()
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    cv2.imshow('frame',gray)
-    if cv2.waitKey(1) &amp;amp; 0xFF == ord('q'):
-        break
-
-# When everything done, release the capture
-cap.release()
-cv2.destroyAllWindows()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Sample code source: [&lt;a href="http://opencv-python-tutroals.readthedocs.org/en/latest/py_tutorials/py_gui/py_video_display/py_video_display.html"&gt;OpenCV-Python-Tutorials&lt;/a&gt;]&lt;/p&gt;
-
-&lt;p&gt;این کد، ابتدا کتابخانه‌های لازم را بارگزاری می‌کنه. سپس اولین فریم از تصویر از وب‌کم گرفته میشه. بعد در یک لوپ تکرار شونده، در ابتدا یک فریم جدید از وب‌کم گرفته میشه، سپس با تبدیل نمایش فریم گرفته شده از حالت رنگی به سیاه‌سفید، تصویر نهایی در خروجی نمایش داده میشه. در نهایت هرگاه کلید &lt;code&gt;q&lt;/code&gt; توسط کاربر وارد بشه، برنامه از لوپ خارج شده و نمایش تصاویر از وب‌کم متوقف میشه.&lt;/p&gt;
 </a10:content></item></channel></rss>
