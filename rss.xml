@@ -1,4 +1,10 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>تکنیکال اِنری</title><link>http://blog.erfan.xyz/rss.xml</link><description>تکنیکال اِنری</description><item><guid isPermaLink="true">http://blog.erfan.xyz/2015/09/installing-theano-2/</guid><link>http://blog.erfan.xyz/2015/09/installing-theano-2/</link><author>ennry@outlook.com</author><category>AI</category><category>Deep Learning</category><category>Machine Learning</category><category>Python</category><title>نصب کتابخانه‌ی Theano در ویندوز (به‌روزرسانی)</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>تکنیکال اِنری</title><link>http://blog.erfan.xyz/rss.xml</link><description>تکنیکال اِنری</description><item><guid isPermaLink="true">http://blog.erfan.xyz/2015/09/new-address/</guid><link>http://blog.erfan.xyz/2015/09/new-address/</link><author>ennry@outlook.com</author><category>General</category><title>آدرس جدید!</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;راستی آدرس اینجا هم تغییر کرده. یعنی علاوه بر اینکه میشه با آدرس قبلی &lt;a href="http://erfannoury.github.io"&gt;http://erfannoury.github.io&lt;/a&gt; به اینجا دسترسی پیدا کرد، حالا آدرس &lt;a href="http://blog.erfan.xyz"&gt;http://blog.erfan.xyz&lt;/a&gt; هم اضافه شده. با این آدرس هم میشه به بلاگ دسترسی پیدا کرد. &lt;/p&gt;
+</description><pubDate>Fri, 04 Sep 2015 19:30:00 Z</pubDate><a10:updated>2015-09-04T19:30:00Z</a10:updated><a10:content type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;راستی آدرس اینجا هم تغییر کرده. یعنی علاوه بر اینکه میشه با آدرس قبلی &lt;a href="http://erfannoury.github.io"&gt;http://erfannoury.github.io&lt;/a&gt; به اینجا دسترسی پیدا کرد، حالا آدرس &lt;a href="http://blog.erfan.xyz"&gt;http://blog.erfan.xyz&lt;/a&gt; هم اضافه شده. با این آدرس هم میشه به بلاگ دسترسی پیدا کرد. &lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.erfan.xyz/2015/09/installing-theano-2/</guid><link>http://blog.erfan.xyz/2015/09/installing-theano-2/</link><author>ennry@outlook.com</author><category>AI</category><category>Deep Learning</category><category>Machine Learning</category><category>Python</category><title>نصب کتابخانه‌ی Theano در ویندوز (به‌روزرسانی)</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;بعد از پست قبلی در مورد نصب Theano بر روی ویندوز، تغییرات زیادی در این زمینه و کتابخانه‌های یادگیری عمیق و وضعیت نصب اونها روی ویندوز ایجاد شده. این پست به نوعی به‌روزرسانی بر روی موضوع نصب این کتابخانه‌ی پایه‌ای و بعد معرفی یک کتابخانه‌ی جدیده.&lt;/p&gt;
 
@@ -11,7 +17,8 @@
 بعد از اینکه همه‌ی اینها رو نصب کردم و مطمئن شدم که همه‌ی چیزهای لازم در مسیر سیستم قرار گرفتن رفتم سراغ نصب Theano.&lt;/p&gt;
 
 &lt;p&gt;اولین مشکلی که خوردم این بود که وقتی از gcc می‌خواست استفاده کنه خطای عدم وجود فایل‌های لازم برای پایتون رو میداد. رفتم خوب مسیر پایتون (پوشه‌ی libs) رو بررسی کردم. دیدم که همه چیز درسته.
-بعد از کمی جستجو، فهمیدم که gcc نیاز به فایل‌های کتابخانه‌ای با فرمت &lt;code&gt;libpython27.a&lt;/code&gt; داره، نه &lt;code&gt;python27.lib&lt;/code&gt;. بنابراین باید اول این فایل رو پیدا (یا درست) می‌کردم و بعد در همون پوشه قرار میدادم. بعد از اینکار یکی از مشکلات کامپایل حل شد.&lt;/p&gt;
+بعد از کمی جستجو، فهمیدم که gcc نیاز به فایل‌های کتابخانه‌ای با فرمت &lt;code&gt;libpython27.a&lt;/code&gt; داره، نه &lt;code&gt;python27.lib&lt;/code&gt;. بنابراین باید اول این فایل رو پیدا (یا درست) می‌کردم و بعد در همون پوشه قرار میدادم. بعد از اینکار یکی از مشکلات کامپایل حل شد. 
+برای حل مشکل به &lt;a href="https://github.com/Theano/Theano/issues/2867"&gt;این لینک&lt;/a&gt; یه نگاهی بندازید.&lt;/p&gt;
 
 &lt;p&gt;مشکل دیگه یه مشکل خیلی عجیب بود. اینکه &lt;code&gt;C:\Windows\System32&lt;/code&gt; تو مسیرهای سیستمی نبود. خیلی عجیب بود این موضوع برام و باعث ایجاد کلی مشکل و گرفتن کلی وقت شد. ولی بعد از اضافه کردن مسیر، کتابخانه به صورت کامل کامپایل شد.&lt;/p&gt;
 
@@ -59,7 +66,8 @@ root=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.0
 بعد از اینکه همه‌ی اینها رو نصب کردم و مطمئن شدم که همه‌ی چیزهای لازم در مسیر سیستم قرار گرفتن رفتم سراغ نصب Theano.&lt;/p&gt;
 
 &lt;p&gt;اولین مشکلی که خوردم این بود که وقتی از gcc می‌خواست استفاده کنه خطای عدم وجود فایل‌های لازم برای پایتون رو میداد. رفتم خوب مسیر پایتون (پوشه‌ی libs) رو بررسی کردم. دیدم که همه چیز درسته.
-بعد از کمی جستجو، فهمیدم که gcc نیاز به فایل‌های کتابخانه‌ای با فرمت &lt;code&gt;libpython27.a&lt;/code&gt; داره، نه &lt;code&gt;python27.lib&lt;/code&gt;. بنابراین باید اول این فایل رو پیدا (یا درست) می‌کردم و بعد در همون پوشه قرار میدادم. بعد از اینکار یکی از مشکلات کامپایل حل شد.&lt;/p&gt;
+بعد از کمی جستجو، فهمیدم که gcc نیاز به فایل‌های کتابخانه‌ای با فرمت &lt;code&gt;libpython27.a&lt;/code&gt; داره، نه &lt;code&gt;python27.lib&lt;/code&gt;. بنابراین باید اول این فایل رو پیدا (یا درست) می‌کردم و بعد در همون پوشه قرار میدادم. بعد از اینکار یکی از مشکلات کامپایل حل شد. 
+برای حل مشکل به &lt;a href="https://github.com/Theano/Theano/issues/2867"&gt;این لینک&lt;/a&gt; یه نگاهی بندازید.&lt;/p&gt;
 
 &lt;p&gt;مشکل دیگه یه مشکل خیلی عجیب بود. اینکه &lt;code&gt;C:\Windows\System32&lt;/code&gt; تو مسیرهای سیستمی نبود. خیلی عجیب بود این موضوع برام و باعث ایجاد کلی مشکل و گرفتن کلی وقت شد. ولی بعد از اضافه کردن مسیر، کتابخانه به صورت کامل کامپایل شد.&lt;/p&gt;
 
@@ -610,14 +618,4 @@ error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C+
 &lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/device-manager.png" alt="Device Manager - Revert to old driver software" /&gt;&lt;/p&gt;
 
 &lt;p&gt;با انجام این دستورات، می‌توانید درایور سخت‌افزاری مورد نظر را به تاریخی گذشته برگردانید و مشکل را حل نمایید.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://blog.erfan.xyz/2014/08/singularity-1-on-1/</guid><link>http://blog.erfan.xyz/2014/08/singularity-1-on-1/</link><author>ennry@outlook.com</author><category>AI</category><category>Youtube</category><title>Ray Kurzweil on Singularity 1 on 1</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
-
-&lt;p&gt;امروز این گفتگو رو پیدا کردم. گفتگوی جالبی هست. پیشنهاد می‌کنم ببینید حتماً.&lt;/p&gt;
-
-&lt;iframe width="640" height="360" src="https://www.youtube.com/embed/CEt3x3GJyKY?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
-</description><pubDate>Thu, 21 Aug 2014 19:30:00 Z</pubDate><a10:updated>2014-08-21T19:30:00Z</a10:updated><a10:content type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
-
-&lt;p&gt;امروز این گفتگو رو پیدا کردم. گفتگوی جالبی هست. پیشنهاد می‌کنم ببینید حتماً.&lt;/p&gt;
-
-&lt;iframe width="640" height="360" src="https://www.youtube.com/embed/CEt3x3GJyKY?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 </a10:content></item></channel></rss>
