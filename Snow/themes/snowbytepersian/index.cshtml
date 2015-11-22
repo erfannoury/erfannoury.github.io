@@ -32,12 +32,12 @@
      @if (Model.HasPreviousPage) {
       if (Model.PreviousPage == 1) {
       <p class="previous">
-        <a href="/">صفحه‌ی قبلی</a>
+        <a href="/">صفحه‌ی قبلی | Previous page</a>
       </p>
       }
       else {
       <p class="previous">
-        <a href="/page@(Model.PreviousPage)">صفحه‌ی قبلی</a>
+        <a href="/page@(Model.PreviousPage)">صفحه‌ی قبلی | Previous page</a>
         </p>
       }
     }
@@ -50,7 +50,7 @@
 
     @if (Model.HasNextPage) {
     <p class="previous">
-      <a href="/page@(Model.NextPage)">صفحه‌ی بعدی</a>
+      <a href="/page@(Model.NextPage)">صفحه‌ی بعدی | Next page</a>
     </p>
     }
 
