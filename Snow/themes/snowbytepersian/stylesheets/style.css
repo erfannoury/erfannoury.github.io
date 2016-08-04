@@ -1,15 +1,15 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
-@font-face{
-    font-family: 'Noto Naskh Arabic';
-    src:
-        local('fonts/NotoNaskhArabic-Bold.ttf')
-        local('fonts/NotoNaskhArabic-Regular.ttf')
+@import url(fontiran.css); /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
+body {
+	font-family: IRANSans !important;
+	font-weight: 300;
+	direction: rtl;
+	background-color: #E2E2E2;
+	margin: 0;
 }
-
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
     border: 0;
-    font-family: inherit;
+    font-family: IRANSans;
     font-size: 100%;
     font-style: inherit;
     font-weight: inherit;
@@ -73,7 +73,7 @@ a img {
 
 body, button, input, select, textarea {
     color: #404040;
-    font-family: "Noto Naskh Arabic", sans-serif;
+    font-family: IRANSans;
     font-size: 16px;
     font-size: 1.6rem;
     line-height: 1.5;
@@ -81,7 +81,7 @@ body, button, input, select, textarea {
 
 h1, h2, h3, h4, h5, h6 {
     clear: both;
-    font-family: "Noto Naskh Arabic", 'Source Sans Pro', sans-serif;
+    font-family: IRANSans;
 }
 
 hr {
@@ -94,7 +94,7 @@ hr {
 p {
     margin-bottom: 1em;
     margin-bottom: 1em;
-    font-family: "Noto Naskh Arabic"
+    font-family: IRANSans;
 }
 
 ul, ol {
@@ -131,7 +131,7 @@ dfn, cite, em, i {
 }
 
 blockquote {
-    font-family: "Noto Naskh Arabic", Georgia,"Bitstream Charter",serif;
+    font-family: IRANSans;
     font-style: italic;
     margin: 0.8em 1.5em;
     border-left: 4px #dfdfdf solid;
@@ -424,11 +424,11 @@ img.aligncenter {
     cursor: pointer;
 }
 .menu {
-    font-family: "Noto Naskh Arabic";
+font-family: IRANSans;
 }
 
 .meta {
-    font-family: "Noto Naskh Arabic";
+    font-family: IRANSans;  
 }
 
 .main-small-navigation .menu {
@@ -899,7 +899,7 @@ h4, h5, h6 {
     clear: both;
     padding: 40px 0;
     text-align: center;
-    font-family: "Noto Naskh Arabic";
+    font-family: IRANSans;
 }
 
     .site-footer, .site-footer a {
@@ -1362,7 +1362,7 @@ kbd {
   border-style: solid solid none;
   border-width: 1px 1px medium;
   color: #444444;
-  font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif;
+  font-family: IRANSans;
   font-size: 11px;
   font-weight: bold;
   white-space: nowrap;
