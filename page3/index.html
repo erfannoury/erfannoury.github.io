@@ -29,7 +29,7 @@
 
 
 
-   <link rel="canonical" href="http://blog.erfan.xyz/2014/12/1024-vs-1000/" />
+   <link rel="canonical" href="http://blog.erfan.xyz/page3/" />
    <script type="text/javascript">
       window.heap=window.heap||[],heap.load=function(t,e){window.heap.appid=t,window.heap.config=e;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+t+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(t){return function(){heap.push([t].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
       heap.load("2204913712");
@@ -69,70 +69,76 @@
                 <div id="content" role="main">
                   
 
-<div class="post">
-    <h1 class="post-title">1024 vs. 1000</h1> 
+  <ul class="posts">
+    <li class="post">
+      <h1><a href="/2014/04/first-post/">اولین پست، ولی آزمایشی</a></h1>
       <div class="meta">
-        <p class="posted"><i class="fa fa-calendar"></i> 07 Dec 2014</p>
+        <p class="posted"><i class="fa fa-calendar"></i> 16 Apr 2014</p>
         <ul class="categories">
         <i class="fa fa-tag"></i>
-          <li><a href="/category/fun" title="Snow.Models.Category">Fun</a></li>
+          <li><a href="/category/بلاگ" title="بلاگ">بلاگ</a></li>
+          <li><a href="/category/عمومی" title="عمومی">عمومی</a></li>
         </ul>
       </div>
+      
+      <h1>به نام خدا</h1>
 
-      <!--div class="addthis_toolbox addthis_default_style" style="float:right;">
-        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-        <a class="addthis_button_tweet"></a>
-        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-        <a class="addthis_button_linkedin_counter"></a>
-        <a class="addthis_counter addthis_pill_style"></a>
-      </div-->
-    </div>
-    
-    
-        
-    <h1>به نام خدا</h1>
+<p>این یک آزمایش است.</p>
 
-<p>راستش رو بخوایید من هم هنوز دقیق نمی‌دونم وقتی به مدل‌های مختلفی می‌نویسن منظور کدومه.</p>
+<p>This is only a test.</p>
 
-<p><img src="http://imgs.xkcd.com/comics/kilobyte.png" alt="1024 vs. 1000" /></p>
+<p>بعد از اینکه  دیدم سایت <a href="www.koding.com">Koding</a> داون شد، دیدم که مطمئن‌ترین جا برای نوشتن این پست‌ها، همین کامپیوتر خودم هست. بخاطر همین هم Octopress و Jekyll رو کلاً انداختم کنار و رو آوردم به the real thing، یعنی .Net :دی</p>
 
+<p>الان دارم از یک نسخه‌ی تغییر یافته از پروژه‌ی <a href="https://github.com/Sandra/Sandra.Snow">Sandra.Snow</a> استفاده می‌کنم. بعضی تغییرات رو توش اعمال کردم تا کلاً بلاگ برای نمایش فارسی بهتر بشه. البته از کد جاوااسکریپ <a href="https://github.com/hasenj/bidiweb">bidiweb</a> هم استفاده کردم تا متونی که احیاناً بخاطر تغییر زبان به هم بریزن رو درست بکنه. همچنین از کتابخونه‌ی خیلی خوب <a href="http://mathjax.org">MathJax</a> هم برای نمایش \(\LaTeX\) استفاده کردم. بعضی وقتا شاید به درد بخورن. </p>
 
-    <div id="disqus_thread"></div>
-<script>
-    var reset_disqus = function(){
-        DISQUS.reset({
-            reload: true,
-            config: function () {
-                //this.page.identifier = '';
-                this.page.url = 'http://blog.erfan.xyz/2014/12/1024-vs-1000/';
-                //this.page.title = '';
-            }
-        });
-    };
+<p>حالا یکم قابلیت‌هایش رو تست بکنیم.</p>
 
-    var disqus_shortname = 'enrygithubpages';
-    var disqus_url = 'http://blog.erfan.xyz/2014/12/1024-vs-1000/';
+<p>This is a text written in English, and yes it is displayed correctly (not that it wouldn't normally :D)</p>
 
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+<p>این هم یه تیکه کد:</p>
 
-    window.addEventListener('orientationchange', reset_disqus);
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    
-    <!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-****"></script>-->
-    <script type="text/javascript" src="/javascripts/bidiweb.build.js"> </script>
-    <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function()
+<pre><code>using System;
+
+public class test
+{
+    public static void Main(string[] args)
     {
-        bidiweb.style('.site-content  *');
-    });
-    </script>
-</div>
+        Console.WriteLine("Hello World, from Sandra.Snow!");
+    }
+}
+</code></pre>
+
+<p>و حالا یکم ریاضی درون یک نوشته‌ی انگلیسی</p>
+
+<p>When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
+
+<p>و همون پاراگراف قبلی به صورت یک پاراگراف فارسی</p>
+
+<p>هرگاه \(a \ne 0\)، دو پاسخ برای معادله‌ی \(ax^2 + bx + c = 0\) داریم که برابر هستند با:
+$$ x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2 a}$$.</p>
+
+<p>و همین دیگه. امیدوارم اونطوری که می‌خوام بتونم بنویسم اینجا و برای خودم و دیگران هم مفید باشه.</p>
+
+<p>تا پستِ بعدی :)</p>
+
+      <!--<p><a href="/2014/04/first-post/">ادامه‌ی مطلب</a></p>-->
+    </li>
+    <hr/>
+  </ul>
+
+  <!-- Pagination links -->
+  <div id="post-pagination" class="pagination">
+
+
+      <p class="previous">
+        <a href="/page2">صفحه‌ی قبلی | Previous page</a>
+        </p>
+
+
+
+  </div>
+
                 </div>
                 <!-- #content -->
             </div>

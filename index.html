@@ -4,19 +4,29 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2016-08-04T18:52:22.3554511+04:30" />
+    <meta http-equiv="last-modified" content="2016-11-21T00:19:37.8395347+03:30" />
     <meta name="keywords" content="" />
-    <title>Technical Enry</title>
+    <title>The Gradient</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <script type="text/javascript"
         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
-    <script type="text/javascript">    
+    <!--<script type="text/javascript">    
         MathJax.Hub.Config({    
             "HTML-CSS": { scale:100}    
         });    
+    </script>-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+            }
+        });
     </script>
+
 
 
    <link rel="canonical" href="http://blog.erfan.xyz/" />
@@ -61,6 +71,100 @@
 
   <ul class="posts">
     <li class="post">
+      <h1><a href="/2016/11/iqa-iclr2017/">Paper notes for &quot;A Context-aware Attention Network for Interactive Question Answering&quot;</a></h1>
+      <div class="meta">
+        <p class="posted"><i class="fa fa-calendar"></i> 19 Nov 2016</p>
+        <ul class="categories">
+        <i class="fa fa-tag"></i>
+          <li><a href="/category/Deep Learning" title="Deep Learning">Deep Learning</a></li>
+          <li><a href="/category/NLP" title="NLP">NLP</a></li>
+          <li><a href="/category/Paper Notes" title="Paper Notes">Paper Notes</a></li>
+        </ul>
+      </div>
+      
+      <h1>به نام خدا</h1>
+
+<p>I just read this paper that is submitted to ICRL 2017 and thought that I might write my notes as a post in the blog. It is a quite interesting and useful habit to publish these notes, but I have been a little lazy before. I'll try to publish more from now on.</p>
+
+<h1>A Context-aware Attention Network for Interactive Question Answering</h1>
+
+<p><a href="http://webpages.uncc.edu/~hli38/">Huayu Li</a>, Martin Renqiang Min, Yong Ge, Asim Kadav</p>
+
+<p>Link(s): <a href="https://openreview.net/forum?id=SkyQWDcex">OpenReview</a></p>
+
+<h2>Summary</h2>
+
+<p>It is an extension of the encoder-decoder framework for the task of question answering, which has two levels of attention when encoding sentences of the story and also when encoding the words of each sentence. Although "attention" term is used throughout the paper, "importance weighting" would better convey the idea of the paper. In addition to this, the other novelty of the paper is introducing a feedback mechanism for when the model doesn't have enough information to generate a correct answer. To test their model's ability to ask question from a user and obtain feedback, they also introduce a new dataset based on bAbI, named "ibAbI".</p>
+
+<h2>More in depth</h2>
+
+<p>This architecture consists of three main modules:</p>
+
+<ol>
+<li>Question Module</li>
+<li>Story Module</li>
+<li>Answer Module</li>
+</ol>
+
+<p>Let's start by first looking at this figure from the paper.</p>
+
+<p><img src="/stylesheets/images/iqa-figure2.png" alt="Figure 2 from paper schematically showing the three modules used in the network architecture" /></p>
+
+<p>In the problem of textual question answering, we are given a question sentence and a sequence of story sentences. The goal is to find the answer to the question given the story sentences. Each sentence is a sequence of words.</p>
+
+<h3>Question Module</h3>
+
+<p>Given a question sentence as a sequence of words, $(\omega^q _ 1,\cdots,\omega _ {N _ q}^q)$, each word is first embedded using an embedding matrix \(\boldsymbol{W} _ \omega\). To achieve an encoding which takes the sequential nature of this sentence into account, a \(GRU _ \omega\) is used. Usually the last hidden state of the recurrent model is used as the encoding of a sequence. However, in this work, they use importance weighting (or "attention") to obtain the encoding of the sequence, using hidden states of the GRU throughout the sequence. To determine the importance of the hidden state at each time step, its similarity with a vector \(\mathbf{v}\) is used. This vector is learned jointly with the model. Although in general it doesn't look like a good idea to use a static vector to assess the importance of each word in a question sentence, however in this case, given mostly short questions, it seems to work. A better approach would be to use techniques like coattention, i.e. to use representation from the input sentences to assess the importance of words in the question sentence. In addition, it would be much better if results without this static attention were also reported, to show how much, if any, is this approach beneficial to the overall system. Anyways, after normalizing the "attention" weights using softmax, weighted some of hidden states is calculated and using a one-layer linear MLP, is projected into "context-level" vector space, thus</p>
+
+<p>$$ \mathbf{u} = \mathbf{W} _ {ch} \sum _ {j=1}^{N _ q} \gamma _ j \mathbf{g} _ j ^ q + b _ c ^ {(q)} $$</p>
+
+<p>So we have vector $\mathbf{u}$ as the vector representation of the question sentence.</p>
+
+<h3>Input Module</h3>
+
+<h4><strong>Sentence Encoder</strong></h4>
+
+<p>"Input module aims at generating a representation for input sentences, including a sentence encoder
+and a context encoder". Input module is given a number of sentences each containing $N _ t$ words. Sentence encoder will encode each sentence into a vector representation, and then the context encoder will encode the sequence of sentence embeddings into a sequence of contextual embeddings, embeddings that take context into account. Let's start from the sentence encoder. As usual each word is embedded first using the embedding matrix $\boldsymbol{W} _ \omega$ (embedding matrices are shared in all modules). Then using a GRU, $GRU _ \omega$, these embeddings are transformed into a sequence of hidden states, $(\mathbf{h} ^ t _ 1, \cdots, \mathbf{h} ^ t _ {N _ t}).$ After this, the important step of word-level attention occurs. What is important and one of the main novelties of this work, is that contextual information from previous sentences is used in this step. </p>
+
+<p><img src="/stylesheets/images/sentence-enc-iqa.png" alt="A hand-drawn diagram of the sentence encoder" /></p>
+
+<p>The diagram above is the missing figure from the paper! Well, just kidding. Figure 2 from paper is quite informative. This is just a supplementary diagram to make things more clear.</p>
+
+<p>As can be seen in the figure above, after using a GRU's hidden states as preliminary representation of the input sentence words, a context vector from the last input sentence is used to transform hidden state representations to another representation which takes the overall context of previous sentences into account. For this transformation, a two layer MLP is used (Equation 5) to obtain the sequence of "context-injected" representations of sentence $l _ t$, $(\mathbf{e} ^ t _ 1, \cdots, \mathbf{e} ^ t _ {N _ t})$. Afterwards, vector representation of the question, $\mathbf{u}$, is used to obtain importance weighting of the words in the sentence and these weights, after being normalized, are used to get a weighted sum of the representations of words of sentence, $\mathbf{y} _ t$. This vector representation of sentence $l _ t$ not only has word-level attention, but also context from previous sentences have been taken into account.</p>
+
+<p>A question that comes to mind is why this attention mechanism isn't incorporated inside the GRU itself? Although the current architecture has allowed the model to have shared parameters in GRUs when encoding the question, input sentences, and the feedback sentence, but it would be interesting to see how the model would perform if attention was baked into the GRU, like the Attentional GRU in the DMN+[1] paper.</p>
+
+<h4><strong>Context Encoder</strong></h4>
+
+<p>Context encoder simply uses another GRU, $GRU _ s$, to encode sequence of sentence representations from the sentence encoder into another sequence $(\mathbf{s} _ 1, \cdots, \mathbf{s} _ N)$. This lets the model encode the sequential structure into the representation obtained from the sentence encoder. Afterwards, just like the sentence encoder, inner product with question representation $\mathbf{u}$ is used to weight importance of each representation in the sequence of sentences. These weights are then used to get the input encoding vector $\mathbf{m}$ (Equations 8 and 9).</p>
+
+<h3>Answer Module</h3>
+
+<p>As clearly can be seen, this architecture is an extension of attention-less sequence to sequence models. It has the bottleneck vector representation $\mathbf{u} + \mathbf{m}$, which is used to condition the language model in the Answer Module. It doesn't have attention mechanism in the decoder, it only has the attention in the encoder portion of the architecture (similar to many VQA models). Although results are impressive (on the bAbI dataset), it would be interesting to see how this architecture (without the feedback mechanism) would fare against models that incorporate attention in their decoder.</p>
+
+<p>The answer generation module is a language model that conditioned on the $\mathbf{u} + \mathbf{m}$ generates the answer to the question. However, the interesting part happens after this language model generates the first answer. There two EOS sentinel characters defined in this model, the question mark and the period. In case the generated sequence ends with a period, the model has decided that it has enough information to generate the answer to the question, given the input sentences. However, if the generated sequence ends with a question mark, it means that the model is asking for more feedback to be able to answer the question. After the model generates a question and gets a feedback, uses the representation of the feedback sentence, $\mathbf{f}$, to update its attention over the sequence of sentence embeddings. It is interesting that they use simple uniform importance weighting over the words of the feedback sentence to obtain its vector representation, instead of attention using the question representation, or the supplementary question generated by the model, or even only using the final state of the $GRU _ \omega$ used for processing the feedback sentence. The updated representation which is the sum of the question representation and the updated overall sentences representation is used to generate the final answer, given the feedback to the model. To simplify the model, they "allow the decoder to only generate at most one supplementary question". Although it may be tempting to allow the model to be able to ask more than one supplementary question, however since answer to these supplementary questions only would update the representation of the model of the input sentences, not increase model's overall knowledge, therefore it won't hurt much to limit the model to at most one supplementary question. The ability to increase model's knowledge using the feedback might make model more capable, although with increased complexity.</p>
+
+<h3>Experiments</h3>
+
+<p>They report that "training can be treated as a supervised classification problem" and they try "to minimize the cross-entropy error of
+the answer sequence and the supplementary question sequence". 
+The evaluate their model on the bAbI dataset and a newly proposed ibAbI (interactive bAbI) dataset. They compare their models with DMN+[1], MemN2N[2], and a simple EncDec[3] model. Their model successfully manages to solve 19 out of 20 of the bAbI tasks (Table 4). They also get significantly better results on the ibAbI dataset compared to the other models evaluated. </p>
+
+<h3>Final words</h3>
+
+<p>The paper was interesting, although short of some details. They could also compare their models against an additional number of other models. It would also be great if they could provide an open source implementation of the proposed model. I still can't think of a way to implement the Input Module. If you have any suggestions comment below.</p>
+
+<p>[1] Caiming Xiong, Stephen Merity, and Richard Socher. Dynamic memory networks for visual and textual question answering. In ICML, pp. 2397–2406, 2016.</p>
+
+<p>[2] Sukhbaatar Sainbayar, Szlam Arthur,Weston Jason, and Fergus Rob. End-to-end memory networks. In NIPS, pp. 2440–2448, 2015.</p>
+
+<p>[3] Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk, and Yoshua Bengio. Learning phrase representations using RNN encoder-decoder for statistical machine translation. In EMNLP, pp. 1724–1734, 2014.</p>
+
+      <!--<p><a href="/2016/11/iqa-iclr2017/">ادامه‌ی مطلب</a></p>-->
+    </li>
+    <hr/>
+    <li class="post">
       <h1><a href="/2016/01/office-365-student/">آفیس رایگان برای دانشجویان</a></h1>
       <div class="meta">
         <p class="posted"><i class="fa fa-calendar"></i> 20 Jan 2016</p>
@@ -83,7 +187,7 @@
 
 <p>شاید یک سال قبل (یا کمتر یا بیشتر، دقیق یادم نیست) بود که اعلام شد مایکروسافت به دانشجوها subscription آفیس 365 رو به صورت رایگان ارائه خواهد داد. برای اینکار هم نیاز به این دارید که آدرس ایمیل از طرف دانشگاه با دامنه‌ی .edu داشته باشید. </p>
 
-<p>مشکل این بود که این امکان برای ایران نبود، یعنی با ایمیل دانشگاه‌های ایرانی نمیشد این کار رو کرد. ولی امروز به صورت اتفاقی دوباره سعی کردم این کار رو بکنم و موفق شدم. یعنی احتمالاً مدتی هست که این امکان فراهم شده و بالاخره از اینجا با ایمیل دانشگاه‌های ایرانی هم میشه آفیس 365 رو گرفت. برای اینکار کافیه به ا<a href="https://products.office.com/en-us/student/office-in-education">ین آدرس</a>  برید و با وارد کردن ایمیل دانشگاهی‌تون حساب آفیس 365 رو دریافت کنید. با این کار یک ترابایت فضای رایگان روی OneDrive می‌گیرید. بعد می‌تونید نرم‌افزار آفیس رو بدون نیاز به کرک کردن استفاده کنید (البته من رو نسخه‌ی Office Standard امتحان کردم، چون این برنامه شامل نرم‌افزارهای Word، PowerPoint، OneNote و Excel میشه) نسخه‌های دیگه شامل نرم‌افزارهای دیگه‌ای هستن که توی این توافقنامه نیستن. در ضمن با این کار میشه آفیس رو روی 5 تا از کامپیوترهاتون استفاده کنید (PC و Mac) (توجه کنید روی کامپیوترهاتون، نه روی کامپیوتر خودتون و کسای دیگه، این Licence فقط به یک شخص حقیقی داده میشه). بعد روی موبایل و تبلت‌تون هم می‌تونید ازش استفاده کنید (روی همه‌ی سیستم‌عامل‌ها).</p>
+<p>مشکل این بود که این امکان برای ایران نبود، یعنی با ایمیل دانشگاه‌های ایرانی نمیشد این کار رو کرد. ولی امروز به صورت اتفاقی دوباره سعی کردم این کار رو بکنم و موفق شدم. یعنی احتمالاً مدتی هست که این امکان فراهم شده و بالاخره از اینجا با ایمیل دانشگاه‌های ایرانی هم میشه آفیس 365 رو گرفت. برای اینکار کافیه به ا<a href="https://products.office.com/en-us/student/office-in-education">ین آدرس</a>  برید و با وارد کردن ایمیل دانشگاهی‌تون حساب آفیس 365 رو دریافت کنید. با این کار یک ترابایت فضای رایگان روی OneDrive می‌گیرید. بعد می‌تونید نرم‌افزار آفیس رو بدون نیاز به کرک کردن استفاده کنید (البته من رو نسخه‌ی Office Standard امتحان کردم، چون این برنامه شامل نرم‌افزارهای Word، PowerPoint، OneNote و Excel میشه) نسخه‌های دیگه شامل نرم‌افزارهای دیگه‌ای هستن که توی این توافقنامه نیستن. در ضمن با این کار میشه آفیس رو روی 5 تا از کامپیوترهاتون استفاده کنید (PC و Mac) (توجه کنید روی کامپیوترهاتون، نه روی کامپیوتر خودتون و کسای دیگه، این License فقط به یک شخص حقیقی داده میشه). بعد روی موبایل و تبلت‌تون هم می‌تونید ازش استفاده کنید (روی همه‌ی سیستم‌عامل‌ها).</p>
 
 <p><strong>سلب مسئولیت</strong> (فارسی همون Disclaimer): من این کارها رو با ایمیل دانشگاهی که توش مشغول تحصیل هستم (دانشگاه شریف) امتحان کردم، در مورد دانشگا‌ه‌های دیگه‌ی ایران اطلاعی ندارم.</p>
 
@@ -426,80 +530,6 @@ error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C+
 <p><img src="http://imgs.xkcd.com/comics/kilobyte.png" alt="1024 vs. 1000" /></p>
 
       <!--<p><a href="/2014/12/1024-vs-1000/">ادامه‌ی مطلب</a></p>-->
-    </li>
-    <hr/>
-    <li class="post">
-      <h1><a href="/2014/10/blog-second-anniversary/">دومین سالگرد وبلاگ :)</a></h1>
-      <div class="meta">
-        <p class="posted"><i class="fa fa-calendar"></i> 17 Oct 2014</p>
-        <ul class="categories">
-        <i class="fa fa-tag"></i>
-          <li><a href="/category/Blog" title="Blog">Blog</a></li>
-          <li><a href="/category/Visualization" title="Visualization">Visualization</a></li>
-        </ul>
-      </div>
-      
-      <h1>به نام خدا</h1>
-
-<p>امروز دومین سالگرد اون یکی وبلاگمه. دو سال پیش در همین روز بود که اولین پستم رو توی اون بلاگ منتشر کردم.امروز به مناسبت دومین سالگرد چون حوصله‌ی پست نوشتن اونجا رو نداشتم، یعنی در واقع حوصله‌ی پست‌نویسی به سبک اونجا رو نداشتم، تصمیم گرفتم اینجا در مورد اون بلاگ بنویسم.</p>
-
-<p>البته نوشتن که چه عرض کنم، بیشتر با چند تا عدد بازی کنم و یه چندتایی نمودار بکشم. هدف بیشتر کار با <code>matplotlib</code> بود تا کار مهم دیگه‌ای.</p>
-
-<p>تو این مدت دو ساله، 77 پست رو ارسال کردم تو اون یکی بلاگم</p>
-
-<p><img src="/stylesheets/images/timeline_raw.png" alt="Timeline post distribution" /></p>
-
-<p><img src="/stylesheets/images/timeline_distribution.png" alt="Timeline post distribution" /></p>
-
-<p>خیلی واضحه از روی پست که در یکسال اول، خیلی بیشتر از یکسال دوم پست نوشتم. شاید نشون میده که یکسال دوم، یعنی از یکسال پیش، آرامیش بیشتری به زندگیم حاکم بوده. از طرف دیگه شاید بشه گفت که  هیجان زندگیم کمتر شده، چیز کمتری بوده تو زندگیم که در موردش بنویسم. البته اگر به آخرهای این مدت زمان نگاهی بندازیم، میبینیم که باز شروع کرده بودم به مرتب نوشتن، ولی باز از حوصله افتادم و الان خیلی وقته که ننوشتم. درسته که فقط دوبار اتفاق افتاده، ولی شاید این تحلیل رو هم بشه کرد که در نزدیکی‌های سالگردها، خیلی کمتر نوشتم.</p>
-
-<p>از نظر زمانی فکر می‌کردم بیشتر پست‌هام رو در روزهای آخر هفته می‌نوشتم. ولی این نمودار چیز دیگه‌ای رو نشون میده</p>
-
-<p><img src="/stylesheets/images/weekly_distribution.png" alt="Weekly post distribution" /></p>
-
-<p>اینطوری که مشخصه بیشترین پست‌هام رو در روز دوشنبه منتشر کردم. هر چند آخرهفته‌ها هم فعال بودم.</p>
-
-<p>یه موضوع دیگه‌ای که مطرحه اینه که بیشتر در چه زمان‌هایی از شبانه‌روز اقدام به ارسال پست می‌کردم؟ حدس خودم اینه که شب‌ها بیشتر می‌نوشتم. داده‌ها هم این حدس رو تایید می‌کنن.</p>
-
-<p><img src="/stylesheets/images/daily_distribution.png" alt="Daily post distribution" /></p>
-
-<p>البته خیلی هم مطابقت نداره با حدسم. بیشترین پست‌ها رو ساعت 20 شب منتشر کردم. در حالی که من حدس می‌زدم زمان ارسال‌هام چند ساعتی دیرتر باشن. این نکته هم جالبه که ساعت 2 و 3 بامداد و همچنین نیمه‌ی روز هیچوقت ارسال پست نداشتم.</p>
-
-<p>موضوع بعدی که دوست داشتم در مورد پستم بدونم این بود که چقدر می‌نویسم؟ خودم که همیشه دوست دارم پست‌هایی که می‌نویسم یا می‌خونم طولانی باشن، بخاطر همین حدس می‌زنم بیشتر پست‌هام طولانی باشن. ولی چقدر طولانی؟ از روی بررسی پست‌ها مشخص میشه که طولانی‌ترین پستم از 4170 کلمه‌ تشکیل شده. فکر می‌کنم خیلی کم نباشه :دی</p>
-
-<p>نمودار پایین هم توزیع پست‌ها بر اساس طولشون رو نشون میده. هر دسته بازه‌ای به طول 400 کلمه است.</p>
-
-<p><img src="/stylesheets/images/post_length_hist.png" alt="Daily post distribution" /></p>
-
-<p>نکته‌ی دیگه‌ای که بهش پرداختم، بررسی رابطه‌ی بین طول پست و زمان ارسال پست بود. یعنی بعضی شبا که میشینم، با خودم هی فکر می‌کنم، آیا نتیجه‌اش این میشه که پست‌های طولانی می‌نویسم؟
-محور عمودی طول پست، و محور افقی زمان ارسال پست هست.
-شکل پایین این موضوع رو بررسی کرده.</p>
-
-<p><img src="/stylesheets/images/length_vs_time_scatter.png" alt="Post length vs. Publishing time scatter plot" /></p>
-
-<p>یا اگر جور دیگه‌ای بهش نگاه کنیم، اینطوری:</p>
-
-<p><img src="/stylesheets/images/length_vs_time_hex.png" alt="Post length vs. Publishing time hex plot" /></p>
-
-<p>این نمودار آخر به خوبی این ارتباط رو نشون میده. این که بیشتر شب‌ها پست‌های طولانی‌تری می‌نویسم.البته چون داده‌های زمانی ه صورت ترتیبی نیستن، بلکه دوری هستن، نمیشه یک رابطه‌ی خطی بینشون پیدا کرد. اگر بتونم راه‌حلی برای این مورد پیدا کنم، سعی می‌کنم فرمولی برای این رابطه به دست بیارم.</p>
-
-<p>بجز این موارد چیز دیگه‌ای به ذهنم نرسید. یعنی بیشتر به تحلیل متن احتیاج داشتم، ولی همچین چیزی فعلاً بلد نیستم. تنها کاری که تونستم انجام بدم این بود که ماتریس شباهت پست‌هام رو به هم پیدا کردم. در شکل پایین ماتریس شباهت پست‌ها رو می‌بینید.</p>
-
-<p><img src="/stylesheets/images/post_similarity.png" alt="Post Similarity Matrix" /></p>
-
-<p>انتظار دیدن همچین چیزی رو نداشتم. به طرز عجیبی بین سه تا از پست‌ها شباهت زیادی وجود داره، یعنی پست‌های "یه دوست خاص"، "متاسفم"، و "عصبانی". برام این موضوع خیلی عجیب بود. چون نباید این اتفاق میوفتاد. اینقدر شباهت در متن پست‌ها خیلی عجیبه. در نتیجه تصمیم گرفتم متن این پست‌ها رو به دقت و از نزدیک بررسی کنم. وقتی که این کار رو کردم به این نوشته در همه‌شون رسیدم:</p>
-
-<blockquote>
-  <p>برای نمایش مطلب باید رمز عبور را وارد کنید</p>
-</blockquote>
-
-<p>و اینطوری بود که از راز شباهت این سه پست هم پرده برداشته شد :دی</p>
-
-<p>اگر بهتر به این ماتریس نگاه کنیم، تعدادی پست‌ها هستن که خیلی با پست‌های دیگه تفاوت دارن. اینا پست‌هایی هستن که توشون کلمات انگلیسی زیادی به کار برده شده. ولی بین بعضی دیگر از پست‌ها شباهت‌های خوبی هست. نیاز هست که دقیق‌تر این پست‌ها رو باز بررسی کنم.</p>
-
-<p>نکته‌ی جالبی که رخ داد اینه که بیان دسترسیم رو بلاگم قطع کرده بخاطر اینکه درخواست زیاد فرستادم.</p>
-
-      <!--<p><a href="/2014/10/blog-second-anniversary/">ادامه‌ی مطلب</a></p>-->
     </li>
     <hr/>
   </ul>

@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2016-11-21T00:19:37.8395347+03:30" />
+    <meta name="keywords" content="" />
+    <title>The Gradient</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <!--<script type="text/javascript">    
+        MathJax.Hub.Config({    
+            "HTML-CSS": { scale:100}    
+        });    
+    </script>-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+            }
+        });
+    </script>
+
+
+
+   <link rel="canonical" href="http://blog.erfan.xyz/2016/11/iqa-iclr2017/" />
+   <script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(t,e){window.heap.appid=t,window.heap.config=e;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+t+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(t){return function(){heap.push([t].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2204913712");
+    </script>
+
+</head>
+<body class="home blog">
+    <div id="page" class="hfeed site">
+        <header id="masthead" class="site-header" role="banner">
+            <hgroup>
+                <h1 class="site-title"><a href="/" title="The Gradient" rel="home">The Gradient</a>
+                <p>
+                    <small>
+                        ماجراجویی‌های من به عنوان یه تازه‌کار
+                    </small>
+                </p>
+                </h1>
+            </hgroup>
+            <nav role="navigation" class="site-navigation main-navigation">
+                <h1 class="assistive-text">منو | Menu</h1>
+                <div class="assistive-text skip-link"><a href="#content" title="Skip to content">ادامه به اصلِ مطلب | Skip to content</a></div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="/" class="home"><i class="fa fa-home fa-lg"></i></a></li>
+                        <!-- <li><a href="/about">درباره‌ی من</a></li> -->
+                        <li><a href="http://ce.sharif.edu/~noury">درباره‌ی من | About Me</a></li>
+                        <li><a href="/category">موضوع‌بندی‌ها | Categories</a></li>
+                        <li><a href="/archive">آرشیو | Archive</a></li>
+                        <li><a href="/rss.xml"><i class="fa fa-rss-square fa-lg" style="color:orange"></i></a></li>
+                        <li><a href="/feed.xml"><i class="fa fa-rss fa-lg" style="color:orange"></i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div id="main">
+            <div id="primary" class="site-content">
+                <div id="content" role="main">
+                  
+
+<div class="post">
+    <h1 class="post-title">Paper notes for &quot;A Context-aware Attention Network for Interactive Question Answering&quot;</h1> 
+      <div class="meta">
+        <p class="posted"><i class="fa fa-calendar"></i> 19 Nov 2016</p>
+        <ul class="categories">
+        <i class="fa fa-tag"></i>
+          <li><a href="/category/deep-learning" title="Snow.Models.Category">Deep Learning</a></li>
+          <li><a href="/category/nlp" title="Snow.Models.Category">NLP</a></li>
+          <li><a href="/category/paper-notes" title="Snow.Models.Category">Paper Notes</a></li>
+        </ul>
+      </div>
+
+      <!--div class="addthis_toolbox addthis_default_style" style="float:right;">
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        <a class="addthis_button_tweet"></a>
+        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+        <a class="addthis_button_linkedin_counter"></a>
+        <a class="addthis_counter addthis_pill_style"></a>
+      </div-->
+    </div>
+    
+    
+        
+    <h1>به نام خدا</h1>
+
+<p>I just read this paper that is submitted to ICRL 2017 and thought that I might write my notes as a post in the blog. It is a quite interesting and useful habit to publish these notes, but I have been a little lazy before. I'll try to publish more from now on.</p>
+
+<h1>A Context-aware Attention Network for Interactive Question Answering</h1>
+
+<p><a href="http://webpages.uncc.edu/~hli38/">Huayu Li</a>, Martin Renqiang Min, Yong Ge, Asim Kadav</p>
+
+<p>Link(s): <a href="https://openreview.net/forum?id=SkyQWDcex">OpenReview</a></p>
+
+<h2>Summary</h2>
+
+<p>It is an extension of the encoder-decoder framework for the task of question answering, which has two levels of attention when encoding sentences of the story and also when encoding the words of each sentence. Although "attention" term is used throughout the paper, "importance weighting" would better convey the idea of the paper. In addition to this, the other novelty of the paper is introducing a feedback mechanism for when the model doesn't have enough information to generate a correct answer. To test their model's ability to ask question from a user and obtain feedback, they also introduce a new dataset based on bAbI, named "ibAbI".</p>
+
+<h2>More in depth</h2>
+
+<p>This architecture consists of three main modules:</p>
+
+<ol>
+<li>Question Module</li>
+<li>Story Module</li>
+<li>Answer Module</li>
+</ol>
+
+<p>Let's start by first looking at this figure from the paper.</p>
+
+<p><img src="/stylesheets/images/iqa-figure2.png" alt="Figure 2 from paper schematically showing the three modules used in the network architecture" /></p>
+
+<p>In the problem of textual question answering, we are given a question sentence and a sequence of story sentences. The goal is to find the answer to the question given the story sentences. Each sentence is a sequence of words.</p>
+
+<h3>Question Module</h3>
+
+<p>Given a question sentence as a sequence of words, $(\omega^q _ 1,\cdots,\omega _ {N _ q}^q)$, each word is first embedded using an embedding matrix \(\boldsymbol{W} _ \omega\). To achieve an encoding which takes the sequential nature of this sentence into account, a \(GRU _ \omega\) is used. Usually the last hidden state of the recurrent model is used as the encoding of a sequence. However, in this work, they use importance weighting (or "attention") to obtain the encoding of the sequence, using hidden states of the GRU throughout the sequence. To determine the importance of the hidden state at each time step, its similarity with a vector \(\mathbf{v}\) is used. This vector is learned jointly with the model. Although in general it doesn't look like a good idea to use a static vector to assess the importance of each word in a question sentence, however in this case, given mostly short questions, it seems to work. A better approach would be to use techniques like coattention, i.e. to use representation from the input sentences to assess the importance of words in the question sentence. In addition, it would be much better if results without this static attention were also reported, to show how much, if any, is this approach beneficial to the overall system. Anyways, after normalizing the "attention" weights using softmax, weighted some of hidden states is calculated and using a one-layer linear MLP, is projected into "context-level" vector space, thus</p>
+
+<p>$$ \mathbf{u} = \mathbf{W} _ {ch} \sum _ {j=1}^{N _ q} \gamma _ j \mathbf{g} _ j ^ q + b _ c ^ {(q)} $$</p>
+
+<p>So we have vector $\mathbf{u}$ as the vector representation of the question sentence.</p>
+
+<h3>Input Module</h3>
+
+<h4><strong>Sentence Encoder</strong></h4>
+
+<p>"Input module aims at generating a representation for input sentences, including a sentence encoder
+and a context encoder". Input module is given a number of sentences each containing $N _ t$ words. Sentence encoder will encode each sentence into a vector representation, and then the context encoder will encode the sequence of sentence embeddings into a sequence of contextual embeddings, embeddings that take context into account. Let's start from the sentence encoder. As usual each word is embedded first using the embedding matrix $\boldsymbol{W} _ \omega$ (embedding matrices are shared in all modules). Then using a GRU, $GRU _ \omega$, these embeddings are transformed into a sequence of hidden states, $(\mathbf{h} ^ t _ 1, \cdots, \mathbf{h} ^ t _ {N _ t}).$ After this, the important step of word-level attention occurs. What is important and one of the main novelties of this work, is that contextual information from previous sentences is used in this step. </p>
+
+<p><img src="/stylesheets/images/sentence-enc-iqa.png" alt="A hand-drawn diagram of the sentence encoder" /></p>
+
+<p>The diagram above is the missing figure from the paper! Well, just kidding. Figure 2 from paper is quite informative. This is just a supplementary diagram to make things more clear.</p>
+
+<p>As can be seen in the figure above, after using a GRU's hidden states as preliminary representation of the input sentence words, a context vector from the last input sentence is used to transform hidden state representations to another representation which takes the overall context of previous sentences into account. For this transformation, a two layer MLP is used (Equation 5) to obtain the sequence of "context-injected" representations of sentence $l _ t$, $(\mathbf{e} ^ t _ 1, \cdots, \mathbf{e} ^ t _ {N _ t})$. Afterwards, vector representation of the question, $\mathbf{u}$, is used to obtain importance weighting of the words in the sentence and these weights, after being normalized, are used to get a weighted sum of the representations of words of sentence, $\mathbf{y} _ t$. This vector representation of sentence $l _ t$ not only has word-level attention, but also context from previous sentences have been taken into account.</p>
+
+<p>A question that comes to mind is why this attention mechanism isn't incorporated inside the GRU itself? Although the current architecture has allowed the model to have shared parameters in GRUs when encoding the question, input sentences, and the feedback sentence, but it would be interesting to see how the model would perform if attention was baked into the GRU, like the Attentional GRU in the DMN+[1] paper.</p>
+
+<h4><strong>Context Encoder</strong></h4>
+
+<p>Context encoder simply uses another GRU, $GRU _ s$, to encode sequence of sentence representations from the sentence encoder into another sequence $(\mathbf{s} _ 1, \cdots, \mathbf{s} _ N)$. This lets the model encode the sequential structure into the representation obtained from the sentence encoder. Afterwards, just like the sentence encoder, inner product with question representation $\mathbf{u}$ is used to weight importance of each representation in the sequence of sentences. These weights are then used to get the input encoding vector $\mathbf{m}$ (Equations 8 and 9).</p>
+
+<h3>Answer Module</h3>
+
+<p>As clearly can be seen, this architecture is an extension of attention-less sequence to sequence models. It has the bottleneck vector representation $\mathbf{u} + \mathbf{m}$, which is used to condition the language model in the Answer Module. It doesn't have attention mechanism in the decoder, it only has the attention in the encoder portion of the architecture (similar to many VQA models). Although results are impressive (on the bAbI dataset), it would be interesting to see how this architecture (without the feedback mechanism) would fare against models that incorporate attention in their decoder.</p>
+
+<p>The answer generation module is a language model that conditioned on the $\mathbf{u} + \mathbf{m}$ generates the answer to the question. However, the interesting part happens after this language model generates the first answer. There two EOS sentinel characters defined in this model, the question mark and the period. In case the generated sequence ends with a period, the model has decided that it has enough information to generate the answer to the question, given the input sentences. However, if the generated sequence ends with a question mark, it means that the model is asking for more feedback to be able to answer the question. After the model generates a question and gets a feedback, uses the representation of the feedback sentence, $\mathbf{f}$, to update its attention over the sequence of sentence embeddings. It is interesting that they use simple uniform importance weighting over the words of the feedback sentence to obtain its vector representation, instead of attention using the question representation, or the supplementary question generated by the model, or even only using the final state of the $GRU _ \omega$ used for processing the feedback sentence. The updated representation which is the sum of the question representation and the updated overall sentences representation is used to generate the final answer, given the feedback to the model. To simplify the model, they "allow the decoder to only generate at most one supplementary question". Although it may be tempting to allow the model to be able to ask more than one supplementary question, however since answer to these supplementary questions only would update the representation of the model of the input sentences, not increase model's overall knowledge, therefore it won't hurt much to limit the model to at most one supplementary question. The ability to increase model's knowledge using the feedback might make model more capable, although with increased complexity.</p>
+
+<h3>Experiments</h3>
+
+<p>They report that "training can be treated as a supervised classification problem" and they try "to minimize the cross-entropy error of
+the answer sequence and the supplementary question sequence". 
+The evaluate their model on the bAbI dataset and a newly proposed ibAbI (interactive bAbI) dataset. They compare their models with DMN+[1], MemN2N[2], and a simple EncDec[3] model. Their model successfully manages to solve 19 out of 20 of the bAbI tasks (Table 4). They also get significantly better results on the ibAbI dataset compared to the other models evaluated. </p>
+
+<h3>Final words</h3>
+
+<p>The paper was interesting, although short of some details. They could also compare their models against an additional number of other models. It would also be great if they could provide an open source implementation of the proposed model. I still can't think of a way to implement the Input Module. If you have any suggestions comment below.</p>
+
+<p>[1] Caiming Xiong, Stephen Merity, and Richard Socher. Dynamic memory networks for visual and textual question answering. In ICML, pp. 2397–2406, 2016.</p>
+
+<p>[2] Sukhbaatar Sainbayar, Szlam Arthur,Weston Jason, and Fergus Rob. End-to-end memory networks. In NIPS, pp. 2440–2448, 2015.</p>
+
+<p>[3] Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk, and Yoshua Bengio. Learning phrase representations using RNN encoder-decoder for statistical machine translation. In EMNLP, pp. 1724–1734, 2014.</p>
+
+
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://blog.erfan.xyz/2016/11/iqa-iclr2017/';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'enrygithubpages';
+    var disqus_url = 'http://blog.erfan.xyz/2016/11/iqa-iclr2017/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    <!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-****"></script>-->
+    <script type="text/javascript" src="/javascripts/bidiweb.build.js"> </script>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function()
+    {
+        bidiweb.style('.site-content  *');
+    });
+    </script>
+</div>
+                </div>
+                <!-- #content -->
+            </div>
+            <!-- #primary .site-content -->
+        </div>
+        <!-- #main -->
+
+        <footer class="site-footer" role="contentinfo">
+            <div class="site-info">
+            قدرت گرفته از <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>. تِم تغییر یافته از روی Snow Byte. میزبانی بر روی صفحات  <i class="fa fa-github fa-lg" style="color: black"></i>  با  <i class="fa fa-heart fa-lg" style="color: red"></i>
+            </div>
+            <!-- .site-info -->
+            <!--heap analytics badge-->
+            <div>
+                <a href="https://heapanalytics.com/?utm_source=badge"><img style="width:108px;height:41px" src="//heapanalytics.com/img/badgeLight.png" alt="Heap | Mobile and Web Analytics" /></a>
+            </div>
+        </footer>
+        <!-- #colophon .site-footer -->
+    </div>
+    <!-- #page .hfeed .site -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+
+    <!--<script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-56885931-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>-->
+
+    <script type='text/javascript'>
+      $(function () {
+        $("pre code").parent().each(function () {
+          if (!$(this).hasClass("prettyprint")) {
+            $(this).addClass("prettyprint");
+            a = true
+          }
+        });
+
+        prettyPrint();
+      });
+    </script>
+    <script type="text/javascript" src="/javascripts/bidiweb.build.js"> </script>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function()
+    {
+        bidiweb.style('.site-content  *');
+    });
+    </script>
+</body>
+</html>
