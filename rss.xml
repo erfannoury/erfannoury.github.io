@@ -1,4 +1,40 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>The Gradient</title><link>http://blog.erfan.xyz/rss.xml</link><description>The Gradient</description><item><guid isPermaLink="true">http://blog.erfan.xyz/2016/11/iqa-iclr2017/</guid><link>http://blog.erfan.xyz/2016/11/iqa-iclr2017/</link><author>ennry@outlook.com</author><category>Deep Learning</category><category>NLP</category><category>Paper Notes</category><title>Paper notes for "A Context-aware Attention Network for Interactive Question Answering"</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>The Gradient</title><link>http://blog.erfan.xyz/rss.xml</link><description>The Gradient</description><item><guid isPermaLink="true">http://blog.erfan.xyz/2017/02/sourced/</guid><link>http://blog.erfan.xyz/2017/02/sourced/</link><author>ennry@outlook.com</author><category>Deep Learning</category><category>NLP</category><category>Research</category><title>پژوهش و همکاری با sourced</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;بعد از اینکه فرمان اجرایی ممنوعیت مهاجرت تبعه‌ی هفت کشور توسط ترامپ امضا شد، صحبتی با آقای Eiso Kant پیش اومد در مورد وضعیت پژوهش در ایران و مشکلاتش.
+آقای Eiso Kant مدیرعامل و یکی از بنیان‌گذاران شرکت 
+&lt;a href="http://sourced.tech/"&gt;source{d}&lt;/a&gt;
+ هستن.
+هدف این شرکت ساخت یک هوش مصنوعی هست که بتونه کد رو بفهمه. هدف بسیار جالبی هست و فکر می‌کنم خیلی کاربرد داشته باشه، حداقل برای کسایی که بلدن کد بزنن. البته هدف فراتر از این هم هست. برای اینکه بتونن به این هدف برسن لازمه که بتونن کد رو به خوبی بفهمن. به همین خاطر همه‌ی کدهای موجود در گیت‌هاب و بیت‌باکت رو گرفتن و تحلیل کردن، پس اگر کدی روی هر کدوم از این سایت‌ها داشتید که به صورت عمومی منتشر شده بود، جزو داده‌هایی که این شرکت جمع کرده و روشون تحلیل انجام داده قرار داشته. این شرکت کلی پروژه‌ی جالب رو به صورت متن‌باز منتشر کرده که یه پیاده‌سازی از 
+&lt;a href="https://github.com/src-d/go-git"&gt;git به زبان Go&lt;/a&gt;
+ و یک پیاده‌سازی الگوریتم خوشه‌بندی
+ &lt;a href="https://github.com/src-d/kmcuda"&gt;K-means بر روی کارت گرافیکی&lt;/a&gt;
+ جزو جالب‌ترین این پروژه‌ها از نظر من هستن.&lt;/p&gt;
+
+&lt;p&gt;خلاصه بعد از اینکه صحبت در مورد پژوهش شد ایشون پیشنهاد دادن که علاقه‌مند هستن با کسایی که در حال حاضر در ایران مشغول پژوهش هستن یا می‌خوان پژوهش جدی داشته باشن، در زمینه‌هایی که مرتبط به هدف شرکت باشه همکاری بکنن.
+برای اینکه توضیحی در مورد شرکت و هدف‌شون داده باشن و جزئیات و شرایط این همکاری مشخص باشه، یه ارائه آماده کردن که
+&lt;a href="https://docs.google.com/presentation/d/1wUWs3nIlwLsosMW30-K8aaoEZYbp92XqEbkm0-VwsBk/edit?usp=sharing"&gt;تو این لینک&lt;/a&gt;
+می‌تونید ببینیدش.&lt;/p&gt;
+
+&lt;p&gt;من فکر می‌کنم که همچنین همکاری‌هایی می‌تونه خیلی مناسب باشه و یک تجربه‌ی آموزشی خیلی خوبی رو فراهم بکنه. پس اگر فکر می‌کنید که پیشنیازهای لازم رو دارید و در مورد پژوهش در این موضوعات جدی هستید (یا اگر حتی هنوز موضوع پایان‌نامه‌ی ارشدتون رو تعریف نکردید)، توصیه می‌کنم حتماً باهاشون تماس بگیرید. اگر سوال دیگه‌ای داشتید می‌تونید با من هم تماس بگیرید.&lt;/p&gt;
+</description><pubDate>Thu, 16 Feb 2017 20:30:00 Z</pubDate><a10:updated>2017-02-16T20:30:00Z</a10:updated><a10:content type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
+
+&lt;p&gt;بعد از اینکه فرمان اجرایی ممنوعیت مهاجرت تبعه‌ی هفت کشور توسط ترامپ امضا شد، صحبتی با آقای Eiso Kant پیش اومد در مورد وضعیت پژوهش در ایران و مشکلاتش.
+آقای Eiso Kant مدیرعامل و یکی از بنیان‌گذاران شرکت 
+&lt;a href="http://sourced.tech/"&gt;source{d}&lt;/a&gt;
+ هستن.
+هدف این شرکت ساخت یک هوش مصنوعی هست که بتونه کد رو بفهمه. هدف بسیار جالبی هست و فکر می‌کنم خیلی کاربرد داشته باشه، حداقل برای کسایی که بلدن کد بزنن. البته هدف فراتر از این هم هست. برای اینکه بتونن به این هدف برسن لازمه که بتونن کد رو به خوبی بفهمن. به همین خاطر همه‌ی کدهای موجود در گیت‌هاب و بیت‌باکت رو گرفتن و تحلیل کردن، پس اگر کدی روی هر کدوم از این سایت‌ها داشتید که به صورت عمومی منتشر شده بود، جزو داده‌هایی که این شرکت جمع کرده و روشون تحلیل انجام داده قرار داشته. این شرکت کلی پروژه‌ی جالب رو به صورت متن‌باز منتشر کرده که یه پیاده‌سازی از 
+&lt;a href="https://github.com/src-d/go-git"&gt;git به زبان Go&lt;/a&gt;
+ و یک پیاده‌سازی الگوریتم خوشه‌بندی
+ &lt;a href="https://github.com/src-d/kmcuda"&gt;K-means بر روی کارت گرافیکی&lt;/a&gt;
+ جزو جالب‌ترین این پروژه‌ها از نظر من هستن.&lt;/p&gt;
+
+&lt;p&gt;خلاصه بعد از اینکه صحبت در مورد پژوهش شد ایشون پیشنهاد دادن که علاقه‌مند هستن با کسایی که در حال حاضر در ایران مشغول پژوهش هستن یا می‌خوان پژوهش جدی داشته باشن، در زمینه‌هایی که مرتبط به هدف شرکت باشه همکاری بکنن.
+برای اینکه توضیحی در مورد شرکت و هدف‌شون داده باشن و جزئیات و شرایط این همکاری مشخص باشه، یه ارائه آماده کردن که
+&lt;a href="https://docs.google.com/presentation/d/1wUWs3nIlwLsosMW30-K8aaoEZYbp92XqEbkm0-VwsBk/edit?usp=sharing"&gt;تو این لینک&lt;/a&gt;
+می‌تونید ببینیدش.&lt;/p&gt;
+
+&lt;p&gt;من فکر می‌کنم که همچنین همکاری‌هایی می‌تونه خیلی مناسب باشه و یک تجربه‌ی آموزشی خیلی خوبی رو فراهم بکنه. پس اگر فکر می‌کنید که پیشنیازهای لازم رو دارید و در مورد پژوهش در این موضوعات جدی هستید (یا اگر حتی هنوز موضوع پایان‌نامه‌ی ارشدتون رو تعریف نکردید)، توصیه می‌کنم حتماً باهاشون تماس بگیرید. اگر سوال دیگه‌ای داشتید می‌تونید با من هم تماس بگیرید.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.erfan.xyz/2016/11/iqa-iclr2017/</guid><link>http://blog.erfan.xyz/2016/11/iqa-iclr2017/</link><author>ennry@outlook.com</author><category>Deep Learning</category><category>NLP</category><category>Paper Notes</category><title>Paper notes for "A Context-aware Attention Network for Interactive Question Answering"</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
 
 &lt;p&gt;I just read this paper that is submitted to ICRL 2017 and thought that I might write my notes as a post in the blog. It is a quite interesting and useful habit to publish these notes, but I have been a little lazy before. I'll try to publish more from now on.&lt;/p&gt;
 
@@ -602,14 +638,4 @@ error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C+
 &lt;p&gt;&lt;img src="http://blog.erfan.xyz/stylesheets/images/year-in-pocket-weekly-stat.png" alt="Year in Pocket weekly stats" /&gt;&lt;/p&gt;
 
 &lt;p&gt;امیدوارم در سال بعد، یعنی سال 2015، بیشتر مطالعه داشته باشم، هم با استفاده از این سرویس، هم به طرق دیگه.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://blog.erfan.xyz/2014/12/1024-vs-1000/</guid><link>http://blog.erfan.xyz/2014/12/1024-vs-1000/</link><author>ennry@outlook.com</author><category>Fun</category><title>1024 vs. 1000</title><description>&lt;h1&gt;به نام خدا&lt;/h1&gt;
-
-&lt;p&gt;راستش رو بخوایید من هم هنوز دقیق نمی‌دونم وقتی به مدل‌های مختلفی می‌نویسن منظور کدومه.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://imgs.xkcd.com/comics/kilobyte.png" alt="1024 vs. 1000" /&gt;&lt;/p&gt;
-</description><pubDate>Sat, 06 Dec 2014 20:30:00 Z</pubDate><a10:updated>2014-12-06T20:30:00Z</a10:updated><a10:content type="html">&lt;h1&gt;به نام خدا&lt;/h1&gt;
-
-&lt;p&gt;راستش رو بخوایید من هم هنوز دقیق نمی‌دونم وقتی به مدل‌های مختلفی می‌نویسن منظور کدومه.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://imgs.xkcd.com/comics/kilobyte.png" alt="1024 vs. 1000" /&gt;&lt;/p&gt;
 </a10:content></item></channel></rss>
