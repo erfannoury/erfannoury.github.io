@@ -21,16 +21,16 @@ This is a text written in English, and yes it is displayed correctly (not that i
 
 این هم یه تیکه کد:
 
-	using System;
-	
-	public class test
-	{
-		public static void Main(string[] args)
-		{
-			Console.WriteLine("Hello World, from Sandra.Snow!");
-		}
-	}
-	
+    using System;
+    
+    public class test
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World, from Sandra.Snow!");
+        }
+    }
+    
 و حالا یکم ریاضی درون یک نوشته‌ی انگلیسی
 
 When \\(a \ne 0\\), there are two solutions to \\(ax^2 + bx + c = 0\\) and they are

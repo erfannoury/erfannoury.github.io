@@ -30,24 +30,24 @@ $$ \text{STFT} \lbrace x[n] \rbrace (m,\omega )\equiv X(m,\omega )=\sum _{n=-\in
 
 کد زیر یک پیاده‌سازی ابتدایی برای این کار است:
 
-	function specPlot(x, windlen)
-	% x: input signal
-	% windlen: length of the time window inside which fourier coefficients will be calculated, note that since our signal is real, only half of the coefficients are needed
-	
-	% preallocating magnitude matrix for speedup
-	numofwinds = floor(length(x)/windlen);
-	magnitude = zeros(numofwinds, floor(windlen/2));
-	for i = 0:(numofwinds - 1)
-   		startIdx = i*windlen;
-   		partfft = abs(fft(x((1+startIdx):(startIdx+windlen))))/windlen;
-   		magnitude((i+1),:) = partfft(1:length(partfft)/2);
-	end
-	waterfall(1:windlen/2, 0:(length(x)/windlen -1), magnitude);
-	xlabel('frequency');
-	ylabel('time');
-	zlabel('magnitude');
-	end
-	
+    function specPlot(x, windlen)
+    % x: input signal
+    % windlen: length of the time window inside which fourier coefficients will be calculated, note that since our signal is real, only half of the coefficients are needed
+    
+    % preallocating magnitude matrix for speedup
+    numofwinds = floor(length(x)/windlen);
+    magnitude = zeros(numofwinds, floor(windlen/2));
+    for i = 0:(numofwinds - 1)
+           startIdx = i*windlen;
+           partfft = abs(fft(x((1+startIdx):(startIdx+windlen))))/windlen;
+           magnitude((i+1),:) = partfft(1:length(partfft)/2);
+    end
+    waterfall(1:windlen/2, 0:(length(x)/windlen -1), magnitude);
+    xlabel('frequency');
+    ylabel('time');
+    zlabel('magnitude');
+    end
+    
 حال این توابع را بر روی یک سیگنال نمونه امتحان می‌کنیم.
 
 سیگنال زیر را که یک سیگنال جیر با رابطه‌ی \\( y=sin(1600\pi t^2) \\) می‌باشد در نظر بگیرید. نمودار این سیگنال به صورت زیر است:
@@ -56,9 +56,9 @@ $$ \text{STFT} \lbrace x[n] \rbrace (m,\omega )\equiv X(m,\omega )=\sum _{n=-\in
 
 ![Chirp Plot](/stylesheets/images/chirp.png)
 
-	>> t = [0:1/8000:1-1/8000];
-	>> y = sin(2*pi*800*(t.*t));
-	>> specPlot(y,800);
+    >> t = [0:1/8000:1-1/8000];
+    >> y = sin(2*pi*800*(t.*t));
+    >> specPlot(y,800);
 
 با اجرای دستور آخر نمودار زیر ایجاد خواهد شد
 

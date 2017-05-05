@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2017-04-09T01:05:17.0649170+04:30" />
+    <meta http-equiv="last-modified" content="2017-05-06T00:19:56.7793150+04:30" />
     <meta name="keywords" content="" />
     <title>The Gradient</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
@@ -329,7 +329,7 @@ cv2.destroyAllWindows()
 
 <h2>معرفی</h2>
 
-<p>این پست، بیشتر یک پست معرفی است. امروز یک وبلاگ جدید پیدا کردم که نویسنده‌ی آن تصمیم دارد به مباحثی در برنامه‌نویسی با تمرکز بر روی زبان <code>C++</code> بپردازد. 
+<p>این پست، بیشتر یک پست معرفی است. امروز یک وبلاگ جدید پیدا کردم که نویسنده‌ی آن تصمیم دارد به مباحثی در برنامه‌نویسی با تمرکز بر روی زبان <code>C++</code> بپردازد.
 وبلاگی که معرفی شد <a href="http://www.randomprogramming.com/">Random Programming</a> نام دارد.</p>
 
 <h2>پیشنهاد پست</h2>
@@ -484,9 +484,9 @@ EXPORTS
 numofwinds = floor(length(x)/windlen);
 magnitude = zeros(numofwinds, floor(windlen/2));
 for i = 0:(numofwinds - 1)
-    startIdx = i*windlen;
-    partfft = abs(fft(x((1+startIdx):(startIdx+windlen))))/windlen;
-    magnitude((i+1),:) = partfft(1:length(partfft)/2);
+       startIdx = i*windlen;
+       partfft = abs(fft(x((1+startIdx):(startIdx+windlen))))/windlen;
+       magnitude((i+1),:) = partfft(1:length(partfft)/2);
 end
 waterfall(1:windlen/2, 0:(length(x)/windlen -1), magnitude);
 xlabel('frequency');

@@ -16,7 +16,7 @@ title: چگونه یک صفحه‌ی گیت‌هاب با استفاده از Sa
 
 مرحله‌ی بعد این هست که فایل پروژه‌ با نام `Sandra.Snow.sln` که در پوشه‌ی `src` قرار دارد را باز کنید. برای اینکار بر روی ویندوز به نرم‌افزار ویژوال‌استودیو نیاز دارید. البته بر روی همه‌ی سیستم‌های عامل می‌توانید از [Xamarin Studio](xamarin.com/studio) استفاده کنید. در اینجا برای ساخت بلاگ، فقط به پروژه‌ای با نام `Snow` نیاز داریم. در تنظیمات این پروژه، در قسمت `debug` در قسمت مربوط به `Command line arguments` اطلاعات زیر رو وارد کنید:
 
-	config="path/to/Snow/" server=true debug=true
+    config="path/to/Snow/" server=true debug=true
 
 ![Project Settings -> Debug -> Command line arguments](/stylesheets/images/vs-debug.png)
 
@@ -29,4 +29,4 @@ title: چگونه یک صفحه‌ی گیت‌هاب با استفاده از Sa
 ##در مورد صفحه‌ی گیت‌هاب
 برای داشتن یک صفحه‌ی گیت‌هاب در سایت Github لازم است یک پروژه با نام `<username>.github.io` در گیت‌هاب ایجاد نمایید. `<username>` نام کاربری شما در گیت‌هاب می‌باشد. در نهایت با `push` کردن فایل‌های ایستای بلاگتان در این پروژه، بلاگ ایستای شما در آدرسی به نام پروژه‌تان ایجاد خواهد شد.
 
-	git push -u origin master
+    git push -u origin master
