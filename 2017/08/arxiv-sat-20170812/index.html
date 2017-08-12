@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2017-08-12T19:39:36.1336683+04:30" />
+    <meta name="keywords" content="" />
+    <title>The Gradient</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <!--<script type="text/javascript">    
+        MathJax.Hub.Config({    
+            "HTML-CSS": { scale:100}    
+        });    
+    </script>-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+            }
+        });
+    </script>
+
+
+
+   <link rel="canonical" href="http://blog.erfan.xyz/2017/08/arxiv-sat-20170812/" />
+   <script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(t,e){window.heap.appid=t,window.heap.config=e;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+t+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(t){return function(){heap.push([t].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2204913712");
+    </script>
+
+</head>
+<body class="home blog">
+    <div id="page" class="hfeed site">
+        <header id="masthead" class="site-header" role="banner">
+            <hgroup>
+                <h1 class="site-title"><a href="/" title="The Gradient" rel="home">The Gradient</a>
+                <p>
+                    <small>
+                        ماجراجویی‌های من به عنوان یه تازه‌کار
+                    </small>
+                </p>
+                </h1>
+            </hgroup>
+            <nav role="navigation" class="site-navigation main-navigation">
+                <h1 class="assistive-text">منو | Menu</h1>
+                <div class="assistive-text skip-link"><a href="#content" title="Skip to content">ادامه به اصلِ مطلب | Skip to content</a></div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="/" class="home"><i class="fa fa-home fa-lg"></i></a></li>
+                        <!-- <li><a href="/about">درباره‌ی من</a></li> -->
+                        <li><a href="http://ce.sharif.edu/~noury">درباره‌ی من | About Me</a></li>
+                        <li><a href="/category">موضوع‌بندی‌ها | Categories</a></li>
+                        <li><a href="/archive">آرشیو | Archive</a></li>
+                        <li><a href="/rss.xml"><i class="fa fa-rss-square fa-lg" style="color:orange"></i></a></li>
+                        <li><a href="/feed.xml"><i class="fa fa-rss fa-lg" style="color:orange"></i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div id="main">
+            <div id="primary" class="site-content">
+                <div id="content" role="main">
+                  
+
+<div class="post">
+    <h1 class="post-title">شنبه‌های آرکایو (دوشنبه ۱۶ مرداد - شنبه ۲۱ مرداد)</h1> 
+      <div class="meta">
+        <p class="posted"><i class="fa fa-calendar"></i> 12 Aug 2017</p>
+        <ul class="categories">
+        <i class="fa fa-tag"></i>
+          <li><a href="/category/deep-learning" title="Snow.Models.Category">Deep Learning</a></li>
+          <li><a href="/category/research" title="Snow.Models.Category">Research</a></li>
+        </ul>
+      </div>
+
+      <!--div class="addthis_toolbox addthis_default_style" style="float:right;">
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        <a class="addthis_button_tweet"></a>
+        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+        <a class="addthis_button_linkedin_counter"></a>
+        <a class="addthis_counter addthis_pill_style"></a>
+      </div-->
+    </div>
+    
+    
+        
+    <h1>به نام خدا</h1>
+
+<p>در مورد شنبه‌های آرکایو
+<a href="https://github.com/n1analytics/python-paillier/blob/master/phe/paillier.py#L746-L748">قبلاً</a>
+نوشتم. این بار تصمیم گرفتم که برای هر هفته پستی بنویسم و مقالات جالبی رو که پیدا کردم معرفی کنم.
+فعلاً این هفته به صورت آزمایشی این کار رو انجام میدم تا بعد تصمیم بگیرم که آیا ادامه خواهم داد یا نه.</p>
+
+<p>این هفته ۴۷۲ عنوان جدید تو قسمت‌های منتخب آرکایو بارگزاری شده که البته این، عدد، تعداد مقالات یکتا نیست.
+تعداد مقالات یکتا شاید نصف این عدد باشه.
+دلیلش اینه که بعضی از مقالات ممکنه که در بیش از یک موضوع دسته‌بندی شده باشن.
+این بار cs.CV (طبق معمول) بیشترین مقاله‌ی جدید رو با ۱۴۲ عنوان جدید داشت.</p>
+
+<p>قسمت‌هایی که من دنبال می‌کنم این قسمت‌ها هستن:</p>
+
+<ul>
+<li>cs.{AI, CG, CL, CV, IR, LG, NE, RO}</li>
+<li>stat.ML</li>
+</ul>
+
+<h2>مقالات منتخب هفته‌ی گذشته</h2>
+
+<p><strong>"Regularizing and Optimizing LSTM Language Models"</strong> - <a href="https://arxiv.org/abs/1708.02182">1708.02182</a></p>
+
+<p>Stephen Merity, Nitish Shirish Keskar, Richard Socher</p>
+
+<p>Salesforce Research</p>
+
+<p>در این مقاله مسئله‌ی آموزش مدل‌های زبانی سطح کلمه (word-level) مورد توجه قرار گرفته و روش‌های مختلف بهینه‌سازی و تنظیم (regularization) مدل‌های مبتنی بر LSTM بررسی شدن.</p>
+
+<p>از طریق این روش‌های بهبود یافته‌ی آموزش مدل‌های زبانی مبتنی بر LSTM، در این مقاله تونستن به بهترین نتیجه روی دو دیتاست Penn Tree Bank و WikiText-2 دست پیدا کنن.</p>
+
+<p>یکی از این روش‌ها، استفاده از DropConnect با ماسک ثابت در راستای زمان، برای اتصالات پنهان-به-پنهان در فرمول‌بندی LSTM هست.
+تفاوت DropConnect با Dropout در این هست که در Dropout ماسک تصادفی بر روی خروجی یک لایه اعمال میشه تا لایه‌ی بعد به عنوان ورودی، نسخه‌ای مخدوش‌شده از خروجی لایه‌ی قبل رو بگیره.
+در مقابل در DropConnect این ماسک تصادفی بر روی وزن‌های یک لایه‌ی fully-connected اعمال میشه.</p>
+
+<p>برای بقیه‌ی اتصالات در این کار از Dropout معمولی استفاده شده، ولی ماسک تصادفی یک بار نمونه‌گیری شده و در طول دنباله از این ماسک استفاده شده، یعنی در واقع Variational Dropout.
+کار دیگه‌ای هم که در این مقاله انجام شده استفاده از Dropout بر روی ماتریس Embedding هست، به این شکل که در هر بار نمونه‌گیری از ماسک تصادفی ممکنه تعدادی از کلمات حذف بشن.
+طبق معمول یه سری کارهای قبلی در زمینه‌ی یادگیری مدل زبانی و ترجمه‌ی ماشینی، در این کار وزن‌های ماتریس Embedding و لایه‌ی خروجی (یا لایه‌ی softmax) مشترک هستن.
+این کار هم باعث میشه که تعداد پارامترهای مدل کم بشه و هم اینکه یک شهود نظری پشت این کار هست <a href="https://arxiv.org/abs/1611.01462">1</a>.</p>
+
+<p>یک regularization جالب دیگه‌ای که انجام دادن
+Activation Regularization و
+Temporal Activation Regularization هست که تقریباً جدید هستن و تو کارهای زیادی قبلاً ندیدم.
+توی Activation Regularization هدف اینه که خروجی میانی LSTM مقادیر کوچکی بگیرن،‌ یعنی</p>
+
+<p>$$ \alpha L _ 2 (m \odot h _ t) $$.
+در مقابل در Temporal Activation Regularization
+هدف اینه که خروجی‌های میانی LSTM در طول زمان خیلی متغیر نباشن، یعنی</p>
+
+<p>$$ \beta L _ 2 (h _ t - h _ {t+1}) $$</p>
+
+<p>در کل به نظر میاد که مقاله‌ی خوبی باشه و بشه به نتایج‌شون اعتماد کرد، هر چند تا جایی که می‌دونم کد مقاله رو منتشر نکردن.
+اگر می‌خوایید از LSTM برای پردازش دنباله استفاده کنید، بخصوص برای مدل‌های زمانی، خوندن این مقاله فکر می‌کنم مفید می‌تونه باشه.</p>
+
+<p><strong>"Recent Trends in Deep Learning Based Natural Language Processing"</strong> - <a href="https://arxiv.org/abs/1708.02709">1708.02709</a></p>
+
+<p>Tom Young, Devamanyu Hazarika, Soujanya Poria, Erik Cambria</p>
+
+<p>School of Information and Electronics, Beijing Institute of Technology, China; School of Computing, National University of Singapore, Singapore; Temasek Laboratories, Nanyang Technological University, Singapore; School of Computer Science and Engineering, Nanyang Technological University, Singapore</p>
+
+<p>این مقاله به طور کلی به بررسی پیشینه، وضعیت فعلی، و روند پیشرفت روش‌های مبتنی بر شبکه‌های عصبی برای پردازش زبان‌های طبیعی پرداخته. اگر تازه می‌خوایید وارد این موضوع بشید یا حتی اگر می‌خوایید با تاریخچه و روال فعلی این موضوعات آشنا بشید این مقاله منبع خوبیه برای مطالعه‌ی اولیه.</p>
+
+<p><strong>"Revisiting Unreasonable Effectiveness of Data in Deep Learning Era"</strong> - <a href="https://arxiv.org/abs/1707.02968">1707.02968</a></p>
+
+<p>Chen Sun, Abhinav Shrivastava, Saurabh Singh, Abhinav Gupta</p>
+
+<p>Google Research, Carnegie Mellon University</p>
+
+<p>تا مدتی قبل بزرگ‌ترین مجموعه دادگان در دسترس عموم برای کلاسه‌بندی تصاویر مجموعه دادگان ImageNet بود.
+ولی شرکت‌های بزرگ هر کدوم مجموعه دادگان خیلی بزرگ‌تری داشتن.
+یکی از این مجموعه دادگان که مال گوگل هست JFT نام داره و حاوی بیش از ۳۰۰ میلیون(!) تصویر با ۱۸۲۹۱ دسته هست. البته برچسب‌زنی این همه تصویر به صورت خودکار انجام شده و بنابراین دارای خطا هستن. ولی با این حال اندازه‌ی این مجموعه دادگان واقعاً بزرگه.
+توی این مقاله گوگلی‌ها بررسی کردن که آیا معماری‌های معمول دسته‌بندی تصاویر وقتی که تعداد تصاویر به مقدار قابل توجهی زیاد بشه باز هم می‌تونن به نتیجه‌ی بهتری دست پیدا بکنن و نمایش بهتری از داده‌ها رو یاد بگیرن؟
+برای این کار یک مدل ResNet-101 رو روی این مجموعه دادگان آموزش میدن (در مورد جزئیات این آموزش توی مقاله نوشته شده) و بعد از این مدل آموزش دیده شده به عنوان مدل اولیه برای چهار downstream task دیگه استفاده می‌کنن، یعنی کلاسه‌بندی تصاویر، تشخیص اشیا، قطعه‌بندی معنایی تصاویر، و تشخیص وضعیت (اسکلت) انسان.
+اونطوری که حدس زدن نتیجه‌ی این کار دور از انتظار نیست، مدل آموزش داده شده بر روی مجموعه تصاویر JFT-300M و بعد fine-tune شده روی هر مجموعه دادگان تونسته بهترین نتیجه رو توی هر کدوم از این چالش‌ها به دست بیاره.</p>
+
+<p>چون کسی به غیر از گوگل به مجموعه دادگان به این بزرگی دسترسی نداره، تنها میشه امیدوار شد که گوگل مدل آموزش‌داده‌شده بر روی این مجموعه دادگان بزرگ رو منتشر بکنه (تا الان که این کار رو نکرده، بعید می‌دونم بعد از این هم بکنه).</p>
+
+<p><strong>"Tips and Tricks for Visual Question Answering: Learnings from the 2017 Challenge"</strong> - <a href="https://arxiv.org/abs/1708.02711">1708.02711</a></p>
+
+<p>Damien Teney, Peter Anderson, Xiaodong He, Anton van den Hengel</p>
+
+<p>Australian Centre for Visual Technologies, The University of Adelaide, Australia; Australian National University, Canberra, Australia; Deep Learning Technology Center, Microsoft Research, Redmond, WA, USA</p>
+
+<p>این مقاله شرح روشی هست که در آخرین مسابقه‌ی پاسخ پرسش‌های تصویری VQA 2017 که بر روی نسخه‌ی دوم مجموعه دادگان VQA هم بود تونست مقام اول رو کسب بکنه.
+تقریباً میشه با نگاهی به تصویر دوم در مقاله کلیت روش رو فهمید. نکات جالب این مدل به نظرم در مقایسه با مدل‌های دیگه برای VQA یکی روش استخراج ویژگی‌های تصویر هست که از R-CNN استفاده شده، و نکته‌ی بعدی هم استفاده از ضرب درایه به درایه برای ترکیب ویژگی‌های سوال و تصویر هست.
+این کار تقریباً بر خلاف اکثر کارهای اخیر هست که توی اون‌ها تعامل‌های مرتبه بالاتری بین توصیف تصویر و سوال مدل‌سازی میشن، مثلاً انواع تعامل bilinear به جای ضرب هادامارد ساده. ولی خب در اینجا تونستن
+البته کار جدیدی که توی این مدل انجام دادن و به خاطر ندارم مدل‌های دیگه‌ای این کار رو کرده باشن اینه که مسئله‌ی VQA رو (با در نظر گرفتن برچسب‌های این دیتاست) تبدیل کردن به یه مسئله‌ی دسته‌بندی چند برچسبی (Multi-label classification).
+یه نکته‌ی خیلی عجیب در مورد این مقاله این هست که این شبکه با استفاده از MATLAB پیاده‌سازی و آموزش داده شده.</p>
+
+<p>چیزی که باعث شد من خیلی از این مقاله خوشم بیاد، علاوه بر اینکه قسمت‌های مختلف کارشون رو خوب توضیح دادن، اینه که Ablation study خیلی مفصلی انجام دادن که دقیقاً تشریح می‌کنه هر قسمت از مدل‌شون و هر کاری که انجام دادن چقدر در رسیدن به نتیجه‌ی نهایی تاثیر داشته.
+همین کار باعث میشه که اعتماد آدم به این کار و نتایجش تقریباً تضمین بشه. ولی اینکه کد این مقاله منتشر نشده و البته اگر هم منتشر بشه با MATLAB نوشته شده یکی از نکات منفی این کار هست، البته در مقابل نکات قوت این کار میشه کاملاً ازشون چشم‌پوشی کرد.</p>
+
+<p>فکر می‌کنم از این به بعد اگر کسی بخواد روی مسئله‌ی VQA کار بکنه باید از این کار شروع بکنه.</p>
+
+<p><strong>"MemexQA: Visual Memex Question Answering"</strong> - <a href="https://arxiv.org/abs/1708.01336">1708.01336</a></p>
+
+<p>Lu Jiang, Junwei Liang, Liangliang Cao, Yannis Kalantidis, Sachin Farfade, Alexander Hauptmann</p>
+
+<p>Carnegie Mellon University, Customer Service AI, Yahoo Research</p>
+
+<p>این مقاله کار بسیار جالبی هست که توجه من رو خیلی جلب کرد و فکر می‌کنم چیزی هست که در آینده‌ی نزدیک خیلی دوست دارم روش کار بکنم.
+این مقاله مسئله‌ی MemexQA رو معرفی می‌کنه.
+این مسئله اینطوری تعریف میشه که اگر یک مجموعه از تصاویر و ویدیوها متعلق به یک فردی داده بشن، هدف اینه که به صورت خودکار به سوالات کاربر جواب بدیم تا کاربر بتونه خاطراتش رو در مورد رویدادهایی که اتفاق افتادن و توی اون مجموعه به تصویر کشیده شدن به خاطر بیاره.
+مثلاً یه سری تصویر از یک جشن تولد دارید ولی به خاطر نمیارید که جشن تولد کی بوده.
+هدف این کار اینه که این سیستم بتونه به این سوال که جشن تولد کی بوده پاسخ بده و برای پاسخش هم تعدادی تصاویر از اون مجموعه تصاویر به عنوان مدرک بیاره.
+برای اینکار یک مجموعه دادگان جدید هم به همین اسم منتشر شده، البته در حال حاضر در دسترس نیست، ولی به زودی خواهد بود.
+این مسئله و کلیت مقاله به نظرم خیلی جالب هستن و البته مدل اولیه‌ای که ارائه دادن خیلی مدل پیچیده‌ای نیست. بنابراین فکر می‌کنم میشه با مدل بهتری نتایج بهتری روی این مجموعه دادگان گرفت. در کل اگر به مسئله‌ی مطرح شده تو این مقاله علاقه دارید حتماً مقاله رو کامل بخونید.</p>
+
+<p><strong>"TensorFlow Estimators: Managing Simplicity vs. Flexibility in High-Level Machine Learning Frameworks"</strong> - <a href="https://arxiv.org/abs/1708.02637">1708.02637</a></p>
+
+<p>Heng-Tze Cheng, Zakaria Haque, Lichan Hong, Mustafa Ispir, Clemens Mewald, Illia Polosukhin, Georgios Roumpos, D Sculley, Jamie Smith, David Soergel, Yuan Tang, Philipp Tucker, Martin Wicke, Cassandra Xia, Jianwei Xie</p>
+
+<p>Google; UptakeTechnologies</p>
+
+<p>این یک مقاله‌ی خیلی جالبی هست که توی کنفرانس KDD 2017 پذیرفته شده و رابط برنامه‌نویسی <code>Estimator</code> رو در کتابخانه‌ی TensorFlow معرفی می‌کنه.
+ساختاردهی و مدیریت کد یکی از کارهای سختیه که نیاز به تجربه‌ی زیادی داره.
+ولی با این حال بعضی وقت‌ها کتابخانه‌ها می‌تونن با فراهم کردن رابط‌های برنامه‌نویسی خوب ساختاردهی مناسبی به کد کاربر اعمال بکنن.
+یکی از این ساختاردهی‌ها توی کتابخانه‌ی TensorFlow با استفاده از کلاس <code>Estimator</code> اعمال میشه که در این مقاله به طور مفصلی در این مورد صحبت کرده.
+از روی تجربه‌ام فکر می‌کنم دنبال کردن یک ساختار برنامه‌نویسی که سطح بالا است و در عین حال انعطاف‌پذیری کافی هم داره هم باعث میشه که پروژه سریع‌تر جلو بره و هم با گذشت زمان هم‌چنان کد قابل مدیریت باقی می‌مونه. حدود شش ماه پیش که تصمیم گرفتم آخرین پروژه‌ام رو با استفاده از کتابخانه‌ی TensorFlow شروع کردم خوشبختانه با نمونه کدی شروع کردم که از این رابط‌های برنامه‌نویسی مثل کلاس <code>Estimator</code> استفاده می‌کرد.
+هر چند استفاده از این رابط‌ها هنوز معمول نیست بین برنامه‌نویس‌ها، ولی از این انتخاب بسیار راضی هستم. چون باعث شده که با وجود نیاز به تغییرات بنیادین و البته بزرگ‌شدن زیاد کد در طول پروژه، نیازی نباشه که کل کد رو چند بار از اول ساختاردهی بکنم و دوباره بنویسم و یا اینکه مشکلات بزرگی در کد پیش بیاد.</p>
+
+<p>اگر می‌خوایید پروژه‌ای با اندازه‌ی متوسط به بالا با کتابخانه‌ی TensorFlow پیاده‌سازی بکنید پیشنهاد می‌کنم از رابط‌های برنامه‌نویسی کلاس‌های <code>Estimator</code> و <code>Experiment</code> استفاده کنید و این مقاله رو هم بخونید.</p>
+
+<h2>پست‌های وبلاگ منتخب از هفته‌ی گذشته</h2>
+
+<p><a href="https://www.edge.org/conversation/thomas_metzinger-benevolent-artificial-anti-natalism-baan">تولدستیزی مصنوعی خیرخواهانه!</a></p>
+
+<p>این یه مطلب تقریباً مفصل هست در مورد یک سناریوی غیرمحتمل که البته بیشتر جنبه‌ی فکری داره، تا اینکه واقعاً امکانش وجود داشته باشه. به نوعی یک آزمایش ذهنی.</p>
+
+<p>فرض کنید یک ابرهوش به وجود بیاد که توانایی ذهنی بسیار زیادی داره، خیلی بیشتر از توانایی ذهنی انسان‌ها.
+بنابراین میشه نتیجه گرفت که این موجودیت توانایی بیشتری هم در زمینه‌ی استدلال در مورد اخلاق و آداب هم داره.
+حالا فرض کنید که این موجودیت به انسان‌ها و زندگی کردن‌شون رو ببینه و بعد به این نتیجه برسه که اگر انسان‌ها به دنیا نیان، بنابراین نمی‌تونن رنجی رو هم متحمل بشن.
+بنابراین خیلی خیرخواهانه تصمیم می‌گیره که سیاست تولدستیزی (Anti-Natalism) سیاست خیلی خوبی در مورد انسان‌هاست.</p>
+
+
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://blog.erfan.xyz/2017/08/arxiv-sat-20170812/';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'enrygithubpages';
+    var disqus_url = 'http://blog.erfan.xyz/2017/08/arxiv-sat-20170812/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    <!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-****"></script>-->
+    <script type="text/javascript" src="/javascripts/bidiweb.build.js"> </script>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function()
+    {
+        bidiweb.style('.site-content  *');
+    });
+    </script>
+</div>
+                </div>
+                <!-- #content -->
+            </div>
+            <!-- #primary .site-content -->
+        </div>
+        <!-- #main -->
+
+        <footer class="site-footer" role="contentinfo">
+            <div class="site-info">
+            قدرت گرفته از <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>. تِم تغییر یافته از روی Snow Byte. میزبانی بر روی صفحات  <i class="fa fa-github fa-lg" style="color: black"></i>  با  <i class="fa fa-heart fa-lg" style="color: red"></i>
+            </div>
+            <!-- .site-info -->
+            <!--heap analytics badge-->
+            <div>
+                <a href="https://heapanalytics.com/?utm_source=badge"><img style="width:108px;height:41px" src="//heapanalytics.com/img/badgeLight.png" alt="Heap | Mobile and Web Analytics" /></a>
+            </div>
+        </footer>
+        <!-- #colophon .site-footer -->
+    </div>
+    <!-- #page .hfeed .site -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+
+    <!--<script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-56885931-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>-->
+
+    <script type='text/javascript'>
+      $(function () {
+        $("pre code").parent().each(function () {
+          if (!$(this).hasClass("prettyprint")) {
+            $(this).addClass("prettyprint");
+            a = true
+          }
+        });
+
+        prettyPrint();
+      });
+    </script>
+    <script type="text/javascript" src="/javascripts/bidiweb.build.js"> </script>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function()
+    {
+        bidiweb.style('.site-content  *');
+    });
+    </script>
+</body>
+</html>
