@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2017-08-24T16:25:16.4290703+04:30" />
+    <meta http-equiv="last-modified" content="2017-11-18T16:29:23.0508385-05:00" />
     <meta name="keywords" content="" />
     <title>The Gradient</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
@@ -70,6 +70,86 @@
                   
 
   <ul class="posts">
+    <li class="post">
+      <h1><a href="/2014/04/spectrogram/">Spectrogram</a></h1>
+      <div class="meta">
+        <p class="posted"><i class="fa fa-calendar"></i> 25 Apr 2014</p>
+        <ul class="categories">
+        <i class="fa fa-tag"></i>
+          <li><a href="/category/Signal Processing" title="Signal Processing">Signal Processing</a></li>
+          <li><a href="/category/پردازش سیگنال" title="پردازش سیگنال">پردازش سیگنال</a></li>
+          <li><a href="/category/علمی" title="علمی">علمی</a></li>
+        </ul>
+      </div>
+      
+      <h1>به نام خدا</h1>
+
+<p><a href="http://commons.wikimedia.org/wiki/File:Expchirp.jpg">Exponential Chirp Spectrogram</a>
+<img src="http://upload.wikimedia.org/wikipedia/commons/f/f1/Expchirp.jpg" alt="Exponential Chirp Spectrogram" /></p>
+
+<p>(<em>Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en">Attribution-Share Alike 3.0 Unported license</a> (CC BY-SA 3.0), from Wikimedia Commons</em>)</p>
+
+<h2>معرفی</h2>
+
+<p>برای بررسی ساختار فرکانسی سیگنال‌های متغییر در زمان، از روشی به نام تبدیل فوریه‌ی کوتاه-زمان (<a href="http://en.wikipedia.org/wiki/STFT">STFT</a>) استفاده می‌شود. با استفاده از این نوع تبدیل فوریه می‌توان به اطلاعات فرکانسی و فازی ناحیه‌ای کوتاه از سیگنال پی برد. در حالت پیوسته، این تبدیل از رابطه‌ی زیر به دست می‌آید:</p>
+
+<p>$$ \text{STFT} ‎\lbrace x(t) ‎\rbrace (\tau ,\omega ) \equiv X ( \tau ,\omega ) = \int _{-\infty }^{\infty} x(t)w(t-\tau )e^{-j \omega t}dt $$</p>
+
+<p>که تابع \( w(t)\) تابع پنجره می‌باشد.</p>
+
+<p>رابطه‌ی تبدیل فوریه‌ی کوتاه-زمان برای حالت گسسته نیز مشابه می‌باشد.</p>
+
+<p>$$ \text{STFT} \lbrace x[n] \rbrace (m,\omega )\equiv X(m,\omega )=\sum _{n=-\infty }^{\infty } x[n]w[n-m]e^{-j \omega  n} $$</p>
+
+<p>برای تهیه‌ی اسپکتروگرام، سیگنال به بازه‌هایی با طول کمتر از طول سیگنال تقسیم می‌شود (لزومی ندارد این بازه‌ها مجزا باشند)، برای هر کدام از این بازه‌ها تبدیل فوریه محاسبه می‌شود، و سپس اندازه‌ی این تبدیل فوریه برای بازه‌های مختلف در کنار یکدیگر قرار می‌گیرد تا تصویری دو یا سه بعدی از اسپکتروگرام سیگنال اصلی ایجاد شود. </p>
+
+<h2>پیاده‌سازی</h2>
+
+<p>(نمونه کدها، به زبان متلب می‌باشند)</p>
+
+<p>برای ایجاد نمودار اسپکتروگرام برای یک سیگنال، ابتدا لازم است سیگنال را به تعدادی بازه تقسیم کرده و سپس برای هر بازه، ضرایب فوریه را محاسبه نماییم. در نهایت با جمع‌آوری همه‌ی این ضرایب به دست‌آمده، می‌توانیم نمودار آبشاری اسپکتروگرام را رسم کنیم.</p>
+
+<p>کد زیر یک پیاده‌سازی ابتدایی برای این کار است:</p>
+
+<pre><code>function specPlot(x, windlen)
+% x: input signal
+% windlen: length of the time window inside which fourier coefficients will be calculated, note that since our signal is real, only half of the coefficients are needed
+
+% preallocating magnitude matrix for speedup
+numofwinds = floor(length(x)/windlen);
+magnitude = zeros(numofwinds, floor(windlen/2));
+for i = 0:(numofwinds - 1)
+       startIdx = i*windlen;
+       partfft = abs(fft(x((1+startIdx):(startIdx+windlen))))/windlen;
+       magnitude((i+1),:) = partfft(1:length(partfft)/2);
+end
+waterfall(1:windlen/2, 0:(length(x)/windlen -1), magnitude);
+xlabel('frequency');
+ylabel('time');
+zlabel('magnitude');
+end
+</code></pre>
+
+<p>حال این توابع را بر روی یک سیگنال نمونه امتحان می‌کنیم.</p>
+
+<p>سیگنال زیر را که یک سیگنال جیر با رابطه‌ی \( y=sin(1600\pi t^2) \) می‌باشد در نظر بگیرید. نمودار این سیگنال به صورت زیر است:</p>
+
+<p><img src="/stylesheets/images/chirp-limited.png" alt="Chirp Plot, limited" /></p>
+
+<p><img src="/stylesheets/images/chirp.png" alt="Chirp Plot" /></p>
+
+<pre><code>&gt;&gt; t = [0:1/8000:1-1/8000];
+&gt;&gt; y = sin(2*pi*800*(t.*t));
+&gt;&gt; specPlot(y,800);
+</code></pre>
+
+<p>با اجرای دستور آخر نمودار زیر ایجاد خواهد شد</p>
+
+<p><img src="/stylesheets/images/chirp-specplot.png" alt="Spectrogram waterfall plot" /></p>
+
+      <!--<p><a href="/2014/04/spectrogram/">ادامه‌ی مطلب</a></p>-->
+    </li>
+    <hr/>
     <li class="post">
       <h1><a href="/2014/04/this-vs-that/">این در مقابل اون</a></h1>
       <div class="meta">

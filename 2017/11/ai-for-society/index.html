@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2017-11-18T16:29:23.0508385-05:00" />
+    <meta name="keywords" content="" />
+    <title>The Gradient</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <!--<script type="text/javascript">    
+        MathJax.Hub.Config({    
+            "HTML-CSS": { scale:100}    
+        });    
+    </script>-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+            }
+        });
+    </script>
+
+
+
+   <link rel="canonical" href="http://blog.erfan.xyz/2017/11/ai-for-society/" />
+   <script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(t,e){window.heap.appid=t,window.heap.config=e;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+t+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(t){return function(){heap.push([t].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2204913712");
+    </script>
+
+</head>
+<body class="home blog">
+    <div id="page" class="hfeed site">
+        <header id="masthead" class="site-header" role="banner">
+            <hgroup>
+                <h1 class="site-title"><a href="/" title="The Gradient" rel="home">The Gradient</a>
+                <p>
+                    <small>
+                        ماجراجویی‌های من به عنوان یه تازه‌کار
+                    </small>
+                </p>
+                </h1>
+            </hgroup>
+            <nav role="navigation" class="site-navigation main-navigation">
+                <h1 class="assistive-text">منو | Menu</h1>
+                <div class="assistive-text skip-link"><a href="#content" title="Skip to content">ادامه به اصلِ مطلب | Skip to content</a></div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="/" class="home"><i class="fa fa-home fa-lg"></i></a></li>
+                        <!-- <li><a href="/about">درباره‌ی من</a></li> -->
+                        <li><a href="http://ce.sharif.edu/~noury">درباره‌ی من | About Me</a></li>
+                        <li><a href="/category">موضوع‌بندی‌ها | Categories</a></li>
+                        <li><a href="/archive">آرشیو | Archive</a></li>
+                        <li><a href="/rss.xml"><i class="fa fa-rss-square fa-lg" style="color:orange"></i></a></li>
+                        <li><a href="/feed.xml"><i class="fa fa-rss fa-lg" style="color:orange"></i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div id="main">
+            <div id="primary" class="site-content">
+                <div id="content" role="main">
+                  
+
+<div class="post">
+    <h1 class="post-title">هوش مصنوعی برای جامعه</h1> 
+      <div class="meta">
+        <p class="posted"><i class="fa fa-calendar"></i> 18 Nov 2017</p>
+        <ul class="categories">
+        <i class="fa fa-tag"></i>
+          <li><a href="/category/aritifical-intelligence" title="Snow.Models.Category">Aritifical Intelligence</a></li>
+          <li><a href="/category/society" title="Snow.Models.Category">Society</a></li>
+        </ul>
+      </div>
+
+      <!--div class="addthis_toolbox addthis_default_style" style="float:right;">
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        <a class="addthis_button_tweet"></a>
+        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+        <a class="addthis_button_linkedin_counter"></a>
+        <a class="addthis_counter addthis_pill_style"></a>
+      </div-->
+    </div>
+    
+    
+        
+    <h1>به نام خدا</h1>
+
+<p>فکر کنم دور از ذهن نیست اگر بقیه‌ی مطالب این وبلاگ رو خونده باشید بدونید که مهم‌ترین زمینه‌ای که روش تمرکز دارم در حال حاضر هوش مصنوعی هست. از زمانی که تورینگ مقاله‌ی «ادوات محاسبه‌گری و هوش»[۱]
+رو منتشر کرد ۶۸ سال می‌گذره. تو این مدت زمان خیلی اتفاق‌ها افتاده و هوش مصنوعی خیلی سرد و گرم کشیده. ولی حالا زمانی هست که بیشتر از هر وقت دیگه‌ای آدم‌های کارپشته و تازه‌کارهایی مثل من وارد این حوزه شدن. شاید بشه گفت الان مهم‌ترین تکنولوژی حاضر بشر هست که داره به شکوفایی میرسه. احتمالاً برای همه هم واضح باشه که تو چهار پنج سال اخیر پیشرفتش قابل مقایسه با قبل نبوده. حالا کاملاً از دانشگاه‌ها خارج شده و توی جامعه دنبال میشه و به طور مستقیم به اکثر جوامع تاثیر می‌گذاره.</p>
+
+<p>احتمالاً اگر دسترسی به اینترنت داشته باشید، در مورد این هم اطلاع دارید که کلی آدم دارن در مورد این صحبت می‌کنن که اگر بتونیم به هوش عمومی مصنوعی [۲] برسیم، به احتمال زیادی نسل بشر منقرض خواهد شد. در مقابل یه سری هم هستن که میگن اگر به هوش عمومی مصنوعی برسیم دیگه زندگی انسان‌ها تبدیل به بهشت خواهد شد. به هر دو دسته‌ای که زمان حال یا آینده‌ی نزدیک رو ول کردن و دارن در مورد آینده‌ی نامعلوم دست‌یابی به هوش عمومی مصنوعی صحبت می‌کنن، میگن تکینه‌گراها [۳]، کسایی که غالباً خیلی احساسی و تعصبی در مورد این مسائل صحبت می‌کنن. البته حرف‌هاشون خیلی بیهوده هم نیست، واقعاً این خطر به شکل جدی وجود داره. ولی معمولاً وسط این حرف‌های اغراق‌آمیز در مورد یک آینده‌ی نامعلوم و شاید نه چندان نزدیک، اهمیت زمان حال و آینده‌ی خیلی نزدیک خیلی گم میشه. اون قدری که به حرف‌های تکینه‌گراها گوش داده میشه و کار انجام میشه، کار در مورد اثرات هوش مصنوعی بر روی جوامع و انسان‌ها انجام نمیشه.</p>
+
+<p>شاید آخرین تکنولوژی خیلی مخربی که بشر بهش دست یافته باشه تکنولوژی تولید سلاح‌های هسته‌ای باشه. معمولاً وقتی در مورد خطرات هوش عمومی مصنوعی صحبت میشه، حتماً حرف سلاح‌های هسته‌ای هم وسط میاد. ولی فکر می‌کنم تفاوت عمده‌ای بین این دو تکنولوژی وجود داره که زیاد بهش توجه نمیشه. اگر یک دولت، مثل دولت امریکا، با یه پروژه‌ی خیلی بزرگ مقیاس مثل پروژه‌ی منهتن تونست به این تکنولوژی دست پیدا بکنه و بعد از سال‌ها این تکنولوژی فقط دست «دولت»های معدودی هست، نشون میده که موانع ورود به این حوزه خیلی خیلی بزرگ هستن.
+ولی، موانع ورود به حوزه‌ای مثل هوش مصنوعی اصلاً اونقدر بزرگ نیستن. درسته برای یه چند تا دانشجو خریدن کارت گرافیکی سخت باشه، ولی هم‌زمانی وجود اینترنت، وجود داده، وجود زیرساخت‌های محاسباتی، و حرکت ارزشمند open source و مشابه اون در به اشتراک گذاری تحقیقات، یک هم‌زمانی منحصربفرد هست.
+فکر کنید به جای اینکه پروژه‌ی منهتن یک پروژه‌ی مخفی باشه، با چند نفر محدود که روش کار می‌کردن، این یه حرکت بین‌المللی باشه بین تعداد زیادی آدم و شرکت، که کلی امکانات در اختیار دارن و آزادانه همه‌ی نتایج و دستاوردها رو به اشتراک میذارن. مثلاً فرض کنید اپنهایمر به یه چیز جدید در مورد تکنولوژی هسته‌ای میرسه، بعد میشینه آخر هفته یه مقاله می‌نویسه، جمعه شب (یا به طور مشابه یک‌شنبه شب) مقاله رو به آرکایو [۴] سابمیت می‌کنه و دو روز بعد، صبح دانشمندان روسی یا آلمانی که از خواب بیدار میشن میرن مقاله‌ی اپنهایمر و دوستان رو دانلود می‌کنن و از آخرین دستاوردهاشون در مورد ساخت سلاح‌های هسته‌ای استفاده می‌کنن. تصور می‌کنید این شرایط رو؟ این شرایط برای هوش مصنوعی وجود داره. ولی اتفاقات کوتاه مدتی که توی هوش مصنوعی میوفته به اندازه‌ی یک سلاح هسته‌ای صدا نمی‌کنن. خیلی کوچک‌تر هستن. یک سلاح هسته‌ای تاثیر مخربی رو جمعیت نسبتاً کمی (نسبت به جمعیت کل جهان) میذاره. ولی یک محصولی که هوش مصنوعی داشته باشه می‌تونه تاثیر خیلی کمی روی جمعیت خیلی بزرگی بذاره. تاثیرش هم معمولاً روی هر فرد به اندازه‌ای کمه که هیچ کسی رو از اتفاقی که داره میوفته خبردار نمی‌کنه.
+مشکل اصلی هوش مصنوعی دقیقاً چیزی هست که باعث شده به این وضعیت پیشرفته‌ی فعلیش برسه، راحتی پیشبردش.</p>
+
+<p>اول این ویدیو رو ببینید:</p>
+
+<div style="text-align:center;">
+<iframe style="display:block" width="1280" height="720" src="https://www.youtube-nocookie.com/embed/xhp47v5OBXQ?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p>شاید اول فکرتون به این سمت بره که اگر دولت‌ها به این تکنولوژی‌ها دسترسی داشته باشن (که قطعاً دارن) چه کارهایی میشه باهاش کرد که اهداف بیشترشون در تضاد حقوق شهروندی می‌تونه باشه. ولی مسئله‌ی اصلی اینه که دسترسی به تکنولوژی اونقدر راحت هست که نه تنها دولت‌ها، بلکه هر کس دیگه‌ای می‌تونه بهش دسترسی داشته باشه و بر اساس نیازهاش تغییرش بده.</p>
+
+<p>حال این ویدیو رو ببینید:</p>
+
+<div>
+<iframe width="1280" height="720" src="https://www.youtube-nocookie.com/embed/9CO6M2HsoIA?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p>این ویدیو ساختگی هست، برای کمپین ایجاد قوانین محدودکننده برای سلاح‌های خودمختار [۵]. این ویدیو خیلی باعث ترس و نگرانی من شد. چیزی که توی این ویدیو نشون میدن تکنولوژی عجیب یا دور از دسترسی نیست. شاید یک تیم چند نفره‌ای که برنامه‌نویسی بلد هستن بتونن در مدت چند ماه حرکت هوشمندانه‌ی این پهپاد رو درست بکنن. درست کردن بقیه‌ی قسمت‌هاش هم خیلی زمان نمی‌بره.درسته تخمین‌های من اشتباه هستن، ولی رسیدن به این تکنولوژی نیازی به زمان و هزینه و تخصص (در عمل به اندازه‌ی) بینهایت نداره. با منابع محدودتری هم میشه به این تکنولوژی دست یافت و این خیلی ترسناکه.)
+شاید کشورهایی که در اون‌ها جایگاه و منزلت قانون بیشتره، مثل امریکا یا کشورهای اتحادیه‌ی اروپا واقعاً بتونن به قوانین محدود کننده دست پیدا بکنن، ولی نگرانی بزرگ‌تر اینجا شروع میشه. کشورهایی که به اندازه‌ی کافی در چارچوب قوانین نیستن و یا تمامیت‌خواه و سرکوب‌گر هستن، به راحتی می‌تونن از این تکنولوژی‌های برای مقاصد نادرست استفاده بکنن. علاوه بر اون کشورهای تابع قوانین هم خیلی راحت می‌تونن این تکنولوژی‌هاشون رو بر روی ملل دولت‌های ضعیف‌تر امتحان بکنن. بخاطر همینه که پیشرفت تکنولوژی از خیلی جهات خیلی بیشتر باعث ضرر مردمان کشورهای ضعیف از نظر سیاسی و دسترسی به تکنولوژی میشه. این مردمان (ما مردمان) هم از طرف دولت‌های خودشون (خودمون) با ابزار تکنولوژی هوش مصنوعی می‌تونن (می‌تونیم) مورد سرکوب قرار بگیرن (بگیریم) و هم از طرف دولت‌های صادرکننده‌ی دموکراسی. واقعاً در این زمان خیلی سخته شهروند کشوری بود که در اون کشور به اندازه‌ی کافی و لازم به قوانین احترام گذاشته نمیشه.</p>
+
+<p>ولی خب به هر حال نمیشه جلوی پیشرفت تکنولوژی رو گرفت. اتفاقاً جلوی پیشرفتش رو هم گرفتن اشتباهه. در مورد برخورد با هوش مصنوعی چند تا راهکار اصلی وجود داره. بعضی‌ها عقیده دارن که همه‌ی نتایج و دستاوردها باید آزادانه و به سرعت با همه به اشتراک گذاشته بشه تا برتری استراتژیک زیادی بین طرف‌های مختلف وجود نداشته باشه. شاید بشه گفت تا حدودی وضعیت فعلی اهالی دانشگاه و محققان دانشگاهی که در صنعت هستن اینطوری باشه. نظر گروه دیگه‌ای اینه که دستاوردها باید با تامل بیشتری به اشتراک گذاشته بشن. تا وقتی که در مورد درستی و بی‌خطری دستاوردی مطمئن نشدیم نباید اون دستاورد رو با بقیه به اشتراک بذاریم. دسته‌ی آخر هم نظرشون اینه که کلاً باید همه چیز پشت درهای بسته باشه تا همیشه برتری استراتژیک دست ما (که برگزیده‌ترین افراد برای داشتن این اسرار هستیم و صلاح همه‌ی بشر رو بیشتر می‌دونیم) باشه و دست «انسان‌های بد» نیوفته. البته بدیهیه که این رویکرد خیلی شکننده است.</p>
+
+<p>من به اندازه‌ی کافی در مورد این رویکردها فکر نکردم، ولی نظر فعلیم اینه که اشتراک‌گذاری بدون وقفه و آزادانه شاید بهترین روش فعلی باشه. ولی قطعاً این روش پایداری نیست و بهترین گزینه نیست. این روش تضمین نمی‌کنه که همه‌ی طرفین آزادانه دارن همه‌ی نتایج و دستاوردهاشون رو به اشتراک می‌ذارن و اتفاقاً کسایی که با قوانین این بازی، بازی نمی‌کنن شاید بشه گفت که سود بیشتری می‌برن.</p>
+
+<p>از اون طرف به کارگیری روزمره‌ی تکنولوژی‌های مبتنی بر هوش مصنوعی در همه‌ی زمینه‌های زندگی حتماً اثرات منفی مختلفی داره ولی نمیشه جلوی این رو گرفت. به نظر شما چطوری میشه اثرگذاری این تکنولوژی رو مثبت‌تر کرد؟ واقعاً آیا راه‌حلی وجود داره؟</p>
+
+<p>اگر خیلی مثل گذشته تنبلی بر من غلبه نکنه، در آینده بیشتر در مورد ایمنی هوش مصنوعی [۶] خواهم نوشت.</p>
+
+<p>[1] Turing, Alan M. "Computing machinery and intelligence." Mind 59.236 (1950): 433-460.</p>
+
+<p>[2] Artificial General Intelligence</p>
+
+<p>[3] Singularitarians</p>
+
+<p>[4] arxiv.org/</p>
+
+<p>[5] Autonomous Weapons</p>
+
+<p>[6] AI Safety</p>
+
+
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://blog.erfan.xyz/2017/11/ai-for-society/';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'enrygithubpages';
+    var disqus_url = 'http://blog.erfan.xyz/2017/11/ai-for-society/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    <!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-****"></script>-->
+    <script type="text/javascript" src="/javascripts/bidiweb.build.js"> </script>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function()
+    {
+        bidiweb.style('.site-content  *');
+    });
+    </script>
+</div>
+                </div>
+                <!-- #content -->
+            </div>
+            <!-- #primary .site-content -->
+        </div>
+        <!-- #main -->
+
+        <footer class="site-footer" role="contentinfo">
+            <div class="site-info">
+            قدرت گرفته از <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>. تِم تغییر یافته از روی Snow Byte. میزبانی بر روی صفحات  <i class="fa fa-github fa-lg" style="color: black"></i>  با  <i class="fa fa-heart fa-lg" style="color: red"></i>
+            </div>
+            <!-- .site-info -->
+            <!--heap analytics badge-->
+            <div>
+                <a href="https://heapanalytics.com/?utm_source=badge"><img style="width:108px;height:41px" src="//heapanalytics.com/img/badgeLight.png" alt="Heap | Mobile and Web Analytics" /></a>
+            </div>
+        </footer>
+        <!-- #colophon .site-footer -->
+    </div>
+    <!-- #page .hfeed .site -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+
+    <!--<script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-56885931-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>-->
+
+    <script type='text/javascript'>
+      $(function () {
+        $("pre code").parent().each(function () {
+          if (!$(this).hasClass("prettyprint")) {
+            $(this).addClass("prettyprint");
+            a = true
+          }
+        });
+
+        prettyPrint();
+      });
+    </script>
+    <script type="text/javascript" src="/javascripts/bidiweb.build.js"> </script>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function()
+    {
+        bidiweb.style('.site-content  *');
+    });
+    </script>
+</body>
+</html>

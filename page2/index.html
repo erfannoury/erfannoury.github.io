@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2017-08-24T16:25:16.4290703+04:30" />
+    <meta http-equiv="last-modified" content="2017-11-18T16:29:23.0508385-05:00" />
     <meta name="keywords" content="" />
     <title>The Gradient</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
@@ -70,6 +70,105 @@
                   
 
   <ul class="posts">
+    <li class="post">
+      <h1><a href="/2015/02/installing-theano/">نصب کتابخانه‌ی Theano در ویندوز</a></h1>
+      <div class="meta">
+        <p class="posted"><i class="fa fa-calendar"></i> 13 Feb 2015</p>
+        <ul class="categories">
+        <i class="fa fa-tag"></i>
+          <li><a href="/category/AI" title="AI">AI</a></li>
+          <li><a href="/category/Deep Learning" title="Deep Learning">Deep Learning</a></li>
+          <li><a href="/category/Machine Learning" title="Machine Learning">Machine Learning</a></li>
+          <li><a href="/category/Python" title="Python">Python</a></li>
+        </ul>
+      </div>
+      
+      <h1>به نام خدا</h1>
+
+<p>یکی از مهم‌ترین برتری‌های زبان پایتون، مجموعه‌ی بسیار کامل کتابخانه‌هایی هست که برای کارهای مختلف در دسترس برنامه‌نویس هست. این موضوع باعث شده که برای کاربردهای بسیاری، بتوان کتابخانه‌های بسیار با کیفیتی پیدا کرد و از اونها استفاده کرد.</p>
+
+<p>یکی از حوزه‌هایی که از این مورد مستثنی نیست، موضوع کتابخانه‌های مربوط به <em>یادگیری عمیق</em> یا <em>Deep Learning</em> هست. از روی مشاهداتم می‌تونم بگم که بیشترین کتابخانه‌ها برای اینکار رو زبان پایتون داره و حتی اگر کتابخانه‌ای مثلاً در زبانی مثل C++ نوشته شده باشه، به احتمال زیادی یک پوشش (wrapper) برای زبان پایتون داره.</p>
+
+<p>یک منبع مناسب که تعدادی از کتابخانه‌های مربوط به یادگیری عمیق رو با هم مقایسه کرده،
+<a href="https://github.com/soumith/convnet-benchmarks">soumith/convnet-benchmarks</a>
+ هست. در اینجا می‌تونیم ببینیم که سهم زبان‌های Python و Lua در کنار زبان C++ از کتابخانه‌های با کیفیت و مطرح بالا است.</p>
+
+<p>مشکلی که بسیاری از این کتابخانه‌ها دارن اینه که با در نظر گرفتن ویندوز ایجاد نشدن. بخاطر همین نمیشه به راحتی خیلی از اونها رو در ویندوز استفاده کرد. برای کاری که می‌خوام انجام بدم تصمیم گرفتم این کتابخانه‌ها رو با هم مقایسه کنم و نهایت سعی‌ام رو بکنم که روی ویندوز اجراشون کنم. در ابتدا و بخاطر اینکه خیلی بیشتر ازش استفاده میشه، از کتابخانه‌ی Theano شروع کردم.</p>
+
+<h2>معرفی <a href="http://www.deeplearning.net/software/theano/">Theano</a></h2>
+
+<p>طبق تعریفی که در خود سایت نوشته شده، <em>Theano</em> «یک کتابخانه برای تعریف، بهینه‌سازی و اجرای عبارت‌های ریاضی شامل آرایه‌های چندبعدی به صورت بهینه است.»</p>
+
+<blockquote>
+  <p>Theano is a Python library that allows you to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently.</p>
+</blockquote>
+
+<p>از ویژگی‌های این کتابخانه میشه به تعامل با کتابخانه‌ی NumPy (استفاده از <code>numpy.ndarray</code>)، استفاده از واحد پردازش گرافیکی برای تسریع عملیات، مشتق‌گیری سریع عبارت‌های ریاضی و همچنین تولید پویای کد به زبان C اشاره کرد.
+ این کتابخانه توسط آزمایشگاه LISA دانشگاه مونترال کانادا تهیه میشه و معمولاً شامل جدیدترین الگوریتم‌ها و معماری شبکه‌های عمیق از جدیدترین مقالات هست.</p>
+
+<h3>نصب Theano</h3>
+
+<p>با وجود اینکه در ابتدا تصور می‌کردم نصب این کتابخانه، با توجه به اینکه از CUDA هم استفاده می‌کنه، در ویندوز کار بسیار سختی خواهد بود، ولی به هیچ عنوان اینگونه نبود. برای نصب این کتابخانه ابتدا آخرین نسخه‌ی کد رو با استفاده از دستور زیر از گیت‌هاب گرفتم:</p>
+
+<pre><code>git clone https://github.com/Theano/Theano
+</code></pre>
+
+<p>بعد از گرفتن کد مربوط به این کتابخانه، در مسیر کاربری خودم در ویندوز، یعنی <code>C:\Users\&lt;username&gt;\</code>، یک فایل با نام <code>.theanorc</code> ایجاد کردم تا بتونم در این فایل تنظیماتی رو به این کتابخانه بدم. تنظیمات مربوط به طور کامل در <a href="http://www.deeplearning.net/software/theano/install.html#bleeding-edge-installation">این آدرس</a> نوشته شده. بعد از اینکه فایل تنظیمات مورد نظر رو تکمیل کردم (تنظیمات مربوط به CUDA رو هم اعمال کردم) با دستور زیر کتابخانه ساخت و نصب شد، به همین سادگی</p>
+
+<pre><code>cd theano
+python setup.py install
+</code></pre>
+
+<p>برای اینکه ببینید استفاده از کارت گرافیکی در این کتابخانه، به طور خاص، و کتابخانه، به طور عام درست ساخت و نصب شده، از آدرس زیر برنامه‌ی مورد نظر رو اجرا کنید:</p>
+
+<pre><code>cd theano\misc
+python check_blas.py
+</code></pre>
+
+<h2><a href="https://github.com/lisa-lab/pylearn2">Pylearn2</a></h2>
+
+<p>کتابخانه‌ی Pylearn2 یک کتابخانه‌ی یادگیری ماشین هست که بر روی کتابخانه‌ی Theano توسط آزمایشگاه LISA ایجاد شده. این کتابخانه به سرعت در حال تغییره و الگوریتم‌های بسیاری بهش اضافه میشن. به نظر میومد که نصب این کتابخانه چون وابسته به theano بود خیلی سخت نباشه، ولی اینطوری نبود. طبق معمول بقیه‌ی کتابخانه‌ها، کد این کتابخانه رو از روی گیت‌هاب گرفتم. بعد که خواستم نصبش کنم، با این خطا مواجه شدم که نمی‌تونست کامپایلر Microsoft Visual C++ 2008 یا همون VC90 رو پیدا بکنه. قبلاً هم این مشکل رو داشتم ولی تونسته بودم حلش کنم (<a href="http://erfannoury.github.io/2014/04/msvc-for-python/">در اینجا توضیح دادم چطوری</a>)،ولی این بار متاسفانه مشکل به این راحتی حل نشد.</p>
+
+<p>با وجود اینکه تنظیمات رو تغییر دادم تا از کامپایلر Microsoft Visual C++ 2013 یا همون VC120 استفاده بشه، ولی باز درخواست کامپایر قدیمی رو می‌کرد. چاره‌ای نداشتم جز اینکه این کامپایلر رو نصب کنم. خوشبختانه برای حل این مشکل مایکروسافت یک دانلود کم حجم از این نسخه از کامپایلر برای پایتون 2.7 قرار داده.
+<a href="http://aka.ms/vcpython27">از این آدرس</a> میشه این نسخه از کامپایلر رو دانلود کرد. بعد از نصب این نسخه‌ی قدیمی از کامپایلر مشکل پیدا کردنش حل شد، ولی در کل استفاده از چنین نسخه‌ی قدیمی مشکل‌سازه. از توی کد کتابخانه نتونستم چیزی پیدا کنم که مربوط به محدودیت استفاده از این نسخه از کامپایلر باشه، بنابراین حدس می‌زنم که مشکل از setuptools پایتون هست. بعد از کمی جستجو و پیدا کردن پروژه‌ای موسوم به <a href="http://pythonwheels.com/">Python Wheels</a> حدسم قوت گرفت. فکر می‌کنم مشکل از همین باشه و این پروژه سعی داره این مشکل رو حل بکنه. فعلاً که خیلی از کتابخانه‌های مطرح پایتون از این پروژه پشتیبانی نمی‌کنن، چه برسه به پروژه‌ای مثل Pylearn2. خلاصه در نهایت مجبور به استفاده از همین نسخه از کامپایلر شدم.</p>
+
+<p>بعد از حل مشکل اومدم و طبق گفته‌ی سایت از دستور زیر برای نصب استفاده کردم</p>
+
+<pre><code>python setup.py develop
+</code></pre>
+
+<p>ولی در نهایت تاسف، با پیام خطای زیر در مورد یکی از فایل‌ها مواجه شدم.</p>
+
+<pre><code>LINK : fatal error LNK1181: cannot open input file 'Vault\Github\pylearn2\pylearn2\utils\_window_flip.pyd'
+error: Command "C:\Users\Erfan\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0\VC\Bin\amd64\link.exe /DLL /nologo /INCREMENTAL:NO /LIBPATH:C:\Anaconda\libs /LIBPATH:C:\Anaconda\PCbuild\amd64 /EXPORT:init_window_flip build\temp.win-amd64-2.7\Release\pylearn2/utils\_window_flip.obj /OUT:E:\Code Vault\Github\pylearn2\pylearn2\utils\_window_flip.pyd /IMPLIB:build\temp.win-amd64-2.7\Release\pylearn2/utils\_window_flip.lib /MANIFESTFILE:build\temp.win-amd64-2.7\Release\pylearn2/utils\_window_flip.pyd.manifest" failed with exit status 1181
+</code></pre>
+
+<p>راستش فعلاً پیدا نکردم که مشکل از چیه و چطوری میشه حلش کرد (به صورت اصولی)، ولی به جاش از دستور زیر برای نصب استفاده کردم و بدون مشکل کتابخانه نصب شد</p>
+
+<pre><code>python setup.py install
+</code></pre>
+
+<p>بعد از این کار و نصب ظاهراً موفق این کتابخانه، با اجرای دستور <code>import pylearn2</code>، پیام اخطاری مشاهده نشد. بنابراین احتمالاً بدون خطا نصب شده. البته باید بیشتر از کتابخانه استفاده بکنم تا بفهمم که آیا درست نصب شده یا نه.</p>
+
+<h2><a href="https://github.com/benanne/Lasagne">Lasagne</a>, <a href="https://github.com/bartvm/blocks">blocks</a></h2>
+
+<p>این دو کتابخانه به طور خاص برای ساخت شبکه‌های عصبی و بخصوص شبکه‌های عمیق ساخته شدن. هر دو مبتنی بر Theano هستن و هدف هر دو ساده‌تر کردن و ماژولار کردن ساخت این شبکه‌ها و پیاده‌سازی یادگیری این شبکه‌ها است.</p>
+
+<p>نصب این دو کتابخانه هم خیلی ساده بود. بعد از این که کد هر کدوم رو از گیت‌هاب گرفتم، با دستور <code>python setup.py install</code> هر دو به سادگی نصب شدن.</p>
+
+<h2>جمع‌بندی</h2>
+
+<p>در نهایت همونطوری که گفتم، تونستم یکی از کتابخانه‌های مهم پایتون و همچنین سه تا از کتابخانه‌های مهم یادگیری عمیق رو بر روی ویندوز نصب کنم.</p>
+
+<p>لازم هست بگم که از Windows 8.1 Pro x64 و CUDA 6.5 بر روی nVidia Quadro K1100M استفاده می‌کنم. همچنین پایتون رو با استفاده از <a href="https://store.continuum.io/cshop/anaconda/">Anaconda</a> روی ویندوز نصب کردم؛ نسخه‌ی 2.7.6 پایتون بر روی Anaconda نسخه‌ی 2.0 به طور دقیق‌تر. نصب پایتون رو از این طریق خیلی پیشنهاد می‌کنم. چون بسیاری از کتابخانه‌های مهم پایتون همراه باهاش نصب میشن و یه IDE خوب به نام Spyder هم نصب میشه که خیلی می‌تونه کمک دست خوبی باشه.</p>
+
+<p>این از مرحله‌ی نصب این کتابخانه‌ها که به نظر می‌رسه با موفقیت به اتمام رسید. حالا می‌مونه استفاده از این کتابخانه‌ها و کار مفید انجام دادن باهاشون که البته مرحله‌ی مهم‌تریه.</p>
+
+<p>در آینده، انشالله، بیشتر در موردشون خواهم نوشت.</p>
+
+      <!--<p><a href="/2015/02/installing-theano/">ادامه‌ی مطلب</a></p>-->
+    </li>
+    <hr/>
     <li class="post">
       <h1><a href="/2015/01/computers-which-learn/">کامپیوترهایی که یاد می‌گیرند</a></h1>
       <div class="meta">
@@ -463,86 +562,6 @@ EXPORTS
 <p>با انجام این کارها به احتمال زیادی مشکل کامپایل‌شدن کدهای <code>C</code> برای پایتون حل خواهد شد.</p>
 
       <!--<p><a href="/2014/04/msvc-for-python/">ادامه‌ی مطلب</a></p>-->
-    </li>
-    <hr/>
-    <li class="post">
-      <h1><a href="/2014/04/spectrogram/">Spectrogram</a></h1>
-      <div class="meta">
-        <p class="posted"><i class="fa fa-calendar"></i> 25 Apr 2014</p>
-        <ul class="categories">
-        <i class="fa fa-tag"></i>
-          <li><a href="/category/Signal Processing" title="Signal Processing">Signal Processing</a></li>
-          <li><a href="/category/پردازش سیگنال" title="پردازش سیگنال">پردازش سیگنال</a></li>
-          <li><a href="/category/علمی" title="علمی">علمی</a></li>
-        </ul>
-      </div>
-      
-      <h1>به نام خدا</h1>
-
-<p><a href="http://commons.wikimedia.org/wiki/File:Expchirp.jpg">Exponential Chirp Spectrogram</a>
-<img src="http://upload.wikimedia.org/wikipedia/commons/f/f1/Expchirp.jpg" alt="Exponential Chirp Spectrogram" /></p>
-
-<p>(<em>Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en">Attribution-Share Alike 3.0 Unported license</a> (CC BY-SA 3.0), from Wikimedia Commons</em>)</p>
-
-<h2>معرفی</h2>
-
-<p>برای بررسی ساختار فرکانسی سیگنال‌های متغییر در زمان، از روشی به نام تبدیل فوریه‌ی کوتاه-زمان (<a href="http://en.wikipedia.org/wiki/STFT">STFT</a>) استفاده می‌شود. با استفاده از این نوع تبدیل فوریه می‌توان به اطلاعات فرکانسی و فازی ناحیه‌ای کوتاه از سیگنال پی برد. در حالت پیوسته، این تبدیل از رابطه‌ی زیر به دست می‌آید:</p>
-
-<p>$$ \text{STFT} ‎\lbrace x(t) ‎\rbrace (\tau ,\omega ) \equiv X ( \tau ,\omega ) = \int _{-\infty }^{\infty} x(t)w(t-\tau )e^{-j \omega t}dt $$</p>
-
-<p>که تابع \( w(t)\) تابع پنجره می‌باشد.</p>
-
-<p>رابطه‌ی تبدیل فوریه‌ی کوتاه-زمان برای حالت گسسته نیز مشابه می‌باشد.</p>
-
-<p>$$ \text{STFT} \lbrace x[n] \rbrace (m,\omega )\equiv X(m,\omega )=\sum _{n=-\infty }^{\infty } x[n]w[n-m]e^{-j \omega  n} $$</p>
-
-<p>برای تهیه‌ی اسپکتروگرام، سیگنال به بازه‌هایی با طول کمتر از طول سیگنال تقسیم می‌شود (لزومی ندارد این بازه‌ها مجزا باشند)، برای هر کدام از این بازه‌ها تبدیل فوریه محاسبه می‌شود، و سپس اندازه‌ی این تبدیل فوریه برای بازه‌های مختلف در کنار یکدیگر قرار می‌گیرد تا تصویری دو یا سه بعدی از اسپکتروگرام سیگنال اصلی ایجاد شود. </p>
-
-<h2>پیاده‌سازی</h2>
-
-<p>(نمونه کدها، به زبان متلب می‌باشند)</p>
-
-<p>برای ایجاد نمودار اسپکتروگرام برای یک سیگنال، ابتدا لازم است سیگنال را به تعدادی بازه تقسیم کرده و سپس برای هر بازه، ضرایب فوریه را محاسبه نماییم. در نهایت با جمع‌آوری همه‌ی این ضرایب به دست‌آمده، می‌توانیم نمودار آبشاری اسپکتروگرام را رسم کنیم.</p>
-
-<p>کد زیر یک پیاده‌سازی ابتدایی برای این کار است:</p>
-
-<pre><code>function specPlot(x, windlen)
-% x: input signal
-% windlen: length of the time window inside which fourier coefficients will be calculated, note that since our signal is real, only half of the coefficients are needed
-
-% preallocating magnitude matrix for speedup
-numofwinds = floor(length(x)/windlen);
-magnitude = zeros(numofwinds, floor(windlen/2));
-for i = 0:(numofwinds - 1)
-       startIdx = i*windlen;
-       partfft = abs(fft(x((1+startIdx):(startIdx+windlen))))/windlen;
-       magnitude((i+1),:) = partfft(1:length(partfft)/2);
-end
-waterfall(1:windlen/2, 0:(length(x)/windlen -1), magnitude);
-xlabel('frequency');
-ylabel('time');
-zlabel('magnitude');
-end
-</code></pre>
-
-<p>حال این توابع را بر روی یک سیگنال نمونه امتحان می‌کنیم.</p>
-
-<p>سیگنال زیر را که یک سیگنال جیر با رابطه‌ی \( y=sin(1600\pi t^2) \) می‌باشد در نظر بگیرید. نمودار این سیگنال به صورت زیر است:</p>
-
-<p><img src="/stylesheets/images/chirp-limited.png" alt="Chirp Plot, limited" /></p>
-
-<p><img src="/stylesheets/images/chirp.png" alt="Chirp Plot" /></p>
-
-<pre><code>&gt;&gt; t = [0:1/8000:1-1/8000];
-&gt;&gt; y = sin(2*pi*800*(t.*t));
-&gt;&gt; specPlot(y,800);
-</code></pre>
-
-<p>با اجرای دستور آخر نمودار زیر ایجاد خواهد شد</p>
-
-<p><img src="/stylesheets/images/chirp-specplot.png" alt="Spectrogram waterfall plot" /></p>
-
-      <!--<p><a href="/2014/04/spectrogram/">ادامه‌ی مطلب</a></p>-->
     </li>
     <hr/>
   </ul>
